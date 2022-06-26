@@ -6,6 +6,7 @@
 - Upload gerber files
 - Record audio output
 - Generate audio spectrum plots
+- Add copyright
 
 [Picture of DMGC]
 
