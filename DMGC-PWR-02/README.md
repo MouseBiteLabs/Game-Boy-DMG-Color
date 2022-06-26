@@ -9,7 +9,7 @@
 
 [blank board pictures]
 
-While putting together a BOM for the DMGC-PWR-01, I realized that the TPS63070 and TPS630701 were out of stock in most places. Luckily, I had picked up a handful to use when they were in stock last. But I figured I should make an alternate option with more common chips. So the DMGC-PWR-02 is an alternate option to the DMGC-PWR-01.
+While putting together a BOM for the DMGC-PWR-01, I realized that the TPS63070 and TPS630701 were out of stock in most places. Luckily, I had picked up a handful to use when they were in stock last. But I figured I should make an alternate option with more common chips. So the DMGC-PWR-02 is an alternate option to the DMGC-PWR-01, but I would personally use the -01 if the parts are available.
 
 Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~3.6 V up to ~8.5 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. However, I was unable to locate any simple buck-boost converters that met my criteria (other than the TPS63070), so I instead opted for a bit of an unorthodox solution as a backup option – separate buck and boost converters. The input voltage will buck down to 3.3 V using the TPS62056, and then boost up to 5 V using the TPS61202.
 
