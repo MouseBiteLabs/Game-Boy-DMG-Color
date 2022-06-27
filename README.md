@@ -57,8 +57,7 @@ This is the high-level BOM for my specific build. Each folder for each board wil
 -	Custom designed 3D-printed IPS bracket
 -	Game Boy DMG Shell – Factory A (Midnight Blue)
 -	Kitsch-Bent clear silicone DMG buttons
--	DMG battery terminals
--	FunnyPlaying DMG speaker
+
 ## Assembly Pictures
 Here are some pictures of the assembly process. Detailed images of the circuit boards are shown in their respective folders.
 
