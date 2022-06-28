@@ -3,13 +3,12 @@
 **TO-DO:**
 
 - Upload pictures
-- Upload BOM
 - Upload files
-- In-text links
+- Test functionality
 
 [blank board pictures]
 
-While putting together a BOM for the DMGC-PWR-01, I realized that the TPS63070 and TPS630701 were out of stock in most places. Luckily, I had picked up a handful to use when they were in stock last. But I figured I should make an alternate option with more common chips. So the DMGC-PWR-02 is an alternate option to the DMGC-PWR-01, but I would personally use the -01 if the parts are available.
+While putting together a BOM for the DMGC-PWR-01, I realized that the TPS63070, TPS630701, and TPS630702 were out of stock in most places. Luckily, I had picked up a handful to use when they were in stock last. But I figured I should make an alternate option with more common chips. So the DMGC-PWR-02 is an alternate option to the DMGC-PWR-01, **but I would personally use the -01 if the parts are available.**
 
 Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~3.6 V up to ~8.5 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. However, I was unable to locate any simple buck-boost converters that met my criteria (other than the TPS63070), so I instead opted for a bit of an unorthodox solution as a backup option – separate buck and boost converters. The input voltage will buck down to 3.3 V using the TPS62056, and then boost up to 5 V using the TPS61202.
 
@@ -19,7 +18,7 @@ Because the system will run with 4x AA batteries or the DC jack input, the range
 -	Surface Finish: ENIG
 
 ## Connections to the CPU Board
-There are five wires that connect to the CPU board power supply circuitry. Pin 1 is the GND reference and pin 2 is the 5 V output from the PWR board. Pin 4, VCC, is the battery input, which is always powered by the batteries if they are present. VCC_SW is the output of the power switch on the CPU board. On the CPU board, pin 3 is connected to the DC jack output, but on the DMGC-PWR-01 I connect this to VCC as well, so that either batteries or the DC jack will power this board. A different revision might utilize the DC jack for something else, such as charging a LiPo battery, which is why I left these pins separate.
+There are five wires that connect to the CPU board power supply circuitry. Pin 1 is the GND reference and pin 2 is the 5 V output from the PWR board. Pin 4, VCC, is the battery input, which is always powered by the batteries if they are present. VCC_SW is the output of the power switch on the CPU board. On the CPU board, pin 3 is connected to the DC jack output, but on the DMGC-PWR-02 I connect this to VCC as well, so that either batteries or the DC jack will power this board. A different revision might utilize the DC jack for something else, such as charging a LiPo battery, which is why I left these pins separate.
 
 ![image](https://user-images.githubusercontent.com/97127539/175819569-3407084e-0a9b-49e3-b0d0-022bb81526bd.png)
 
@@ -58,13 +57,36 @@ So in order to fix this, I introduced a latching circuit, so that as soon as the
 The latching circuit consists of Q1 through Q4 and R1 through R4. You can read the application note for the full series of events, but basically as soon as the gate of Q2 (the PSU_EN net) is pulled low by the /RESET pin for the first time (after it is released from the time delay startup), Q4 is turned on to conduct and the /MR pin (master reset) is also pulled low. On the TPS3840, whenever /MR is low, /RESET will also automatically be pulled low no matter if VDD is above or below the undervoltage trip point. So even if the voltage on the VDD pin rises back up above the trip limit, /RESET will keep Q4 conducting, which keeps /MR low as well. So the only way to reset the whole thing is to turn the power off and reset the latch. (R6 provides a path to discharge all of the capacitors in the supervisory circuit after power is removed)
 
 ## Bill of Materials
-Lots of parts.
+
+Here, I have provided links to components I used personally (or suitable replacements). This BOM is also included in Excel format in the root folder.
+
+| Reference Designators | Qty | Value/Part Number | Package  | Description      | Comment                                         | Source                                                                                                                                     |
+|-----------------------|-----|-------------------|----------|------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| C1, C3, C5            | 3   | 10 uF             | 0603     | Capacitor (MLCC) | Should be X5R (or better), at least 25V         | https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73J?qs=5aG0NVq1C4xEV8YyiSS7mg%3D%3D&countrycode=US&currencycode=USD |
+| C2, C8                | 2   | 100 nF            | 0603     | Capacitor (MLCC) |                                                 | https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KO8NNWC/3887597                                               |
+| C4, C7                | 2   | 22 uF             | 1206     | Capacitor (MLCC) | Should be X5R (or better), at least 25V         | https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31A226KAHNNNE?qs=X6jEic%2FHinCdwsjGJII51w%3D%3D                           |
+| C6                    | 1   | 1 uF              | 0603     | Capacitor (MLCC) | Should be X5R (or better), at least 25V         | https://www.digikey.com/en/products/detail/kemet/C0603C105K4RAC7867/2199788                                                                |
+| F1                    | 1   | 1 A               | 0603     | Fuse             |                                                 | https://www.digikey.com/en/products/detail/vishay-beyschlag-draloric-bc-components/MFU0603FF01000P100/1206475                              |
+| L1                    | 1   | 10 uH             | 1212     | Inductor         | At least 0.8 A saturation current               | https://www.digikey.com/en/products/detail/murata-electronics/LQH3NPZ100MJRL/9887679                                                       |
+| L3                    | 1   | 2.2 uH            | 1212     | Inductor         | At least 1 A saturation current                 | https://www.mouser.com/ProductDetail/81-LQH3NPN2R2MMEL                                                                                     |
+| LED1                  | 1   |                   | 0603     | Red LED          |                                                 | https://www.digikey.com/en/products/detail/rohm-semiconductor/SML-D12U1WT86/5843853                                                        |
+| Q1, Q5                | 2   | MMBT3906          | SOT23    | PNP BJT          |                                                 | https://www.digikey.com/en/products/detail/micro-commercial-co/MMBT3906-TP/819631                                                          |
+| Q2, Q4                | 2   | 2N7002            | SOT23    | N-channel MOSFET |                                                 | https://www.digikey.com/en/products/detail/nexperia-usa-inc/2N7002NXBKR/10416553                                                           |
+| Q3                    | 1   | MMBT3904          | SOT23    | NPN BJT          |                                                 | https://www.digikey.com/en/products/detail/micro-commercial-co/MMBT3904-TP/717280                                                          |
+| R1, R4, R6, R9, R11   | 5   | 100 kΩ            | 0603     | Resistor         |                                                 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100KL/726889                                                                   |
+| R2, R3, R5, R10       | 4   | 10 kΩ             | 0603     | Resistor         |                                                 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-0710KL/726880                                                                    |
+| R7                    | 1   | 100 Ω             | 0603     | Resistor         |                                                 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100RL/726888                                                                   |
+| R8                    | 1   | 232 kΩ            | 0603     | Resistor         |                                                 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07232KL/727072                                                                   |
+| R12                   | 1   | 1 kΩ              | 0603     | Resistor         |                                                 | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843                                                                     |
+| U1                    | 1   | TPS62056          | VSSOP-10 | Buck converter   | Might be difficult to find. Check octopart.com. | https://www.mouser.com/ProductDetail/Texas-Instruments/TPS62056DGS?qs=Gse6rAGbi7%252BfbVYUmz7rjA%3D%3D                                     |
+| U2                    | 1   | TPS61202          | VSON-10  | Boost converter  | Might be difficult to find. Check octopart.com. | https://www.mouser.com/ProductDetail/Texas-Instruments/TPS61202DSCT?qs=WxL8HmPi5r5Jg6NZNBKShQ%3D%3D                                        |
+| U3                    | 1   | TPS3840DL22       | SOT23-5  | Supervisory IC   |                                                 | https://www.mouser.com/ProductDetail/Texas-Instruments/TPS3840DL22DBVR?qs=%252B6g0mu59x7Lf1uRTRhpR2w%3D%3D                                 |
 
 ## Resources
--	TPS62056 datasheet
--	TPS61202 datasheet
--	TPS3840 datasheet
--	Latching a Voltage Supervisor Application Note
+-	<a href="https://www.ti.com/lit/ds/slvs432f/slvs432f.pdf?ts=1656303563615">TPS62056 datasheet</a>
+-	<a href="https://www.ti.com/lit/ds/symlink/tps61200.pdf?ts=1656303585503">TPS61202 datasheet</a>
+-	<a href="https://www.ti.com/lit/ds/symlink/tps3840.pdf?ts=1656386735143">TPS3840 datasheet</a>
+-	<a href="https://www.ti.com/lit/an/snva836a/snva836a.pdf">Latching a Voltage Supervisor Application Note</a>
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
