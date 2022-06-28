@@ -23,10 +23,10 @@ All of the parts from the original headphone board can be transplanted here (exc
 
 | Reference Designators | Qty | Value/Part Number | Package | Description                       | Comment                                            | Source                                                                 |
 |-----------------------|-----|-------------------|---------|-----------------------------------|----------------------------------------------------|------------------------------------------------------------------------|
-| C1, C2                | 2   | 100uF             |         | Capacitor (Aluminum electrolytic) | Panasonic ECE-A0JKA101 might be a good replacement | Salvaged (DMG)                                                         |
-| L1, L2, L3            | 3   | 33uH              |         | Filter                            |                                                    | Salvaged (DMG)                                                         |
+| C1, C2                | 2   | 100 uF            |         | Capacitor (Aluminum electrolytic) | Panasonic ECE-A0JKA101 might be a good replacement | Salvaged (DMG)                                                         |
+| L1, L2, L3            | 3   | 33 uH             |         | Filter                            |                                                    | Salvaged (DMG)                                                         |
 | JACK                  | 1   |                   |         | Headphone jack                    |                                                    | Salvaged (DMG)                                                         |
-| R1, R2                | 2   | 1k                | 0603    | Resistor                          |                                                    | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843 |
+| R1, R2                | 2   | 1 kΩ              | 0603    | Resistor                          |                                                    | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843 |
 
 ## Resources
 -	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
