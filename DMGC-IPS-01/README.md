@@ -2,8 +2,6 @@
 **TO-DO:**
 - Upload pictures
 - Upload files
-- In-text links
-- Upload BOM
 
 [blank board pictures]
 
@@ -47,15 +45,39 @@ One popular feature for Game Boy mods are backlit buttons. On the front PCB I in
 
 There are nine color settings - red, orange, yellow, green, cyan, blue, purple, white, and off. These settings can be manually changed (or additional settings could be appended) by changing the RGB values in the arrays. Pushing in on the navigation switch will toggle between these settings. Pushing and holding it in, and then pressing left or right will change the brightness of the LEDs. The settings are saved every time the brightness or color is changed, and will be reloaded when turning on the Game Boy. This feature was inspired by NiceMitch's RGB LED flex PCB for GBC.
 
-There's also a nice startup effect to match the Game Boy Color boot sequence :)
+Code for the ATTINY85 is included here, however because I wrote this months ago (and forgot to comment it sufficiently...) I have forgotten how some of the code actually works. There's certainly room for improvement. But there *is* a nice startup effect to match the Game Boy Color boot sequence that a friend (jokingly) suggested I include. (If you hold the navigation switch in as you turn on the console, this startup sequence will be skipped)
 
 Discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB LED pads, from VDD to DO. The pads for this are indicated by the arrows. There are spaces for a resistor for each LED on the back of the board (R22 to R29). If you're using the RGB LEDs, or no LEDs at all, the resistors aren't necessary.
 ## Bill of Materials
-Lots of parts.
+
+Here, I have provided links to components I used personally (or suitable replacements). This BOM is also included in Excel format in the root folder.
+
+| Reference Designators | Qty | Value/Part Number | Package             | Description                       | Comment                                                   | Source                                                                                                           |
+|---------------------|-----|-------------------|---------------------|-----------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| C1, C2, C7, C8, C24 | 5   | 100nF             | 0603                | Capacitor (MLCC)                  | Should be X5R (or better), at least 25V                   | https://www.digikey.com/en/products/detail/kemet/C0603C104K4RAC7867/411095                                       |
+| C3                  | 1   | 100uF             | 5mm dia x 11 mm len | Capacitor (Aluminum electrolytic) | Board has space for a 100uF SMD tantalum electrolytic     | https://www.mouser.com/ProductDetail/KEMET/ESK107M025AC3AA?qs=Z46kSA%2FmtFiEo%2F6fDW5ebA%3D%3D                   |
+| C4, C5              | 2   | 220pF             | 0603                | Capacitor (MLCC)                  |                                                           | https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL10B221KB8NFNC?qs=YCa%2FAAYMW03S2dLM1EfL7A%3D%3D |
+| FFC Cable           | 1   | 0151660539‎       |                     | Flat Flexible Cable               |                                                           | https://www.digikey.com/en/products/detail/molex/0151660539/3281420                                              |
+| J1, J2              | 2   |                   |                     | LCD connector                     |                                                           | https://www.digikey.com/en/products/detail/FFC2B17-50-T/2073-FFC2B17-50-TCT-ND/15181672?itemSeq=388086745        |
+| LED1                | 1   |                   | 3mm                 | Red LED                           |                                                           | https://www.digikey.com/en/products/detail/151033RS03000/732-5013-ND/4490003?itemSeq=388099998                   |
+| LED10-LED17         | 8   | WS2812            | 2020                | RGB LED                           |                                                           | https://www.mouser.com/ProductDetail/Adafruit/4684?qs=DPoM0jnrROWIv9%2FMCIm5vw%3D%3D                             |
+| Q1                  | 1   | MMBT3904          | SOT23               | NPN BJT                           |                                                           | https://www.digikey.com/en/products/detail/micro-commercial-co/MMBT3904-TP/717280                                |
+| R1, R22-R29         | 9   | 1k                | 0603                | Resistor                          | R22-R29 optional (only if discrete LEDs for LED10-LED17)  | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843                                           |
+| R2, R9              | 2   | 510               | 0603                | Resistor                          |                                                           | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07510RL/727285                                         |
+| R3, R5              | 2   | 402k              | 0603                | Resistor                          |                                                           | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07402KL/727223                                         |
+| R4                  | 1   | 100               | 0603                | Resistor                          |                                                           | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100RL/726888                                         |
+| R6, R7, R11, R12    | 4   | 249k              | 0603                | Resistor                          |                                                           | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07249KL/727086                                         |
+| R8                  | 1   | 100k              | 0603                | Resistor                          |                                                           | https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100KL/726889                                         |
+| R13                 | 1   | 15k               | 0603                | Resistor                          |                                                           | https://www.digikey.com/en/products/detail/yageo/RC0603FR-1015KL/13694096                                        |
+| Speaker             | 1   | 8Ω                |                     | Speaker                           | Can also used salvaged DMG speaker                        | https://retrogamerepairshop.com/products/funnyplaying-clear-game-boy-dmg-original-speaker?variant=37728957726892 |
+| SW1                 | 1   |                   |                     | Navigation switch                 |                                                           | https://www.digikey.com/en/products/detail/sparkfun-electronics/COM-08184/8543391                                |
+| U1                  | 1   | LMV358            | SOIC-8              | Op-amp                            |                                                           | https://www.digikey.com/en/products/detail/texas-instruments/LMV358Q1MAX-NOPB/3926679                            |
+| U2                  | 1   | ATTINY85          | SOIC-8 (5.3mm wide) | Microcontroller                   | Sometimes stocking issues - might be able to find on eBay | https://www.digikey.com/en/products/detail/microchip-technology/ATTINY85-20SFR/5057266                           |
+
 ## Resources
--	Rolf, bit9, and nitro2k01’s DMG schematics and layouts
--	Adafruit NeoPixel Resources
--	NiceMitch’s RGB LED flex PCB for GBC
+-	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
+-	<a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/downloads">Adafruit NeoPixel Resources</a>
+-	<a href="https://github.com/HandHeldLegend/gbc-rgb-led-2.0">NiceMitch’s RGB LED flex PCB for GBC</a>
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
