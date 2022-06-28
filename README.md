@@ -2,7 +2,6 @@
 **TO-DO:**
 - Include pictures
 - Update power draw measurements
-- Add links in-text
 - Upload gerber files
 - Record audio output
 - Generate audio spectrum plots
@@ -29,7 +28,7 @@ Next to an original DMG… one can really see the improvements!
 
 ## Disclaimer
 
-Before I go any further, please read this important disclaimer.
+**Before I go any further, please read this important disclaimer.**
 
 I made this project first and foremost **for my own consumption**. All of the features I have included are things I personally wanted. I have tried my hardest to make the project modular, if others would like to improve or change things easily, and I have also tried very hard to make the design somewhat less prone to potential errors during assembly (such as spacing out power pins on the FFC connectors). But in the end, every decision I made was for what I wanted the final product to be, with my skill level in mind.
 
@@ -38,8 +37,11 @@ This project is fully open-sourced under the Creative Commons Attribution-NonCom
 **Do not attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering.**
 
 [pictures of the four blank circuit boards]
+
 ## Bill of Materials
-This is the high-level BOM for my specific build. Each folder for each board will contain detailed BOMs near the bottom of each readme that contain all of the electronic components needed for each circuit board.
+
+This is the high-level BOM for my specific build. Each folder for each board will contain detailed BOMs near the bottom of each readme that contain all of the electronic components needed for each circuit board. Note that some parts may be out of stock at these links, but many (such as the IPS kit) can be found at alternate other retailers online. Parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications.
+
 - Original Game Boy Color console
   -	U1 - CGB CPU (I used version B, I expect any revision except for E, which has a different pinout, will work)
   - U2 - LH52256CVTXIZ
@@ -52,11 +54,11 @@ This is the high-level BOM for my specific build. Each folder for each board wil
   -	EXT port
   -	DC jack
   -	Headphone board components (importantly the headphone jack)
--	GBC Q5 XL IPS Backlight with OSD
--	FunnyPlaying DMG Q5 IPS Lens (black)
+-	<a href="https://retrogamerepairshop.com/products/game-boy-color-q5-ips-backlight-with-osd?variant=37646279213228">GBC Q5 XL IPS Backlight with OSD</a>
+-	<a href="https://retrogamerepairshop.com/collections/dmg-lenses/products/funnyplaying-dmg-q5-ips-lens?variant=39626455187628">FunnyPlaying DMG Q5 IPS Lens (black)</a>
 -	Custom designed 3D-printed IPS bracket
--	Game Boy DMG Shell – Factory A (Midnight Blue)
--	Kitsch-Bent clear silicone DMG buttons
+-	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
+-	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
 ## Assembly Pictures
 Here are some pictures of the assembly process. Detailed images of the circuit boards are shown in their respective folders.
@@ -133,13 +135,15 @@ Want to improve this project? Maybe try one of these things (because I probably 
   - I haven't been able to locate a headphone jack exactly the same as the DMG one, but the circuit could easily be adapted to accept a different style.
   - The DC jack could be tricky. I haven't looked very hard for any kind of replacement for this.
 - Any other of the various popular GBC mods could be incorporated if desired - line out audio, bluetooth, overclocking, etc. With the ATTINY on the IPS board, one could incorporate button combinations to interface with these mods without the need of any additional buttons or (*shudder*) touch controls.
+
 ## Potential Issues/Annoyances
 -	When the button LEDs are on max brightness, using the NeoPixel LEDs specifically (especially on the white color setting), a ~1 kHz whine can be heard through the speakers or headphones. I attempted to remove this whine with different methods – adding filtering to the supplies, using separate supplies for the audio/LEDs, etc. – but I wasn’t able to remove it completely. And obviously adding a filter on the audio output is a no-go since 1 kHz is smack dab in the middle of the audible range. Changing to different colors can reduce the volume of the whine, red in particular seems to be quite low, and setting the LEDs at low brightness (or just completely off) removes it. (So just don’t play with the LEDs on if it bugs you!)
+
 ## Resources and Acknowledgements
--	The board outlines and many of the footprints for the DMG components are adapted from this DMG recreation project, so very special thanks to Rolf, bit9, and nitro2k01 for saving me hours of work!
--	Thank you to gekkio for his Game Boy repository and github: I used many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
+-	The board outlines and many of the footprints for the DMG components are adapted from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a>, so very special thanks to Rolf, bit9, and nitro2k01 for saving me hours of work!
+-	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
 -	Very special thanks to the users of the gbdev and r/Gameboy discord servers for technical resources, troubleshooting/feedback, and suggestions.
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-This project is the culmination of over half a year of research, development, and testing. Please give me appropriate credit, provide a link to the license, and indicate if any changes were made to this project if you modify and share it. You may not use this work for commercial purposes. If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
+This project is the culmination of over half a year of research, development, and testing. Please give me appropriate credit, provide a link to the license, and indicate if any changes were made to this project if you modify and share it. **You may not use this work for commercial purposes.** If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
