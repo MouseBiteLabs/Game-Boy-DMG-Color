@@ -8,10 +8,12 @@
 [blank board pictures]
 
 The PWR board has gone through a few iterations. Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~3.6 V up to ~8.5 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. Thus, the DMGC-PWR-01 utilizes the TPS630702 (or TPS63070 or TPS630701) – a buck-boost converter with only a few external parts required for operation, that accepts anywhere between 2 V and 16 V to produce a 5 V output.
+
 ## Board Characteristics
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG
+
 ## Connections to the CPU Board
 There are five wires that connect to the CPU board power supply circuitry. Pin 1 is the GND reference and pin 2 is the 5 V output from the PWR board. Pin 4, VCC, is the battery input, which is always powered by the batteries if they are present. VCC_SW is the output of the power switch on the CPU board. On the CPU board, pin 3 is connected to the DC jack output, but on the DMGC-PWR-01 I connect this to VCC as well, so that either batteries or the DC jack will power this board. A different revision might utilize the DC jack for something else, such as charging a LiPo battery, which is why I left these pins separate.
 
@@ -20,7 +22,10 @@ There are five wires that connect to the CPU board power supply circuitry. Pin 1
 The battery voltage, VCC, is applied to the buck-boost input voltage pin, without routing through the power switch on the CPU. Instead, the power switch controls the buck-boost converter’s enable pin.
 
 ## Buck-Boost Converter (U2)
-The bottom half of the circuit is the entire buck-boost stage. I followed the TPS63070 datasheet for choosing values of the input and output capacitance, the inductor, and the feedback resistors. R8 and R9 set up a voltage divider for setting the output of the adjustable TPS630702 or TPS63070 – if the TPS630701 is used instead, which is a 5 V fixed version, then R8 should be short circuited and R9 can be removed. **If you leave R8 and R9 at the values they are with the fixed 5 V chip, the output will shoot up to ~11V. I strongly recommend testing this power supply board separately from the rest of the system to ensure the 5 V output is correct and steady, without frying anything else downstream.**
+
+U2 can be TPS63070, TPS630701, or TPS630702. TPS630701 is a fixed 5 V buck-boost, while the other two have adjustable output. The only difference between TPS63070 and TPS630702 is that the latter has an output discharge function - when the output is disabled, a low impedance (~200Ω) is connected to the rail internally to quickly discharge the output capacitors. If you have a choice, I would recommend using the TPS630702 over the other two, and the TPS630701 over the TPS63070 just because it's a bit more convenient (and foolproof) to use the fixed output version of the chip. But any three of them will work. They don't like to be in stock very often from what I've seen - check stocks on octopart.com. 
+
+The bottom half of the circuit is the entire buck-boost stage. I followed the TPS63070 datasheet for choosing values of the input and output capacitance, the inductor, and the feedback resistors. R8 and R9 set up a voltage divider for setting the output of the adjustable TPS630702 or TPS63070 – if the TPS630701 is used instead, which is the 5 V fixed output version, then R8 should be short circuited and R9 can be removed. **If you leave R8 and R9 at the values they are with the fixed 5 V chip, the output will shoot up to ~11V. I strongly recommend testing this power supply board separately from the rest of the system to ensure the 5 V output is correct and steady, without frying anything else downstream.**
 
 The buck-boost chip is activated when the EN pin is high. SJ1 can be soldered such that it is automatically turned on when VCC is applied. This is really only for troubleshooting purposes, as it would activate the Game Boy whenever batteries were plugged in, regardless of what the power switch was doing (unless the CPU board is modified). Normally, it should be connected to the PSU_EN net, which is influenced by two chips – U3 (overvoltage protection) and U1 (undervoltage detection). If no errors are detected in the power supply, then PSU_EN will be pulled high to VCC once the power switch is turned on and C11 is charged up. If either an overvoltage on the 5 V line or an undervoltage on the battery supply is detected, the PSU_EN net is latched off until the power switch is cycled. 
 
@@ -34,7 +39,9 @@ U3 is a TPS3702 IC. This chip monitors the 5 V output on the SENSE pin. If it’
 The specific part I have chosen is the TPS3702CX50. With the SET pin tied to GND, this sets the overvoltage threshold to 5.45 V. If the supply ever passes this point, then the overvoltage pin will pull PSU_EN low, and the latching circuit will keep it off until the power switch is cycled.
 
 The overvoltage protection is likely overkill as well, as long as the buck-boost circuit is set up correctly and soldered properly. Since the adjustable TPS63070 chips measure the feedback through the FB pin, it will maintain the 5 V as long as no solder bridges or poor solder connections cause the wrong voltage to be measured by the chip (and the rest of the circuit is set up properly). You can omit U3, C9, and C10 to remove the overvoltage detection without impacting the rest of the circuit.
+
 ## Undervoltage Detection (U1)
+
 U1 is a TPS3840 chip which monitors the voltage on the batteries via the VDD pin. When it detects the voltage has gone below a specific threshold, the /RESET pin is pulled low. Like the TPS3702, this output is open-drain, so it does not affect the PSU_EN net while not in an error state.
 
 The specific part I chose was the TPS3840DL22. The DL indicates the /RESET is an active-low open-drain output. (PL would indicate active-low push-pull output, PH would indicate active-high push-pull, both of which aren’t suitable for this part). The threshold voltage is determined by the last two numbers, which for my selection is 22 for 2.2 V. Any threshold below ~3.5 V (the point where the 4x series AA batteries are depleted) and above 2 V should be fine to use here, so an alternate part can be chosen if stock of the TPS3840DL22 isn’t available.
