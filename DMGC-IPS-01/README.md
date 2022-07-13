@@ -45,7 +45,7 @@ One popular feature for Game Boy mods are backlit buttons. On the front PCB I in
 
 There are nine color settings - red, orange, yellow, green, cyan, blue, purple, white, and off. These settings can be manually changed (or additional settings could be appended) by changing the RGB values in the arrays. Pushing in on the navigation switch will toggle between these settings. Pushing and holding it in, and then pressing left or right will change the brightness of the LEDs. The settings are saved every time the brightness or color is changed, and will be reloaded when turning on the Game Boy. This feature was inspired by NiceMitch's RGB LED flex PCB for GBC.
 
-Code for the ATTINY85 is included here, however because I wrote this months ago (and forgot to comment it sufficiently...) I have forgotten how some of the code actually works. There's certainly room for improvement. But there *is* a nice startup effect to match the Game Boy Color boot sequence that a friend (jokingly) suggested I include. (If you hold the navigation switch in as you turn on the console, this startup sequence will be skipped)
+Code for the ATTINY85 is included here, however because I wrote this months ago (and forgot to comment it sufficiently...) I have forgotten how some of the code actually works. There's certainly room for improvement. But there *is* a nice startup effect to match the Game Boy Color boot sequence that a friend (jokingly) suggested I include. (If you hold the navigation switch in as you turn on the console, the LEDs will be disabled until power is cycled.)
 
 Discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB LED pads, from VDD to DO. The pads for this are indicated by the arrows. There are spaces for a resistor for each LED on the back of the board (R22 to R29). If you're using the RGB LEDs, or no LEDs at all, the resistors aren't necessary.
 ## Bill of Materials
@@ -78,6 +78,7 @@ Here, I have provided links to components I used personally (or suitable replace
 -	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
 -	<a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/downloads">Adafruit NeoPixel Resources</a>
 -	<a href="https://github.com/HandHeldLegend/gbc-rgb-led-2.0">NiceMitch’s RGB LED flex PCB for GBC</a>
+-	Instructables post for programming an ATTINY85 with an Arduino
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
