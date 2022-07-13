@@ -21,15 +21,15 @@ I detail the operation of the audio amplifier on the CPU board in that correspon
 ## Power LED and Dimming Circuit
 The power LED is a standard 3mm red LED. The circuit detailed here is a simple comparator circuit.
 
-![image](https://user-images.githubusercontent.com/97127539/175817231-b95eaa5c-ca42-4869-9039-e553d6672c4e.png)
+![image](https://user-images.githubusercontent.com/97127539/178794406-ef2e2fb0-8c2c-4575-bcdd-e084d73dbe3b.png)
 
 Half of U1 is used as a buffer, for no reason other than it was available to use. When the power switch on the CPU board is turned on, the input to the buffer is half the battery voltage, from the voltage divider made from R11 and R12, and it feeds into another voltage divider made by R6 and R7 to cut it in half again. The ½ battery voltage is connected to a solder pad for connecting to the Q5 board for battery level indication – since the Q5 kit expects a GBC battery voltage, cutting the 4x AA battery voltage in half will scale the level correctly for proper measurement. 
 
-The ¼ battery voltage is compared with the inverting input (set at 1.075 V via another voltage divider) on the other half of U1. This means that when the combined voltage of the 4x AAs drops below 4.45 V, the battery level is considered low and the LED will noticeably dim. My testing came up with this voltage as approximately 1 hour of battery left (if at max brightness with headphones in).
+The ¼ battery voltage is compared with the inverting input (set at 1.112 V via another voltage divider) on the other half of U1. R3 provides hysteresis on the comparator (i.e. Schmitt trigger), and C7 and C8 are for noise filtering. When the combined voltage of the 4x AAs drops below ~4.3 V, the battery level is considered low and the LED will noticeably dim. My testing came up with this voltage as approximately 1 hour of battery left (if at max brightness with headphones in).
 
 The output of the comparator is set to 5V when the battery level is high, which turns on Q1; it is driven to GND when the battery level is low, which turns Q1 off. Therefore, the brightness of the LED during normal power is dictated only by the resistance of R1. When the combined battery voltage drops below the low battery threshold, R2 is placed in series with the LED as well, which dims the LED.
 
-R3 provides hysteresis on the comparator (i.e. Schmitt trigger), and C7 and C8 are for noise filtering.
+
 ## Navigation Switch
 This takes place where the contrast wheel used to be. Popular DMG IPS kits use this kind of dial for controlling the settings on the display. On the Q5 board, there are two capacitive sensors - one for changing brightness, one for changing the color palette. Instead of using the touch sensors in the DMGC, the navigation switch will toggle these inputs by connecting a series capacitance to ground to simulate a touch. This also has the benefit of not having to modify the driver board in any way, and instead just requiring soldered wires to the board where capacitive sensors were connected.
 
