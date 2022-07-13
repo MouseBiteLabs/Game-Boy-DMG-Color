@@ -4,10 +4,11 @@
 
 - Upload pictures
 - Upload files
+- More detailed board characteristics
 
 [blank board pictures]
 
-The PWR board has gone through a few iterations. Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~3.6 V up to ~8.5 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. Thus, the DMGC-PWR-01 utilizes the TPS630702 (or TPS63070 or TPS630701) – a buck-boost converter with only a few external parts required for operation, that accepts anywhere between 2 V and 16 V to produce a 5 V output.
+The PWR board has gone through a few iterations. Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~4 V up to ~8 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. Thus, the DMGC-PWR-01 utilizes the TPS630702 (or TPS63070 or TPS630701) – a buck-boost converter with only a few external parts required for operation, that accepts anywhere between 2 V and 16 V to produce a 5 V output.
 
 ## Board Characteristics
 -	Layers: 2
@@ -17,7 +18,7 @@ The PWR board has gone through a few iterations. Because the system will run wit
 ## Connections to the CPU Board
 There are five wires that connect to the CPU board power supply circuitry. Pin 1 is the GND reference and pin 2 is the 5 V output from the PWR board. Pin 4, VCC, is the battery input, which is always powered by the batteries if they are present. VCC_SW is the output of the power switch on the CPU board. On the CPU board, pin 3 is connected to the DC jack output, but on the DMGC-PWR-01 I connect this to VCC as well, so that either batteries or the DC jack will power this board. A different revision might utilize the DC jack for something else, such as charging a LiPo battery, which is why I left these pins separate.
 
-![image](https://user-images.githubusercontent.com/97127539/175819465-ad77a108-7477-41d9-8025-9d6307a248aa.png)
+![image](https://user-images.githubusercontent.com/97127539/178798861-4c2ba351-1a13-4853-8557-5b95a174efaf.png)
 
 The battery voltage, VCC, is applied to the buck-boost input voltage pin, without routing through the power switch on the CPU. Instead, the power switch controls the buck-boost converter’s enable pin.
 
