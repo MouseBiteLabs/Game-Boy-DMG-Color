@@ -78,7 +78,7 @@ Here, I have provided links to components I used personally (or suitable replace
 -	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
 -	<a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/downloads">Adafruit NeoPixel Resources</a>
 -	<a href="https://github.com/HandHeldLegend/gbc-rgb-led-2.0">NiceMitch’s RGB LED flex PCB for GBC</a>
--	Instructables post for programming an ATTINY85 with an Arduino
+-	<a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">Instructables post for programming an ATTINY85 with an Arduino</a>
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
