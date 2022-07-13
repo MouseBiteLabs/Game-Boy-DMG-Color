@@ -114,6 +114,7 @@ For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800
 | IPS max brightness, NeoPixel LEDs off, headphones, Everdrive X5	| 680 mW	| 17.4 hr |
 | IPS max brightness, NeoPixel LEDs off, headphones, original cartridge | 670 mW	| 17.6 hr |
 | IPS min brightness, NeoPixel LEDs off, headphones, original cartridge	| 500 mW	| 23.6 hr |
+
 *Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are probably not sufficient)*
 
 ## Audio Recordings and Spectrum
