@@ -7,6 +7,8 @@
 - Generate audio spectrum plots
 - Upload bracket .stl file
 - Add copyright
+- Higher resolution schematic pictures
+- Update BOMs
 
 [Picture of DMGC]
 
@@ -61,25 +63,29 @@ This is the high-level BOM for my specific build. Each folder for each board wil
 ## Assembly Pictures
 Here are some pictures of the assembly process. Detailed images of the circuit boards are shown in their respective folders.
 
-[picture of back half of shell, with boards, no wires]
+First, I started with the back half of the DMG shell. I measured the wires going to the PWR and HDP boards from the CPU board after placing them in the back shell. The PWR board needs five (LENGTH)" wires, and the HDP board needs four (LENGTH)" wires. I removed all the boards, soldered the wires in, then placed it back in the shell and secured the assembly with the proper screws. (I put a game in the cartridge slot to keep the CPU board in place easier while assembling.)
 
-I measured the wires going to the PWR and HDP boards after placing them in the back shell, removed all of the circuit boards from the shell, and soldered the wires in separately to avoid melting plastic.
+[picture of back half of shell, with boards]
 
-[picture of front half of shell, empty, no lens, from behind]
+Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and soldered them on the brightness, palette, battery, and OSD input pads. These will be soldered to the bottom of the IPS board after installed.
 
-As per instructions on a similar Q5 IPS kit, I very carefully cut 1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth. I used black marker to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. Then I placed the lens in, keeping my greasy fingers off of the viewing area.
+[picture of wires]
+
+For the top half of the shell, as per instructions on a similar Q5 IPS kit, I very carefully cut 1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth. I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
 
 [picture of front half of shell with lens and screen, from behind]
 
-I trimmed two posts off of the shell so the Q5 screen would fit flush against it. I placed the screen, backed with the 3D printed bracket, into the front half of the shell without getting any fingerprints on the lens or screen. 
+Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell.
 
 [picture of bracket]
+[picture of front half]
 
-Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS screen over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place.
+Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS board over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place.
 
 [picture of two halves, ready to be assembled, with FFC on the CPU board]
 
-I put a game in the cartridge slot to keep the CPU board in place easier while assembling. After that, it was just a matter of connecting the FFC to both the CPU and IPS screens, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together.
+After that, it was just a matter of connecting the FFC to both the CPU and IPS screens, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together.
+
 ## Auxilliary Controls
 ### Q5 XL IPS Backlight with OSD
 -	Select + A + B: Open the OSD menu
@@ -93,10 +99,10 @@ I put a game in the cartridge slot to keep the CPU board in place easier while a
 -	Rock up/Hold: Toggle on-screen battery indicator
 -	Rock down: Advance screen color pallete setting
 -	Rock down/Hold: Toggle on-screen pixel grid
--	Push in: Toggle button LED colors
+-	Push in: Toggle button LED color setting
 -	Push in/Hold + D-pad Left: Decrease button LED brightness
 -	Push in/Hold + D-Pad Right: Increase button LED brightness
--	Push in/Hold when turning on power switch: Skip start-up color sequence
+-	Push in/Hold when turning on power switch: Disable LEDs until another power cycle
 
 ## Power Draw Measurements
 For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800 mWh), and the audio gain is set to ~0.4 (see CPU board for more detail on this gain value).
@@ -108,6 +114,7 @@ For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800
 | IPS max brightness, NeoPixel LEDs off, headphones, Everdrive X5	| 680 mW	| 17.4 hr |
 | IPS max brightness, NeoPixel LEDs off, headphones, original cartridge | 670 mW	| 17.6 hr |
 | IPS min brightness, NeoPixel LEDs off, headphones, original cartridge	| 500 mW	| 23.6 hr |
+*Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are probably not sufficient)*
 
 ## Audio Recordings and Spectrum
 I mentioned the sound of the DMGC is "warmer" than an original GBC. I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. I'm not an audiophile, but I do think it sounds nicer. Listen for yourself:
