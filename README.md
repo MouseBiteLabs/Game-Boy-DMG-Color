@@ -5,10 +5,8 @@
 - Upload gerber files
 - Record audio output
 - Generate audio spectrum plots
-- Upload bracket .stl file
 - Add copyright
 - Higher resolution schematic pictures
-- Update BOMs
 
 [Picture of DMGC]
 
@@ -34,7 +32,7 @@ I made this project first and foremost **for my own consumption**. All of the fe
 
 This project is fully open-sourced under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license. Schematics, gerbers, and the BOM are provided in the various folders. If you choose to build this project yourself, be warned - this is a considerably advanced, and expensive build. **You are 100% liable for any damage done to your property or yourself. I am not responsible for any damage or loss of property incurred while attempting this project, or after completion of the project.** While I am confident in this design, I cannot claim full compatibility with every system configuration. And there may be latent issues that have yet to crop up. I will update this page if I encounter any, and if you see anything I may have missed, or some dubious design choice, feel free to ask questions or comment as such. Corrections are welcome. However, I **will not** obligate myself to providing tech support.
 
-### **Do not attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering.**
+**Do not attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering.**
 
 [pictures of the four blank circuit boards]
 
@@ -56,7 +54,7 @@ This is the high-level BOM for my specific build. Each folder for each board wil
   -	Headphone board components (importantly the headphone jack)
 -	<a href="https://retrogamerepairshop.com/products/game-boy-color-q5-ips-backlight-with-osd?variant=37646279213228">GBC Q5 XL IPS Backlight with OSD</a>
 -	<a href="https://retrogamerepairshop.com/collections/dmg-lenses/products/funnyplaying-dmg-q5-ips-lens?variant=39626455187628">FunnyPlaying DMG Q5 IPS Lens (black)</a>
--	Custom designed 3D-printed IPS bracket (located within the DMGC-IPS-01 folder)
+-	Custom designed 3D-printed IPS bracket (file located within the DMGC-IPS-01 folder)
 -	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
@@ -71,7 +69,7 @@ Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and 
 
 [picture of wires]
 
-For the top half of the shell, as per instructions on a similar DMG IPS kit that uses the Q5 screen, I very carefully cut ~1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth. I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
+For the top half of the shell, as per instructions on a similar DMG IPS kit that uses the Q5 screen, I very carefully cut ~1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth (there are "IPS ready" shells that should not require this cut). I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
 
 [picture of front half of shell with lens and screen, from behind]
 
@@ -105,11 +103,13 @@ After that, it was just a matter of connecting the FFC to both the CPU and IPS s
 -	Push in/Hold when turning on power switch: Disable LEDs until another power cycle
 
 ## Power Draw Measurements
-For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800 mWh), and the audio gain is set to ~0.38 (see CPU board for more detail on this gain value).
+For these estimates, battery life is calculated using four eneloop pro NiMH AA batteries (total of ~11800 mWh). Keep in mind that these are very rough estimates. I tried to be conservative in the power draw measurements, so hopefully these numbers represent a *mostly* worst case. Actual playtime *will* vary due to a variety of factors - changes in efficiency and performance as the battery voltage changes, differences in game audio, etc.
+
+I measured the power draws using a MiniWare MDP-XP Mini Digital Power Supply, and used the largest average power draw on the display. Input voltage was set to 4.3 V, just above the point where the power LED dims. I tested with the Legend of Zelda: Link's Awakening, letting the game sit on the title screen after the intro cinematic, where sound is relatively loud and the screen is mostly white. The audio gain on the test console is set to ~0.38 (see CPU board for more detail on this gain value - a higher gain will greatly impact power draw at high volumes out of the speaker). 
 
 | Test Criteria | Power Draw | Estimated Battery Life |
 | ------------- | ------------- | ------------- |
-| IPS max brightness, NeoPixel LEDs max brightness, speaker volume 100%, Everdrive X5	| 800 mW	| 14.8 hr |
+| IPS max brightness, NeoPixel LEDs max brightness (white), speaker volume 100%, Everdrive X5	| 800 mW	| 14.8 hr |
 | IPS max brightness, NeoPixel LEDs off, speaker volume 100%, Everdrive X5 | 770 mW	| 15.3 hr |
 | IPS max brightness, NeoPixel LEDs off, headphones, Everdrive X5	| 680 mW	| 17.4 hr |
 | IPS max brightness, NeoPixel LEDs off, headphones, original cartridge | 670 mW	| 17.6 hr |
