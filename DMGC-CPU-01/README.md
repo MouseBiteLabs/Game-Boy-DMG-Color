@@ -53,7 +53,7 @@ The new audio driver on the CPU board is powered by the LM4853. This TI chip is 
 -	The ratio of R30/R31 and R32/R33 set the amplification of the audio amp - increase R30 and R32 to decrease the output volume. If you pick too low of values, the output will eventually get clipped and sound pretty gross. 47 kΩ seemed to hit a sweet spot for my tastes - louder than the original GBC, but not too loud that the audio clips (or hurts my ears). If you pick 100 kΩ you’ll get output comparable to the original GBC.
 -	The shutdown pin should be tied to GND to allow the amp to work. I made two different revisions that tied this to 5 V instead. Oops. (The output on the headphones will sound really quiet and the speaker won't work if the chip is shutdown)
 -	The speaker output shouldn't need a DC blocking capacitor, as the LM4853 outputs to the speaker as a bridge tied load (BTL). However, I found that if a DC blocking capacitor is not included, a strange issue happens. There’s a very brief moment when plugging the headphones in where the right output channel is shorted to ground (ring and sleeve are connected inside the jack). When this happens, the right output DC blocking cap is connected to GND, and causes a large surge of current from the power supply to charge it up. This can cause a brownout, and the system will reset. I have included a spot for one of these caps in series with the speaker on the IPS board.
--	If you cut the traces (shown below) between the HP-R pads and the HP-L/SPK- pads, and solder a wire from LOUT to HP-L and a wire from ROUT to HP-R (left-most), this will connect the output of the potentiometer directly to the headphone outputs. This is known as the “pro-sound” mod. I won’t use it, but maybe you think it sounds better this way.
+-	If you cut the traces (shown below) between the HP-R pads and the HP-L/SPK- pads (below the via), and solder a wire from LOUT to HP-L and a wire from ROUT to HP-R (left-most), this will connect the output of the potentiometer directly to the headphone outputs. This is known as the “pro-sound” mod. I won’t use it, but maybe you think it sounds better this way.
 
 ![image](https://user-images.githubusercontent.com/97127539/179895601-0d61ca63-916e-4ad9-ba16-519a22bcc837.png)
 
@@ -63,7 +63,7 @@ The last major change to the CPU board is the reset IC. I’ve replaced the orig
 
 R3 and C17 introduces a time delay on the /RESET pin during start-up, to allow the rest of the power supplies to stabilize before letting the CPU operate. This is called a "power-on reset" circuit, and I used values that the original GBC schematic used. (The DMG, GBC, and GBA all use the same odd 18 ms time constant!)
 
-![image](https://user-images.githubusercontent.com/97127539/175816615-ec21e411-9aeb-4349-b123-e396a91f68fb.png)
+![image](https://user-images.githubusercontent.com/97127539/179895977-f3fe5390-cec4-48c5-ab2a-16f82795af4d.png)
 
 ## Bill of Materials
 
