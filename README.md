@@ -30,17 +30,17 @@ Next to an original DMG… one can really see the improvements!
 
 **Before I go any further, please read this important disclaimer.**
 
-I made this project first and foremost **for my own consumption**. All of the features I have included are things I personally wanted. I have tried my hardest to make the project modular, if others would like to improve or change things easily, and I have also tried very hard to make the design somewhat less prone to potential errors during assembly (such as spacing out power pins on the FFC connectors). But in the end, every decision I made was for what I wanted the final product to be, with my skill level in mind.
+I made this project first and foremost **for my own consumption**. All of the features I have included are things I **personally** wanted. I have tried my hardest to make the project modular, if others would like to improve or change things easily, and I have also tried very hard to make the design somewhat less prone to potential errors during assembly (such as spacing out power pins on the FFC connectors). But in the end, every decision I made was for what I wanted the final product to be, with my skill level in mind.
 
 This project is fully open-sourced under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license. Schematics, gerbers, and the BOM are provided in the various folders. If you choose to build this project yourself, be warned - this is a considerably advanced, and expensive build. **You are 100% liable for any damage done to your property or yourself. I am not responsible for any damage or loss of property incurred while attempting this project, or after completion of the project.** While I am confident in this design, I cannot claim full compatibility with every system configuration. And there may be latent issues that have yet to crop up. I will update this page if I encounter any, and if you see anything I may have missed, or some dubious design choice, feel free to ask questions or comment as such. Corrections are welcome. However, I **will not** obligate myself to providing tech support.
 
-**Do not attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering.**
+### **Do not attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering.**
 
 [pictures of the four blank circuit boards]
 
 ## Bill of Materials
 
-This is the high-level BOM for my specific build. Each folder for each board will contain detailed BOMs near the bottom of each readme that contain all of the electronic components needed for each circuit board. Note that some parts may be out of stock at these links, but many (such as the IPS kit) can be found at alternate other retailers online. Parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications.
+This is the high-level BOM for my specific build. Each folder for each board will contain detailed BOMs near the bottom of each README that contain all of the electronic components needed for each circuit board. Note that some parts may be out of stock at these links, but many (such as the IPS kit) can be found at alternate other retailers online. Parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications.
 
 - Original Game Boy Color console
   -	U1 - CGB CPU (I used version B, I expect any revision except for E, which has a different pinout, will work)
@@ -56,7 +56,7 @@ This is the high-level BOM for my specific build. Each folder for each board wil
   -	Headphone board components (importantly the headphone jack)
 -	<a href="https://retrogamerepairshop.com/products/game-boy-color-q5-ips-backlight-with-osd?variant=37646279213228">GBC Q5 XL IPS Backlight with OSD</a>
 -	<a href="https://retrogamerepairshop.com/collections/dmg-lenses/products/funnyplaying-dmg-q5-ips-lens?variant=39626455187628">FunnyPlaying DMG Q5 IPS Lens (black)</a>
--	Custom designed 3D-printed IPS bracket
+-	Custom designed 3D-printed IPS bracket (located within the DMGC-IPS-01 folder)
 -	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
@@ -71,7 +71,7 @@ Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and 
 
 [picture of wires]
 
-For the top half of the shell, as per instructions on a similar Q5 IPS kit, I very carefully cut 1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth. I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
+For the top half of the shell, as per instructions on a similar DMG IPS kit that uses the Q5 screen, I very carefully cut ~1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth. I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
 
 [picture of front half of shell with lens and screen, from behind]
 
@@ -105,7 +105,7 @@ After that, it was just a matter of connecting the FFC to both the CPU and IPS s
 -	Push in/Hold when turning on power switch: Disable LEDs until another power cycle
 
 ## Power Draw Measurements
-For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800 mWh), and the audio gain is set to ~0.4 (see CPU board for more detail on this gain value).
+For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800 mWh), and the audio gain is set to ~0.38 (see CPU board for more detail on this gain value).
 
 | Test Criteria | Power Draw | Estimated Battery Life |
 | ------------- | ------------- | ------------- |
@@ -115,10 +115,10 @@ For these tests, I’m using four eneloop pro NiMH AA batteries (total of ~11800
 | IPS max brightness, NeoPixel LEDs off, headphones, original cartridge | 670 mW	| 17.6 hr |
 | IPS min brightness, NeoPixel LEDs off, headphones, original cartridge	| 500 mW	| 23.6 hr |
 
-*Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are probably not sufficient)*
+*Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are likely not sufficient for higher loads, such as with the button LEDs on)*
 
 ## Audio Recordings and Spectrum
-I mentioned the sound of the DMGC is "warmer" than an original GBC. I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. I'm not an audiophile, but I do think it sounds nicer. Listen for yourself:
+I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less background noise (I suspect owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. I'm not an audiophile, but I do think it sounds nicer. Listen for yourself:
 
 ### Original GBC Audio
 [file]
@@ -143,13 +143,15 @@ Want to improve this project? Maybe try one of these things (because I probably 
 - Any other of the various popular GBC mods could be incorporated if desired - line out audio, bluetooth, overclocking, etc. With the ATTINY on the IPS board, one could incorporate button combinations to interface with these mods without the need of any additional buttons or (*shudder*) touch controls.
 
 ## Potential Issues/Annoyances
--	When the button LEDs are on max brightness, using the NeoPixel LEDs specifically (especially on the white color setting), a ~1 kHz whine can be heard through the speakers or headphones. I attempted to remove this whine with different methods – adding filtering to the supplies, using separate supplies for the audio/LEDs, etc. – but I wasn’t able to remove it completely. And obviously adding a filter on the audio output is a no-go since 1 kHz is smack dab in the middle of the audible range. Changing to different colors can reduce the volume of the whine, red in particular seems to be quite low, and setting the LEDs at low brightness (or just completely off) removes it. (So just don’t play with the LEDs on if it bugs you!)
+-	When the button LEDs are on max brightness, using the NeoPixel LEDs specifically (especially on the white color setting), a ~1 kHz whine can be heard through the speakers or headphones. I attempted to remove this whine with different methods – adding filtering to the supplies, using separate supplies for the audio/LEDs, etc. –  this lowered the noise amplitude, but I wasn’t able to remove it completely. And obviously adding a filter on the audio output is a no-go since 1 kHz is smack dab in the middle of the audible range. Changing to different color settings can reduce the volume of the whine, red in particular seems to be quite low, and setting the LEDs at low brightness (or just completely off) removes it. So just don’t play with the LEDs on if it bugs you! I kept the color sweep during power-on enabled on every color setting - if you want to disable the LEDs for the entire play session, hold the navigation dial in when you turn it on (but at that point... why did you bother adding the LEDs in the first place?)
 
 ## Resources and Acknowledgements
 -	The board outlines and many of the footprints for the DMG components are adapted from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a>, so very special thanks to Rolf, bit9, and nitro2k01 for saving me hours of work!
 -	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
 -	Immense thanks to the users of the gbdev and r/Gameboy discord servers for technical resources, troubleshooting/feedback, and suggestions. Shout out to lidnariq and kevtris especially!
+
 ## License
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 This project is the culmination of over half a year of research, development, and testing. Please give me appropriate credit, provide a link to the license, and indicate if any changes were made to this project if you modify and share it. You may not use this work for commercial purposes. If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
