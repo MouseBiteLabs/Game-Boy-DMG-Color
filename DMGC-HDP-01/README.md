@@ -2,17 +2,20 @@
 **TO-DO:**
 
 - Upload pictures
-- Upload BOM
+- Add board specifications for ordering
 
 [blank board pictures]
 
 This little board is quite simple. You can transplant all of the parts from the original DMG headphone board to this one. This board also uses an original DMG headphone jack. Modifications to the circuit would be required to use an off-the-shelf jack.
 ## Board Characteristics
+The zipped folder contains all the gerber files for this board. Use these specifications when ordering:
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: HASL
+
 ## Circuit Overview
-![image](https://user-images.githubusercontent.com/97127539/175819188-d64cca93-572c-4d30-a57a-c0b97963eb7a.png)
+
+![image](https://user-images.githubusercontent.com/97127539/179897524-bd74a364-c584-42a9-b284-9659ea163933.png)
 
 On the top of the board: pin 1 is the left output, pin 2 is the right output, pin 3 is the GND reference, and pin 4 is the headphone detect pin which is normally connected to GND through the headphone jack (when headphones are placed in the jack, pin 4 will be disconnected from GND).
 
