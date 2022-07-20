@@ -8,6 +8,7 @@
 
 The IPS board is in the front of the DMG shell. This holds the IPS screen kit (and has pads for interfacing with it), has the dimmable power LED, button inputs along with pads for optional LEDs, a navigation switch on the side for changing settings on the IPS screen and the backlit buttons, and the speaker.
 ## Board Characteristics
+The zipped folder contains all the gerber files for this board. Use these specifications when ordering:
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG
