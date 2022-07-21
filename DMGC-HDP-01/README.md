@@ -2,13 +2,13 @@
 **TO-DO:**
 
 - Upload pictures
-- Add board specifications for ordering
 
 [blank board pictures]
 
 This little board is quite simple. You can transplant all of the parts from the original DMG headphone board to this one. This board also uses an original DMG headphone jack. Modifications to the circuit would be required to use an off-the-shelf jack.
+
 ## Board Characteristics
-The zipped folder contains all the gerber files for this board. Use these specifications when ordering:
+The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: HASL
