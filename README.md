@@ -118,17 +118,23 @@ I measured the power draws using a MiniWare MDP-XP Mini Digital Power Supply, an
 *Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are likely not sufficient for higher loads, such as with the button LEDs on)*
 
 ## Audio Recordings and Spectrum
-I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less background noise (I suspect owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. I'm not an audiophile, but I do think it sounds nicer. Listen for yourself:
+I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less background noise (I suspect owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. You can see the larger amplitudes of the lower frequencies in the spectrum plot of the DMGC. I'm not an audiophile, but I do think it sounds nicer. Listen for yourself. (GitHub only allows for video files to be uploaded, MP3 files are provided above)
 
 ### Original GBC Audio
-[file]
+
+https://user-images.githubusercontent.com/97127539/180215249-4b21aca1-a9fd-430a-a870-95bf4837e4da.mp4
+
 ### DMGC Audio
-[file]
+
+https://user-images.githubusercontent.com/97127539/180215280-5e533449-5116-4848-a94b-92f8979db334.mp4
 
 ### Original GBC Audio Spectrum
-[spectrum]
+
+![image](https://user-images.githubusercontent.com/97127539/180213625-09bf0430-d7a2-47d9-acbe-a77910de87cb.png)
+
 ### DMGC Audio Spectrum
-[spectrum]
+
+![image](https://user-images.githubusercontent.com/97127539/180213573-0bff4368-c301-432c-91fa-dc71b0badb11.png)
 
 ## Possible Additions/Changes
 Want to improve this project? Maybe try one of these things (because I probably won’t):
