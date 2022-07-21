@@ -56,7 +56,9 @@ Code for the ATTINY85 is included here, however because I wrote this months ago 
 
 If you hold the navigation switch in as you turn on the console, the LEDs will be disabled until power is cycled. (This is probably more for my benefit as I used it while testing very discharged batteries to skip the start-up LED sequence)
 
-Discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB LED pads, from VDD to DO. The pads for this are indicated by the arrows. There are spaces for a resistor for each LED on the back of the board (R22 to R29). If you're using the RGB LEDs, or no LEDs at all, the resistors aren't necessary.
+Discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB LED pads, from VDD to DO. The pads for this are indicated by the arrows. The picture below shows which pads to use for discrete LEDs (view of the D-pad) - the A indicates the anode of the diode. There are spaces for a resistor for each LED on the back of the board (R22 to R29). If you're using the RGB LEDs, or no LEDs at all, the resistors aren't necessary.
+
+![image](https://user-images.githubusercontent.com/97127539/180103597-06642f10-77f8-44f2-84d5-dac01b80fdf1.png)
 
 ## Q5 IPS Screen Bracket
 I designed a bracket for holding the screen in place. This is placed between the screen and the DMGC-IPS-01 board. Assembly notes are located in the root folder's README, and the model is available for download above.
