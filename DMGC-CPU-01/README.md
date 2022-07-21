@@ -1,14 +1,13 @@
 # DMGC-CPU-01
 **TO-DO:**
-- Upload pictures
-- Upload files
-- Add more detail on board characteristics
 
-[blank board pictures]
+- Upload source files and gerber zip folder
+
+![image](https://user-images.githubusercontent.com/97127539/180128233-93ae4e87-9549-4b95-807b-64d1d931315c.png)
 
 The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, crystal oscillator, and EM10 (which could likely be replaced or bypassed with little consequence). The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
 ## Board Characteristics
-The zipped folder contains all the gerber files for this board. Use these specifications when ordering:
+The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG
