@@ -12,7 +12,7 @@ The PWR board has gone through a few iterations. Because the system will run wit
 This board is likely the most complex part of the build. I spent a lot of time tuning the circuit to produce the exact results I wanted with ample protection downstream of the converters. Unfortunately, at the time of writing, the buck-boost converter chips are not easily sourced. I have begun development of a DMGC-PWR-02 board that will use more commonly-found chips. But feel free to design your own if you'd like :)
 
 ## Board Characteristics
-The zipped folder contains all the gerber files for this board. Use these specifications when ordering:
+The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG
