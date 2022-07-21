@@ -3,8 +3,7 @@
 **TO-DO:**
 
 - Upload pictures
-- Upload files
-- More detailed board characteristics
+- Upload source files and gerber zip
 
 [blank board pictures]
 
