@@ -29,7 +29,7 @@ I detail the operation of the audio amplifier on the CPU board in that correspon
 ## Power LED and Dimming Circuit
 The power LED is a standard 3mm red LED. The circuit detailed here is a simple comparator circuit.
 
-![image](https://user-images.githubusercontent.com/97127539/180362842-a10a4050-d3d8-4790-a33f-495b973ddcb2.png)
+![image](https://user-images.githubusercontent.com/97127539/180364578-1b961876-57ba-45af-9454-6f6047065c71.png)
 
 Half of U1 is used as a buffer, for no reason other than it was available to use. When the power switch on the CPU board is turned on, the input to the buffer is half the battery voltage, from the voltage divider made from R11 and R12, and it feeds into another voltage divider made by R6 and R7 to cut it in half again. C6 is for noise filtering. The ½ battery voltage is connected to a solder pad for connecting to the Q5 board for battery level indication – since the Q5 kit expects a GBC battery voltage, cutting the 4x AA battery voltage in half will scale the level correctly for proper measurement. 
 
