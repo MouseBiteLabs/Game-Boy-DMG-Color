@@ -1,19 +1,14 @@
 # Game Boy DMG Color
 **TO-DO:**
-- Include pictures
-- Update power draw measurements
-- Upload gerber files
-- Record audio output
-- Generate audio spectrum plots
+- Include assembly pictures
 - Add copyright
-- Higher resolution schematic pictures
 
 [Picture of DMGC]
 
 This is my design for an original Game Boy (model name DMG) with native Game Boy Color support, and a handful of improved features! This is an original creation - newly designed PCBs, with only some necessary components harvested from an original Game Boy and Game Boy Color (no hardware emulation – this project uses the original CPU). Here are the project goals:
 -	An original Game Boy aesthetic, using the original Game Boy shell and external parts (link port, volume wheel, power switch, etc.), but with the capability of playing Game Boy and Game Boy Color games.
 -	A nice, large IPS screen – the GBC Q5 XL IPS Backlight with OSD kit – with brightness and color palette control via the "navigation switch" housed where the contrast wheel used to be. (I will refer to the PCB attached to the Q5 screen as the “Q5 board”)
--	A modernized, efficient switch mode power supply that can run off 4x AA batteries or input from the DC jack, just like the original DMG. Testing shows that playing with NiMH AA batteries can yield more than 17 hours of gameplay at normal settings (AKA, the way I normally play it - maximum brightness and headphones). 
+-	A modernized, efficient switch mode power supply that can run off 4x AA batteries or input from the DC jack, just like the original DMG. Testing shows that playing with NiMH AA batteries can yield more than 18 hours of gameplay at normal settings (AKA, the way I normally play it - maximum brightness and headphones). 
 -	Louder, warmer sound through a modern audio amplifier.
 -	The option for backlit buttons, with multiple color modes and settings.
 -	No externally viewable case modifications, outside of trimming the DMG power switch cover for Game Boy Color game compatibility.
@@ -105,15 +100,16 @@ After that, it was just a matter of connecting the FFC to both the CPU and IPS s
 ## Power Draw Measurements
 For these estimates, battery life is calculated using four eneloop pro NiMH AA batteries (total of ~11800 mWh). Keep in mind that these are very rough estimates. I tried to be conservative in the power draw measurements, so hopefully these numbers represent a *mostly* worst case. Actual playtime *will* vary due to a variety of factors - changes in efficiency and performance as the battery voltage changes, differences in game audio, etc.
 
-I measured the power draws using a MiniWare MDP-XP Mini Digital Power Supply, and used the largest average power draw shown on the display. Input voltage was set to 4.3 V, just above the point where the power LED dims. I tested with the Legend of Zelda: Link's Awakening, letting the game sit on the title screen after the intro cinematic, where sound is relatively loud and the screen is mostly white. The audio gain on the test console is set to ~0.38 (see CPU board for more detail on this gain value - a higher gain will greatly impact power draw at high volumes out of the speaker). 
+I measured the power draws using a MiniWare MDP-XP Mini Digital Power Supply, and estimated the average power draw shown on the display (I tried to bias towards a higher value). Input voltage was set to 4.4 V, just above the point where the power LED dims. I tested with the Legend of Zelda: Link's Awakening, letting the game sit on the title screen after the intro cinematic, where sound is relatively loud and the screen is mostly white. The audio gain on the test console is set to ~0.38 (see CPU board for more detail on this gain value - a higher gain will greatly impact power draw at high volumes out of the speaker).
 
 | Test Criteria | Power Draw | Estimated Battery Life |
 | ------------- | ------------- | ------------- |
-| IPS max brightness, NeoPixel LEDs max brightness (white), speaker volume 100%, Everdrive X5	| 800 mW	| 14.8 hr |
-| IPS max brightness, NeoPixel LEDs off, speaker volume 100%, Everdrive X5 | 770 mW	| 15.3 hr |
-| IPS max brightness, NeoPixel LEDs off, headphones, Everdrive X5	| 680 mW	| 17.4 hr |
-| IPS max brightness, NeoPixel LEDs off, headphones, original cartridge | 670 mW	| 17.6 hr |
-| IPS min brightness, NeoPixel LEDs off, headphones, original cartridge	| 500 mW	| 23.6 hr |
+| IPS max brightness, NeoPixel LEDs max brightness (white), speaker volume 100%, Everdrive X5	| 1150 mW	| 10.3 hr |
+| IPS max brightness, NeoPixel LEDs off, speaker volume 100%, Everdrive X5 | 900 mW	| 13.1 hr |
+| IPS max brightness, NeoPixel LEDs off, speaker volume 100%, original cartridge | 750 mW | 15.7 hr |
+| IPS max brightness, NeoPixel LEDs off, headphones, Everdrive X5	| 725 mW	| 16.3 hr |
+| IPS max brightness, NeoPixel LEDs off, headphones, original cartridge | 650 mW	| 18.2 hr |
+| IPS min brightness, NeoPixel LEDs off, headphones, original cartridge	| 475 mW	| 24.8 hr |
 
 *Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are likely not sufficient for higher loads, such as with the button LEDs on)*
 
