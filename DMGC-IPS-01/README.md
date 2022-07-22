@@ -5,7 +5,7 @@
 
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
 
-*This is v1.2, which only has minor differences with the updated v1.3*
+*These scans are for v1.2, which only has minor differences with the updated v1.3*
 
 The IPS board is in the front of the DMG shell. This holds the IPS screen kit (and has pads for interfacing with it), has the dimmable power LED, button inputs along with pads for optional LEDs, a navigation switch on the side for changing settings on the IPS screen and the backlit buttons, and the speaker.
 
