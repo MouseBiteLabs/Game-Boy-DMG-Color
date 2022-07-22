@@ -13,7 +13,7 @@ This is my design for an original Game Boy (model name DMG) with native Game Boy
 -	The option for backlit buttons, with multiple color modes and settings.
 -	No externally viewable case modifications, outside of trimming the DMG power switch cover for Game Boy Color game compatibility.
 
-The code name for this project is DMGC. This console uses four PCBs, just as the original DMG model did - a CPU board (DMGC-CPU), display board (DMGC-IPS), power board (DMGC-PWR), and headphone jack board (DMGC-HDP). All circuit board assemblies have their own separate folders in this repository which contain detailed descriptions of operation, source files for schematics and board layouts (designed using Eagle), exported Gerber files, and some other relevant files. 
+The code name for this project is DMGC. This console uses four PCBs, just as the original DMG model did - a CPU board (DMGC-CPU), display board (DMGC-IPS), power board (DMGC-PWR), and headphone board (DMGC-HDP). All circuit board assemblies have their own separate folders in this repository which contain detailed descriptions of operation, source files for schematics and board layouts (designed using Eagle), exported Gerber files, and some other relevant files. 
 
 Next to an original DMG… one can really see the improvements!
 
@@ -68,12 +68,12 @@ For the top half of the shell, as per instructions on a similar DMG IPS kit that
 
 [picture of front half of shell with lens and screen, from behind]
 
-Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell.
+Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell. 
 
 [picture of bracket]
 [picture of front half]
 
-Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS board over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place.
+Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS board over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place. Then I *very carefully* soldered the wires from the Q5 board onto the appropriate pads on the IPS board - being very careful not to melt any plastic on the shell.
 
 [picture of two halves, ready to be assembled, with FFC on the CPU board]
 
@@ -114,7 +114,7 @@ I measured the power draws using a MiniWare MDP-XP Mini Digital Power Supply, an
 *Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are likely not sufficient for higher loads, such as with the button LEDs on)*
 
 ## Audio Recordings and Spectrum
-I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less background noise (I suspect owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. You can see the larger amplitudes of the lower frequencies in the spectrum plot of the DMGC. I'm not an audiophile, but I do think it sounds nicer. Listen for yourself. (GitHub only allows for video files to be uploaded, MP3 files are provided above)
+I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less buzzing background noise (owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. You can see the larger amplitudes of the lower frequencies in the spectrum plot of the DMGC. I'm not an audiophile, but I'm pretty sure it sounds nicer. Listen for yourself! (GitHub only allows for video files to be embedded, MP3 files are provided above)
 
 ### Original GBC Audio
 
