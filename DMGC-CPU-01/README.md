@@ -14,6 +14,8 @@ The zipped folder contains all the gerber files for this board.
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
 
+**NOTE: When assembling the DMGC, I *highly* recommend assembling the PWR board and the following components first. Then, power on the console with batteries or external supply *without any other devices on the CPU board* to make sure the PWR board is assembled correctly. Check with a multimeter or oscilloscope to make sure the 5 V and 3.3 V supplies are correct and steadily providing the correct voltage. If there is an error in assembly on the PWR board, the voltage could be too high and damage parts -- like the CPU!**
+
 ![image](https://user-images.githubusercontent.com/97127539/179893945-078252b8-437a-4313-877e-8917228ab814.png)
 
 *I know the symbols for the fuses and filters are incorrect. I needed an 0603 package for the board and was too lazy to assign the parts the correct symbols. But I guess technically… they are all resistors in some form.*
@@ -121,3 +123,4 @@ Here, I have provided links to components I used personally (or suitable replace
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
+©MouseBiteLabs 2022
