@@ -1,7 +1,4 @@
 # DMGC-IPS-01
-**TO-DO:**
-
-- Upload source files
 
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
 
