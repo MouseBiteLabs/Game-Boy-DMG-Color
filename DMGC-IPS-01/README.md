@@ -1,5 +1,9 @@
 # DMGC-IPS-01
 
+**TO-DO:**
+
+- Upload assembled board picture
+
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
 
 *These board scans are for v1.2, which only has minor differences from the updated v1.3*
@@ -92,6 +96,16 @@ Here, I have provided links to components I used personally (or suitable replace
 | SW1                     | 1   |                   |                     | Navigation switch                 |                                                                                | [https://www.digikey.com/en/products/detail/sparkfun-electronics/COM-08184/8543391](https://www.digikey.com/en/products/detail/sparkfun-electronics/COM-08184/8543391)                                                               |
 | U1                      | 1   | LMV358M           | SOIC-8              | Op-amp                            |                                                                                | [https://www.digikey.com/en/products/detail/texas-instruments/LMV358Q1MAX-NOPB/3926679](https://www.digikey.com/en/products/detail/texas-instruments/LMV358Q1MAX-NOPB/3926679)                                                       |
 | U2                      | 1   | ATTINY85          | SOIC-8 (5.3mm wide) | Microcontroller                   | Only if using NeoPixels (might need to buy the ATTINY from eBay or AliEx)      | [https://www.digikey.com/en/products/detail/microchip-technology/ATTINY85-20SFR/5057266](https://www.digikey.com/en/products/detail/microchip-technology/ATTINY85-20SFR/5057266)                                                     |
+
+## Revision History
+
+### v1.3
+
+- Fixed Schmitt trigger circuit for power LED dimming
+
+### v1.2
+
+- Release version
 
 ## Resources
 -	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
