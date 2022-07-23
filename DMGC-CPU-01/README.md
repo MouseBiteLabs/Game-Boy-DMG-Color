@@ -118,11 +118,11 @@ Here, I have provided links to components I used personally (or suitable replace
 | X1                                          | 1   | 8.388608MHz       | 7.5X5-4-PAD | Crystal oscillator |                                                                | Salvaged (GBC)                                                                                                                                                                                                                                                                                                                   |
 ## Revision History
 
-###v1.3
+### v1.3
 
 - Added test points to back of the board
 
-###v1.2
+### v1.2
 
 - Release version
 
