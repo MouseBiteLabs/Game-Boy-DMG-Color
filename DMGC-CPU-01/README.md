@@ -116,6 +116,15 @@ Here, I have provided links to components I used personally (or suitable replace
 | U6                                          | 1   | TPS3840DL35       | SOT23-5     | Supervisory IC     |                                                                | [https://www.mouser.com/ProductDetail/Texas-Instruments/TPS3840DL35DBVR?qs=7MVldsJ5UawbjRj7dP73rA%3D%3D](https://www.mouser.com/ProductDetail/Texas-Instruments/TPS3840DL35DBVR?qs=7MVldsJ5UawbjRj7dP73rA%3D%3D)                                                                                                                 |
 | VR1                                         | 1   | 10k               |             | Volume wheel       | Can be salvaged from DMG instead                               | [https://aliexpi.com/qg1M](https://aliexpi.com/qg1M)                                                                                                                                                                                                                                                                             |
 | X1                                          | 1   | 8.388608MHz       | 7.5X5-4-PAD | Crystal oscillator |                                                                | Salvaged (GBC)                                                                                                                                                                                                                                                                                                                   |
+## Revision History
+
+###v1.3
+
+- Added test points to back of the board
+
+###v1.2
+
+- Release version
 
 ## Resources
 -	<a href="https://console5.com/techwiki/images/e/e6/Nintendo_GBC_Schematic.png">GBC schematic</a>
