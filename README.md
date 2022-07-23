@@ -53,27 +53,28 @@ This is the high-level BOM for my specific build. Each folder for each board wil
 -	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
-## Assembly Pictures
+## Assembly
+
 Here are some pictures of the assembly process. Detailed images of the circuit boards are shown in their respective folders.
 
-First, I started with the back half of the DMG shell. I measured the wires going to the PWR and HDP boards from the CPU board after placing them in the back shell. The PWR board needs five (LENGTH)" wires, and the HDP board needs four (LENGTH)" wires. I removed all the boards, soldered the wires in, then placed it back in the shell and secured the assembly with the proper screws. (I put a game in the cartridge slot to keep the CPU board in place easier while assembling.)
+First, I started with the back half of the DMG shell. The PWR board needs five (LENGTH)" wires, and the HDP board needs four (LENGTH)" wires. I soldered all the wires between the two boards, placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
 
 [picture of back half of shell, with boards]
 
-Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and soldered them on the brightness, palette, battery, and OSD input pads. These will be soldered to the bottom of the IPS board after installed.
+Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and soldered them on the brightness, palette, battery, and OSD input pads. These will be soldered to the rear of the IPS board after installed.
 
 [picture of wires]
 
 For the top half of the shell, as per instructions on a similar DMG IPS kit that uses the Q5 screen, I very carefully cut ~1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth (there are "IPS ready" shells that should not require this cut). I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
 
-[picture of front half of shell with lens and screen, from behind]
+[picture of front half of shell, before cuts and after]
 
 Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell. 
 
 [picture of bracket]
 [picture of front half]
 
-Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS board over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place. Then I *very carefully* soldered the wires from the Q5 board onto the appropriate pads on the IPS board - being very careful not to melt any plastic on the shell.
+Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS board over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place. Then I *very carefully* soldered the wires from the Q5 board onto the appropriate pads on the IPS board - making sure not to melt any plastic on the shell.
 
 [picture of two halves, ready to be assembled, with FFC on the CPU board]
 
