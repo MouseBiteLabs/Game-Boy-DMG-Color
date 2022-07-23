@@ -56,7 +56,7 @@ The VDD pin of U1 isn’t directly powered by the battery voltage. C1 and R7 on 
 
 The CT pin on this chip introduces a delayed start function, adding somewhat of a power switch debouncing effect. Adding a 100 nF capacitor to this pin will cause the /RESET output to be held low for approximately 62 milliseconds, which will delay the startup of the 5 V supply. This allows VCC_SW to stabilize after flipping the switch on, and allows C1 to be charged up sufficiently to begin proper undervoltage detection.
 
-You might be asking - why am I including undervoltage detection on this board, instead of controlling the enable line of U2 to shut off the converter?
+You might be asking - why am I including external undervoltage detection on this board? Can't you just put a voltage divider on the enable pin of U2?
 
 ## Latching Circuit
 
