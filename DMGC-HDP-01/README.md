@@ -1,5 +1,9 @@
 # DMGC-HDP-01
 
+**TO-DO:**
+
+- Upload assembled board picture
+
 ![image](https://user-images.githubusercontent.com/97127539/180582438-4e3d7694-0597-42bd-ab3b-f34e2c34e663.png)
 
 *These board scans are for v1.1, which only has minor differences from the updated v1.2*
@@ -29,6 +33,16 @@ All of the parts from the original headphone board can be transplanted here (exc
 | L1, L2, L3            | 3   | 33 uH             |         | Filter                            |                                                    | Salvaged (DMG)                                                         |
 | JACK                  | 1   |                   |         | Headphone jack                    |                                                    | Salvaged (DMG)                                                         |
 | R1, R2                | 2   | 1 kΩ              | 0603    | Resistor                          |                                                    | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843 |
+
+## Revision History
+
+### v1.2
+
+- Tented a single via
+
+### v1.1
+
+- Release version
 
 ## Resources
 -	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
