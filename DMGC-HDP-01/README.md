@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/97127539/180582438-4e3d7694-0597-42bd-ab3b-f34e2c34e663.png)
 
+*These board scans are for v1.1, which only has minor differences from the updated v1.2*
+
 This little board is quite simple. You can transplant all of the parts from the original DMG headphone board to this one. This board also uses an original DMG headphone jack. Modifications to the circuit would be required to use an off-the-shelf jack.
 
 ## Board Characteristics
