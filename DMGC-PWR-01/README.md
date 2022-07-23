@@ -81,11 +81,11 @@ Constraints:
 - The voltage on the base of Q2 must reach the gate-source threshold voltage *before* U2 is enabled. If not, at low battery voltages, the latch will never be set up during start-up. Instead of disabling the converter the first time the undervoltage point is tripped, it will instead rapidly bootloop since the latch does not hold it off.
   - The gate-source threshold voltage of the 2N7002 is 2.1 V (this allows 250 uA through the drain; the latch only requires ~6 uA worst case). A divider ratio of 1:3 was chosen, so that when the enable pin of U2 passes the 800 mV threshold, the gate-source voltage on Q2 will be 2.4 V, ensuring the latch is set up when the converter begins operation.
 
-### Start-up Sequence
+## Start-up Sequence
 
 1) Power switch is turned on, and VCC_SW is (roughly) equal to VCC.
-2) C1 begins to charge through R7, and C11 begins to charge through R5. The time constant of C1 and R7 is crucially less than C11 and R5.
-3) The 400 mV threshold of U1 is passed, and ~220 microseconds later /RESET (pin 1) is pulled low. The voltage across C11 is still low at this point, but it is shorted to GND.
+2) C1 begins to charge through R7, and C11 begins to charge through R5.
+3) The 400 mV threshold of U1 is passed, and ~220 microseconds later /RESET (pin 1) is pulled low. The voltage across C11 is still at a low value at this point, but it is shorted to GND. Neither the latching circuit via Q2 and the buck-boost enable have been activated yet.
 4) C2 causes a 62 ms delay (after VDD passes 3.5 V) to allow for VCC_SW and C1 to stabilize. After this delay, /RESET is released, and C11 begins charging again. 
 5) The gate-source voltage of Q2 passes VGS(th) of 2.1 V, and the latching circuitry is set up. The next time U1_VDD drops below 3.5 V, the latching circuitry will pull /MR to GND and latch PSU_EN off until the power switch is cycled.
 6) The 800 mV threshold of the EN pin on U1 is passed, and after a 70 microsecond delay, the buck-boost is finally enabled. VCC_SW will experience a brief dip due to the large current draw, which is filtered on U1_VDD through R7 and C1 to prevent premature latching.
