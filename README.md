@@ -1,7 +1,7 @@
 # Game Boy DMG Color
 **TO-DO:**
 - Include assembly pictures
-- Add copyright
+- Measure lengths of wires for HDP and PWR boards
 
 [Picture of DMGC]
 
@@ -33,7 +33,7 @@ This project is fully open-sourced under the Creative Commons Attribution-NonCom
 
 ## Bill of Materials
 
-This is the high-level BOM for my specific build. Each folder for each board will contain detailed BOMs near the bottom of each README that contain all of the electronic components needed for each circuit board. Note that some parts may be out of stock at these links, but many (such as the IPS kit) can be found at alternate other retailers online. Parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications.
+This is the high-level BOM for my specific build. Each folder for each board will contain detailed BOMs near the bottom of each README that contain all of the electronic components needed for each circuit board. The root folder contains a master BOM in Excel format as well. Note that some parts may be out of stock at these links, but many (such as the IPS kit) can be found at alternate other retailers online. Parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications.
 
 - Original Game Boy Color console
   -	U1 - CGB CPU (I used version B, I expect any revision except for E, which has a different pinout, will work)
@@ -158,3 +158,5 @@ Want to improve this project? Maybe try one of these things (because I probably 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 This project is the culmination of over half a year of research, development, and testing. Please give me appropriate credit, provide a link to the license, and indicate if any changes were made to this project if you modify and share it. You may not use this work for commercial purposes. If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
+
+©MouseBiteLabs 2022
