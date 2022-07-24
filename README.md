@@ -57,7 +57,7 @@ This is the high-level BOM for my specific build. Each folder for each board wil
 
 Here are some pictures of the assembly process. Detailed images of the circuit boards are shown in their respective folders.
 
-First, I started with the back half of the DMG shell. The PWR board needs five (LENGTH)" wires, and the HDP board needs four (LENGTH)" wires. I soldered all the wires between the two boards, placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
+First, I started with the back half of the DMG shell. The PWR board needs five 2.25" wires, and the HDP board needs four 2.6" wires. I soldered all the wires between the two boards, placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
 
 [picture of back half of shell, with boards]
 
