@@ -67,7 +67,7 @@ Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and 
 
 For the top half of the shell, as per instructions on a similar DMG IPS kit that uses the Q5 screen, I very carefully cut ~1 mm of plastic around the border of the viewing port, and trimmed any extra plastic to make the surface underneath the lens smooth (there are "IPS ready" shells that should not require this cut). I used a black marker pen to color in the edges of the newly cut plastic, so they would not be as easily visible at an angle. And I trimmed two posts off of the shell so the screen would fit flush against it. 
 
-[picture of front half of shell, before cuts and after]
+![image](https://user-images.githubusercontent.com/97127539/180672809-afcfc7b8-bb8a-4744-98ce-41255026dac3.png)
 
 Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell. 
 
