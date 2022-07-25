@@ -1,7 +1,8 @@
 # Game Boy DMG Color
 **TO-DO:**
 - Include assembly pictures
-- Measure lengths of wires for HDP and PWR boards
+- Include assembled board pictures in each folder (all boards)
+- Upload board scans and source files for PWR board
 
 [Picture of DMGC]
 
