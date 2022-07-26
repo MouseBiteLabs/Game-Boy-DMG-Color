@@ -1,8 +1,7 @@
 # Game Boy DMG Color
 **TO-DO:**
 - Include assembly pictures
-- Include assembled board pictures in each folder (all boards)
-- Upload board scans and source files for PWR board
+- Upload assembled board pictures, board scans, and source files for PWR board
 
 [Picture of DMGC]
 
