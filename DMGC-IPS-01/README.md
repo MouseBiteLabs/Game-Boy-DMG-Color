@@ -1,12 +1,9 @@
 # DMGC-IPS-01
 
-**TO-DO:**
-
-- Upload assembled board picture
-
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
+![image](https://user-images.githubusercontent.com/97127539/180912167-1ed4864c-d77d-4482-bf83-c783f309239a.png)
 
-*These board scans are for v1.2, which only has minor differences from the updated v1.3*
+*This specific board is v1.2, which only has minor differences from the updated v1.3 (some minor bodge fixes)*
 
 The IPS board is in the front of the DMG shell. This holds the IPS screen kit (and has pads for interfacing with it), has the dimmable power LED, button inputs along with pads for optional LEDs, a navigation switch on the side for changing settings on the IPS screen and the backlit buttons, and the speaker.
 
