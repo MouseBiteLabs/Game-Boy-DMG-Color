@@ -35,7 +35,7 @@ The ¼ battery voltage is compared with the inverting input (set at 1.112 V via 
 
 The output of the comparator circuit is set to 5V when the battery level is high, which turns on Q1; it is driven to GND when the battery level is low, which turns Q1 off. Therefore, the brightness of the LED during normal power is dictated only by the resistance of R1. When the combined battery voltage drops below the low battery threshold, R2 is placed in series with the LED as well, which dims the LED. I played around with these values to find values that didn't hurt my eyes for normal brightness, and produced a noticeably dimmed power LED.
 
-*This whole circuit could be shrunk a bit through the use of a single comparator instead of an op-amp, but I included an op-amp on the original revision for some reason, and never replaced it with a simpler part. Oh well.*
+*This whole circuit could be shrunk a bit through the use of a single comparator instead of an op-amp, but I included an op-amp on the original revision (I think I was planning to use the second op-amp for something else, I can't remember), and never replaced it with a simpler part. Oh well.*
 
 ## Navigation Switch
 This takes place where the contrast wheel used to be. Popular DMG IPS kits use this kind of dial for controlling the settings on the display. On the Q5 board, there are two capacitive touch sensors - one for changing brightness, one for changing the color palette. Instead of using the touch sensors in the DMGC, the navigation switch will toggle these inputs by connecting a series capacitance to ground to simulate a touch. This also has the benefit of not having to modify the driver board in any way, and instead just requiring soldered wires to the board where capacitive sensors were connected.
