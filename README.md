@@ -57,9 +57,9 @@ This is the high-level BOM for my specific build. Each folder for each board wil
 
 Here are some pictures of the assembly process. Detailed images of the circuit boards are shown in their respective folders.
 
-First, I started with the back half of the DMG shell. The PWR board needs five 2.25" wires, and the HDP board needs four 2.6" wires. I soldered all the wires between the two boards, placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
+First, I started with the back half of the DMG shell. The PWR board needs five 2.25" wires, and the HDP board needs four 2.6" wires. Also, the flex cable should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the two boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
 
-[picture of back half of shell, with boards]
+[picture of back half of shell, with boards and FFC]
 
 Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and soldered them on the brightness, palette, battery, and OSD input pads. These will be soldered to the rear of the IPS board after installed.
 
@@ -69,16 +69,15 @@ For the top half of the shell, as per instructions on a similar DMG IPS kit that
 
 ![image](https://user-images.githubusercontent.com/97127539/180672809-afcfc7b8-bb8a-4744-98ce-41255026dac3.png)
 
-Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell. 
+Then I installed the front lens, and placed the screen, backed with the 3D printed bracket, into the front half of the shell. (I made sure to clean up any stray fingerprints or dust while assembling this part!)
 
-[picture of bracket]
 [picture of front half]
 
 Once the bracket was placed and flush with the shell, I put the buttons in and placed the IPS board over top, slid the Q5 screen FFC into the connector on the PCB (making sure it fit without any added stress on any connections), and secured it all in place. Then I *very carefully* soldered the wires from the Q5 board onto the appropriate pads on the IPS board - making sure not to melt any plastic on the shell.
 
 [picture of two halves, ready to be assembled, with FFC on the CPU board]
 
-After that, it was just a matter of connecting the FFC to both the CPU and IPS screens, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together.
+After that, it was just a matter of connecting the FFC from the CPU to the IPS board, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together.
 
 ## Auxilliary Controls
 ### Q5 XL IPS Backlight with OSD
