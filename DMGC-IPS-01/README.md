@@ -107,6 +107,7 @@ Here, I have provided links to components I used personally (or suitable replace
 ### v1.3
 
 - Fixed Schmitt trigger circuit for power LED dimming
+- Moved Q5 battery detection to op-amp output instead of voltage divider
 
 ### v1.2
 
