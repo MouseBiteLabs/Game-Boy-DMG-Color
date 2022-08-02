@@ -118,6 +118,7 @@ Here, I have provided links to components I used personally (or suitable replace
 ### v1.3
 
 - Added test points to back of the board
+- Shifted FFC connector down a few mm
 
 ### v1.2
 
