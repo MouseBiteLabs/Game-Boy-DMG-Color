@@ -1,5 +1,9 @@
 # DMGC-CPU-01
 
+**TO-DO:**
+
+- Upload gerbers and source files
+
 ![image](https://user-images.githubusercontent.com/97127539/180128233-93ae4e87-9549-4b95-807b-64d1d931315c.png)
 ![image](https://user-images.githubusercontent.com/97127539/180910725-e90a4a0b-95a7-44c1-bb9e-69372823e6a6.png)
 
