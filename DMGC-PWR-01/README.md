@@ -4,12 +4,14 @@
 
 - Upload board scans and assembled board pictures
 - Upload source files and gerber zip
+- Update schematics
+- Update BOM
 
 [blank board pictures]
 
 The PWR board has gone through a few iterations. Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~4 V up to ~8 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. Thus, the DMGC-PWR-01 utilizes the TPS630702 (or TPS63070 or TPS630701) – a buck-boost converter with only a few external parts required for operation, that accepts anywhere between 2 V and 16 V to produce a 5 V output.
 
-This board is likely the most complex part of the build. I spent a lot of time tuning the circuit to produce the exact results I wanted with ample protection downstream of the converters. Unfortunately, at the time of writing, the buck-boost converter chips are not easily sourced. I have begun development of a DMGC-PWR-02 board that will use more commonly-found chips. But feel free to design your own if you'd like ;D
+This board is likely the most complex part of the build. I spent a lot of time tuning the circuit to produce the exact results I wanted with ample protection downstream of the converters.
 
 ## Board Characteristics
 The zipped folder contains all the gerber files for this board.
@@ -22,7 +24,7 @@ There are five wires that connect to the CPU board power supply circuitry. Pin 1
 
 ![image](https://user-images.githubusercontent.com/97127539/180590265-a73ace4a-d27c-4602-bf98-8baf16e3594f.png)
 
-The battery voltage, VCC, is applied to the buck-boost input voltage pin, without routing through the power switch on the CPU. Instead, the power switch controls the buck-boost converter’s enable pin.
+The battery voltage, VCC, is applied to the buck-boost input voltage pin, without routing through the power switch on the CPU. Instead, the power switch controls the buck-boost converter’s enable pin through a load switch circuit.
 
 ## Buck-Boost Converter (U2)
 
@@ -30,9 +32,7 @@ U2 can be TPS63070, TPS630701, or TPS630702. TPS630701 is a fixed 5 V buck-boost
 
 The bottom half of the circuit is the entire buck-boost stage. I followed the TPS63070 datasheet for choosing values of the input and output capacitance, the inductor, and the feedback resistors. R8 and R9 set up a voltage divider for setting the output of the adjustable TPS630702 or TPS63070 – if the TPS630701 is used instead, which is the 5 V fixed output version, then R8 should be short circuited and R9 can be removed. **If you leave R8 and R9 at the values they are with the fixed 5 V chip, the output will shoot up to ~11V. I strongly recommend testing this power supply board separately from the rest of the system to ensure the 5 V output is correct and steady, without frying anything else downstream.**
 
-The buck-boost chip is activated when the EN pin is high. This pin is connected to the PSU_EN net, which is influenced by two chips – U3 (overvoltage protection) and U1 (undervoltage detection). If no errors are detected in the power supply, then PSU_EN will be pulled high to VCC once the power switch is turned on and C11 is charged up. If either an overvoltage on the 5 V line or an undervoltage on the battery supply is detected, the PSU_EN net is latched off until the power switch is cycled. The PSU_EN net is crucial for the proper operation of the power board, and will be explained in greater detail below.
-
-It is important to keep the impedance on the VCC net to a minimum to prevent draining the batteries – therefore, all of the supervisory circuitry is only connected when the power switch is turned on, through the VCC_SW net. This is also crucial for resetting the latching circuit (detailed later).
+The buck-boost chip is activated when the EN pin is higher than 800 mV (there is an internal ~70 microsecond delay before activation after this voltage is reached). This pin is controlled by the PSU_EN net, which is influenced by two chips – U3 (overvoltage protection) and U1 (undervoltage detection). If no errors are detected in the power supply, then PSU_EN will pull up to VCC_SW. If either an overvoltage on the 5 V line or an undervoltage on the battery supply is detected, the PSU_EN net is pulled to GND and latched off until the power switch is cycled. R5, R12, and R13 set up voltage dividers that ensure if the EN pin passes 800 mV, the gate-source voltage on Q2 will be at least 2.4 V, meaning the latching circuit will be set up before the 5 V supply is generated (VGSth of Q2 is ~2.1 V, max). R13 also ensures the EN pin is pulled to GND when the power switch is off. Detailed operation on the PSU_EN net can be found below. 
 
 F1 is a 1 A fuse on the 5 V output, which in hindsight is probably overkill, since the CPU board has protections that will likely always trip first (the 1 A PTC specifically). When testing the PWR board, I shorted the 5 V supply to GND to see if the fuse would pop, and the PTC opened up first every time I tried. But, I have plenty of 1 A fuses lying around, so there’s little reason not to include it just in case, since the TPS63070 chips can output up to 3.6 A.
 
@@ -50,11 +50,11 @@ U1 is a TPS3840 chip which monitors the voltage on the batteries via the VDD pin
 
 The specific part I chose was the TPS3840DL35. The DL indicates the /RESET is an active-low open-drain output. (PL would indicate active-low push-pull output, PH would indicate active-high push-pull, both of which aren’t suitable for my specific application). The threshold voltage is determined by the last two numbers, which for my selection is 35 for 3.5 V. I chose this threshold based on the guidelines from <a href="https://data.energizer.com/pdfs/nickelmetalhydride_appman.pdf">this application note from Energizer.</a> This documentation recommends using a voltage cutoff of ~75% of nominal voltage for a pack of NiMH AA batteries (what I will most commonly be using in my personal console). Nominal voltage of a NiMH AA battery is 1.2 V, so for four of them in series, the 75% level is 3.6 V. So the 3.5 V cutoff is close enough, and as a bonus, it's a part used on the CPU board already.
 
-The VDD pin of U1 isn’t directly powered by the battery voltage. C1 and R7 on the battery voltage filter out any fast power supply transients. I found that during the start-up sequence, when the IPS screen first turns on, it can draw a lot of current from the batteries causing the supply voltage to dip about a volt max (this is normal, and the PTC on the CPU board does not drop the supply more than a few tens of millivolts). Also, the current draw of the TPS3840 and latching circuit is at worst a few microamps, so the voltage drop across R7 is negligible.
+The VDD pin of U1 isn’t directly powered by the battery voltage. C1 and R7 on the battery voltage filter out any fast power supply transients. I found that during the start-up sequence, the loads on the 5 V supply will draw a considerable amount of current from the batteries, causing their voltage to dip about a volt max (this is normal, and the PTC on the CPU board does not drop the supply more than a few tens of millivolts). It's not important for undervoltage lockout to occur immediately after the 3.5 V threhold is passed, so the RC delay (time constant is about 1 millisecond) is fine for normal operation. Also, the current draw of the TPS3840 is less than a microamp, so the voltage drop across R7 is negligible and it also won't have any perceptible impact to battery life despite always being connected to the batteries.
 
-The CT pin on this chip introduces a delayed start function, adding somewhat of a power switch debouncing effect. Adding a 100 nF capacitor to this pin will cause the /RESET output to be held low for approximately 62 milliseconds, which will delay the startup of the 5 V supply. This allows VCC_SW to stabilize after flipping the switch on, and allows C1 to be charged up sufficiently to begin proper undervoltage detection.
+The CT pin on this chip introduces a delayed start function. Adding a 1 uF capacitor to this pin will cause the /RESET output to be held low for approximately 620 milliseconds no matter what the supply voltage is. This is really only useful in the event you put the batteries in while the power switch is already on, because the delay only applies the first time power is applied to the chip. The wait period lets all the input capacitors charge up sufficiently and allows enough time for the input undervoltage latch to be set up before trying to generate the 5 V supply.
 
-You might be asking - why am I including external undervoltage detection on this board? Can't you just put a voltage divider on the enable pin of U2?
+You might be asking - why am I including external input undervoltage detection on this board? Can't you just put a voltage divider on the enable pin of U2? Well...
 
 ## Latching Circuit
 
@@ -62,31 +62,13 @@ The original design of the PWR board had a funny problem, and didn't include the
 
 So in order to fix this, I introduced the undervoltage detection chip along with a latching circuit, so that as soon as the batteries died the *first* time, the system would keep itself shut off until the power switch was cycled. I found this strategy in <a href="https://www.ti.com/lit/an/snva836a/snva836a.pdf">this very helpful application note from Texas Instruments</a>. (You know, Texas Instruments should have sponsored this project, because I sure do use a lot of their parts)
 
-The latching circuit consists of Q1 through Q4 and R1 through R4. You can read the application note for the full series of events, but basically turning on Q2 with a sufficient gate-source voltage sets up the latch. The next time the gate of Q2 (the PSU_EN net) is pulled to GND by the /RESET pin, Q4 is turned on to conduct and the /MR pin (master reset) is also pulled low. On the TPS3840, whenever /MR is low, /RESET will also automatically be pulled low no matter if VDD is above or below the undervoltage trip point. So even if the voltage on the VDD pin rises back up above the trip limit, /RESET will keep Q4 conducting, which keeps /MR low as well. So the only way to reset the whole thing is to turn the power off and reset the latch.
+The latching circuit consists of Q1 through Q4 and R1 through R4. You can read the application note for the full series of events, but basically turning on Q2 with a sufficient gate-source voltage sets up the latch. The next time the gate of Q2 (the PSU_EN net) is pulled to GND by the /RESET pin, Q4 is turned on to conduct and the /MR pin (master reset) is also pulled low. On the TPS3840, whenever /MR is low, /RESET will also automatically be pulled low no matter if VCC is above or below the undervoltage trip point. So even if the voltage rises back up above the trip limit, /RESET will keep Q4 conducting, which keeps /MR low as well. So the only way to reset the whole thing is to turn the power switch off and reset the latch.
 
-I found the latching circuit supply on R1 and Q1 needed to have the same heavy filter (from R7 and C1) that the TPS3840 does, otherwise the power switch bouncing would prematurely latch the enable line off all the time. The values for C1, R7, C11, R5, R12, and R13 are all intertwined and important to pick properly.
+## Load Switch
 
-## Part Value Selection
+VCC is applied to the latching circuit through a load switch circuit, rather than the power switch directly. The power switch, which is connected to the SW net, controls the gate-source voltage of Q5, an N-channel FET. R15 and C11 set up an RC delay for switch debouncing, and R16 is a pull-down resistor for when the power switch is turned off. R14 is a pull-up resistor that keeps Q6, a P-channel FET, off whenever Q5 is off. When the power switch is turned on, Q5 conducts and pulls the gate of Q6 to GND. This allows the battery voltage VCC to turn on the latching circuit. Furthermore, if PSU_EN is not being pulled to GND by the supervisory ICs (if the battery voltage is higher than 3.5 V), then the enable pin of the buck-boost will pass the 800 mV threshold needed to turn on the 5 V supply (after a built-in 70 microsecond delay).
 
-Constraints:
-- U1 activates when VDD passes 400 mV after a ~220 microsecond delay. U2 begins operation 70 microseconds after the EN pin passes 800 mV. The gate-source threshold voltage of Q2 is 2.1 V (at 250 uA through the drain).
-- C1/R7 must be chosen such that the start-up power draw does not cause the detected battery voltage to dip below 3.5 V. 
-  - A time constant of 1 ms was chosen. 
-  - R7 was chosen to be 100 ohms to allow for sufficient current for U1 and the latching circuit.
-- C11/R5 must be chosen such that the time constant does not allow for U2 to be enabled before U1 can begin operation. Doing so would set up the latching circuit early as PSU_EN is applied to the base of Q2. After this, as soon as U1 activates, /RESET would pull low and the latching circuit would be prematurely tripped.
-  - A time constant of 10 ms was chosen.
-  - R5 was chosen to be 10k to reduce the voltage drop on PSU_EN caused by a voltage divider with R12 + R13, which are 300k total.
-- The voltage on the base of Q2 must reach the gate-source threshold voltage *before* U2 is enabled. If not, at low battery voltages, the latch will never be set up during start-up. Instead of disabling the converter the first time the undervoltage point is tripped, it will instead rapidly bootloop since the latch does not hold it off.
-  - The gate-source threshold voltage of the 2N7002 is 2.1 V (this allows 250 uA through the drain; the latch only requires ~6 uA worst case). A divider ratio of 1:3 was chosen, so that when the enable pin of U2 passes the 800 mV threshold, the gate-source voltage on Q2 will be 2.4 V, ensuring the latch is set up when the converter begins operation.
-
-## Start-up Sequence
-
-1) Power switch is turned on, and VCC_SW is (roughly) equal to VCC.
-2) C1 begins to charge through R7, and C11 begins to charge through R5.
-3) The 400 mV threshold of U1 is passed, and ~220 microseconds later /RESET (pin 1) is pulled low. The voltage across C11 is still at a low value at this point, but it is shorted to GND. Neither the latching circuit via Q2 and the buck-boost enable have been activated yet.
-4) C2 causes a 62 ms delay (after VDD passes 3.5 V) to allow for VCC_SW and C1 to stabilize. After this delay, /RESET is released, and C11 begins charging again. 
-5) The gate-source voltage of Q2 passes VGS(th) of 2.1 V, and the latching circuitry is set up. The next time U1_VDD drops below 3.5 V, the latching circuitry will pull /MR to GND and latch PSU_EN off until the power switch is cycled.
-6) The 800 mV threshold of the EN pin on U1 is passed, and after a 70 microsecond delay, the buck-boost is finally enabled. VCC_SW will experience a brief dip due to the large current draw, which is filtered on U1_VDD through R7 and C1 to prevent premature latching.
+The benefit to using a load switch instead of the power switch directly is the contact resistance of the 30+ year old power switches is no longer a factor in operation. One common issue in old Game Boys is a voltage drop across a dirty power switch, because the entire system current flows through the switch. Sometimes, if the switch is particularly oxidized or dirty, the entire Game Boy could fail to turn on. Instead of having to clean out a power switch, a non-trivial task (especially for a DMG), a dirty power switch will still be able to properly control Q5, as long as contact resistance isn't higher than like, 100 kΩ. (And in that case, increase R16 to like 1 MΩ, and you might be ok!)
 
 ## Bill of Materials
 
