@@ -1,8 +1,6 @@
 # Game Boy DMG Color
-**TO-DO:**
-- Upload assembled board pictures, board scans, and source files for PWR board
 
-![PXL_20220802_010635419](https://user-images.githubusercontent.com/97127539/184281053-cd6869b9-f53d-4fe7-855a-337e6875adbc.jpg)
+![PXL_20220802_010635419 (2)](https://user-images.githubusercontent.com/97127539/184283833-da760645-fa9d-40e1-9a36-6cbecef1d47d.jpg)
 
 This is my design for an original Game Boy (model name DMG) with native Game Boy Color support, and a handful of improved features! This is an original creation - newly designed PCBs, with only some necessary components harvested from an original Game Boy and Game Boy Color (no hardware emulation – this project uses the original CPU). Here are the project goals:
 -	An original Game Boy aesthetic, using the original Game Boy shell and external parts (link port, volume wheel, power switch, etc.), but with the capability of playing Game Boy and Game Boy Color games.
