@@ -1,11 +1,5 @@
 # DMGC-IPS-01
 
-**TO-DO:**
-
-- Upload fixed schematic
-- Upload gerbers and source files
-- Fix schematic explanation below
-
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
 ![image](https://user-images.githubusercontent.com/97127539/180912167-1ed4864c-d77d-4482-bf83-c783f309239a.png)
 
@@ -18,7 +12,10 @@ The IPS board is in the front of the DMG shell. This holds the IPS screen kit (a
 The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
--	Surface Finish: ENIG
+-	Surface Finish: ENIG 
+*(ENIG is required for reliable button press detection)*
+
+NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3 (only two changed wires), so I do not expect there to be any issues. See changelog below for more information.
 
 ## FFC Connectors
 There are two FFC connectors on the board - one to take the input from the CPU board, the other is for the Q5 board to connect to. The former is detailed in the CPU board section, and the latter simply omits a few pins to connect to the Q5 board, such as the speaker and button inputs. Notably, the connector going to the CPU board must be reversed due to the FFC cable connecting it to the CPU board.
@@ -31,17 +28,15 @@ All of the unused pins on the Q5 board (CLS, R0, G0, and B0) that are populated 
 I detail the operation of the audio amplifier on the CPU board in that corresponding readme. I mention that a DC blocking capacitor needs to be included in series with the speaker output. That’s what C3 is for, a 100 uF capacitor. There are two capacitors called out as C3 – a space for an aluminum electrolytic capacitor, and one for an electrolytic tantalum. I have a ton of aluminums and they’re cheaper, so that’s the one I used. The speaker itself is an aftermarket FunnyPlaying model.
 
 ## Power LED and Dimming Circuit
-The power LED is a standard 3mm red LED. The circuit detailed here is a simple comparator circuit.
+The power LED is a standard 3mm red LED. For low power detection, I used a simple Schmitt trigger circuit.
 
-![image](https://user-images.githubusercontent.com/97127539/180365287-b848c999-a118-487a-aea3-46d1e5c0d590.png)
+![image](https://user-images.githubusercontent.com/97127539/184360221-3d7121eb-2985-441e-ae19-26c8ac55e4d1.png)
 
-Half of U1 is used as a buffer, for no reason other than it was available to use. When the power switch on the CPU board is turned on, the input to the buffer is half the battery voltage, from the voltage divider made from R11 and R12, and it feeds into another voltage divider made by R6 and R7 to cut it in half again. C6 is for noise filtering. The ½ battery voltage is connected to a solder pad for connecting to the Q5 board for battery level indication – since the Q5 kit expects a GBC battery voltage, cutting the 4x AA battery voltage in half will scale the level correctly for proper measurement. 
+When the power switch on the CPU board is turned on, the input to the buffer (U1B) is half the battery voltage, from the voltage divider made from R11 and R12 (C6 is for noise filtering purposes). This output is connected to the Q5 board's BATT solder pad for battery level indication. Since the Q5 kit expects a GBC battery voltage, which uses 2x AA batteries, cutting the 4x AA battery voltage in half will scale it properly. The Q5 board itself uses a voltage divider for scaling the battery voltage, so the voltage on the BATT pad must be from a low impedance source so as not to ruin the scaling factor - therefore, it must come off of the op-amp output itself, rather than the voltage divider.
 
-The ¼ battery voltage is compared with the inverting input (set at 1.112 V via another voltage divider) on the other half of U1. R3 provides hysteresis on the comparator circuit (i.e. Schmitt trigger), and C7 and C8 are for noise filtering (can likely be omitted). When the combined voltage of the 4x AAs drops below ~4.35 V, the battery level is considered low and the LED will noticeably dim. My testing came up with this voltage as approximately 30 to 45 minutes of playtime left if at max brightness with headphones in, testing from fully charged batteries. If you reduce screen brightness or reduce the volume, you might get more time out of the batteries.
+The ½ battery voltage is then cut in half again via the voltage divider made by R6 and R7. The ¼ battery voltage is compared with the inverting input on the other half of U1. R3 provides hysteresis on the comparator circuit (i.e. Schmitt trigger), and C7 and C8 are for noise filtering (can likely be omitted). When the combined voltage of the 4x AAs drops below ~4.35 V, the battery level is considered low and the LED will noticeably dim. My testing came up with this voltage as approximately 30 to 45 minutes of playtime left if at max brightness with headphones in, testing from fully charged batteries. If you reduce screen brightness or reduce the volume, you might get more time out of the batteries.
 
-The output of the comparator circuit is set to 5V when the battery level is high, which turns on Q1; it is driven to GND when the battery level is low, which turns Q1 off. Therefore, the brightness of the LED during normal power is dictated only by the resistance of R1. When the combined battery voltage drops below the low battery threshold, R2 is placed in series with the LED as well, which dims the LED. I played around with these values to find values that didn't hurt my eyes for normal brightness, and produced a noticeably dimmed power LED.
-
-*This whole circuit could be shrunk a bit through the use of a single comparator instead of an op-amp, but I included an op-amp on the original revision (I think I was planning to use the second op-amp for something else, I can't remember), and never replaced it with a simpler part. Oh well.*
+The output of the circuit is set at 5V when the battery level is high, which turns on Q1; it is driven to GND when the battery level is low, which turns Q1 off. Therefore, the brightness of the LED during normal power is dictated only by the resistance of R1. When the combined battery voltage drops below the low battery threshold, R2 is placed in series with the LED as well, which dims the LED. I played around with these values to find ones that didn't hurt my eyes for normal brightness, and produced a noticeably dimmed power LED when the low voltage detection is tripped.
 
 ## Navigation Switch
 This takes place where the contrast wheel used to be. Popular DMG IPS kits use this kind of dial for controlling the settings on the display. On the Q5 board, there are two capacitive touch sensors - one for changing brightness, one for changing the color palette. Instead of using the touch sensors in the DMGC, the navigation switch will toggle these inputs by connecting a series capacitance to ground to simulate a touch. This also has the benefit of not having to modify the driver board in any way, and instead just requiring soldered wires to the board where capacitive sensors were connected.
@@ -107,7 +102,7 @@ Here, I have provided links to components I used personally (or suitable replace
 ### v1.3
 
 - Fixed Schmitt trigger circuit for power LED dimming
-- Moved Q5 battery detection to op-amp output instead of voltage divider
+- Moved Q5 battery detection (BATT) to op-amp output instead of voltage divider output
 
 ### v1.2
 
