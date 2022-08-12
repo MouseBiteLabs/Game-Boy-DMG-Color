@@ -47,7 +47,9 @@ This takes place where the contrast wheel used to be. Popular DMG IPS kits use t
 Rocking up on the dial will toggle the brightness setting, rocking it down will toggle the color palette setting. Rocking up and holding it will toggle the battery level display on the board, and rocking it down and holding it will toggle the pixel grid. Pushing in on the switch grounds the ATTINY85's PB3 pin (which is pulled up externally to 3.3V), if installed.
 
 ## Q5 Board Pads
-There are six test points at the top of the IPS board for short wires to connect to the Q5 board. The Q5 board includes pads for the select, B, and A buttons for navigation in the OSD. There's also a battery pad, which is for measuring the battery life, as mentioned. And finally, there are two pads for brightness control and color palette swapping, which connect to the capacitive touch sensor inputs on the Q5 board.
+There are six test points at the top of the IPS board for short wires to connect to the Q5 board. The Q5 board includes pads for the select, B, and A buttons for navigation in the OSD. There's also a battery pad, which is for measuring the battery life, as mentioned. And finally, there are two pads for brightness control and color palette swapping, which connect to the capacitive touch sensor inputs on the Q5 board. Before installation, stripped wires should be soldered to these corresponding pads on the Q5 board, so they may be soldered to the IPS board after assembly.
+
+![image](https://user-images.githubusercontent.com/97127539/184361799-70131a36-ccb9-49c3-a647-12fdbeec042c.png)
 
 ## Button LEDs and ATTINY85
 One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. 
@@ -67,7 +69,7 @@ Discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB
 ![image](https://user-images.githubusercontent.com/97127539/180103597-06642f10-77f8-44f2-84d5-dac01b80fdf1.png)
 
 ## Q5 IPS Screen Bracket
-I designed a bracket for holding the screen in place. This is placed between the screen and the DMGC-IPS-01 board. Assembly notes are located in the root folder's README, and the model is available for download above.
+I designed a bracket for holding the screen in place. This is placed between the screen and the DMGC-IPS-01 board. The model is available for download above.
 
 ![image](https://user-images.githubusercontent.com/97127539/179893357-2857c4a3-07b2-433d-b50c-6ba5824419b2.png)
 
