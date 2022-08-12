@@ -1,21 +1,20 @@
 # DMGC-CPU-01
 
-**TO-DO:**
-
-- Upload gerbers and source files
-- Test 1uf for audio cap
-
 ![image](https://user-images.githubusercontent.com/97127539/180128233-93ae4e87-9549-4b95-807b-64d1d931315c.png)
 ![image](https://user-images.githubusercontent.com/97127539/180910725-e90a4a0b-95a7-44c1-bb9e-69372823e6a6.png)
 
 *This specific board is v1.2, which only has minor differences from the updated v1.3*
 
 The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, crystal oscillator, and EM10 (which could likely be replaced or bypassed with little consequence). The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
+
 ## Board Characteristics
 The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
--	Surface Finish: ENIG
+-	Surface Finish: ENIG (HASL is fine, but more difficult for soldering fine-pitch parts like the CPU and FFC connector)
+
+**NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3, and all of the changes are for convenience in assembly and board measurements, so I do not expect there to be any issues. See changelog below for more information.**
+
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
 
@@ -24,13 +23,13 @@ The majority of the crucial power supply circuitry is on the PWR board, but the 
 ![image](https://user-images.githubusercontent.com/97127539/179893945-078252b8-437a-4313-877e-8917228ab814.png)
 
 *I know the symbols for the fuses and filters are incorrect. I needed an 0603 package for the board and was too lazy to assign the parts the correct symbols. But I guess technically… they are all resistors in some form.*
--	As mentioned on the main readme, the DMGC uses the power switch to control the enable pin on the converters on the PWR board. Therefore, the battery voltage is always connected to the PWR board converter inputs. This way, system current does not pass through the switch, which can be dirty or oxidized and introduce unwanted voltage drops at higher currents. Using the switch to drive the enable line incurs a much smaller voltage drop due to the reduced currents. Through some brief testing, it appears that as long as your power switch in the on position has less than ~100 ohms of resistance, everything will operate normally.
+-	As mentioned on the main readme, the DMGC uses the power switch to control the enable pin on the converters on the PWR board. Therefore, the battery voltage is always connected to the PWR board converter inputs. This way, system current does not pass through the switch, which can be dirty or oxidized and introduce unwanted voltage drops at higher currents. Using the switch to drive the enable line incurs a much smaller voltage drop due to the reduced currents.
 -	A downside of connecting the batteries directly to the input of the converter – as soon as the last battery completes the circuit by touching the terminals, the input capacitance is immediately charged up. This causes a considerably large inrush current – up to about 2 A by my measurements. In order to limit this inrush current, I utilize PTC1, a Polyswitch. This is a resettable overcurrent protection device. As current reaches 1 A, the resistance of the PTC will increase until power to the console is essentially cut off. For short bursts, like for the inrush current from the batteries, the resistance will return to it’s normally low value. Nominal operation of the DMGC should only see currents up to 250 mA at worst cases.
--	Furthermore, because the batteries are always connected to at least some of the system, the impedance must be as small as possible to reduce the amount of quiescent current that would drain the batteries. Therefore, the only things connected to the VCC net on any of the boards are capacitors, which should keep battery drainage to a minimum while the console is off.
+-	Furthermore, because the batteries are always connected to at least some of the system, the current draw while the switch is off must be as small as possible to reduce the amount of quiescent current that would drain the batteries.
 -	Because there is still a risk of the batteries being short circuited before reaching the PTC on the board, the positive battery terminal is immediately followed by a ~2.5 amp fuse to open the circuit if the batteries are accidentally short circuited. Also, F2 is in series with the output of the DC jack to protect from overcurrents if batteries aren’t being used to power the console.
 -	Pins 3 and 4 on the DC jack are normally closed when the AC adapter is not plugged in, and open when it is plugged in. This ensures the batteries and AC adapter cannot power the Game Boy simultaneously.
 -	Q1 is a P-channel FET used for reverse polarity protection. This is more efficient than a series diode because while the P-FET is conducting, there is a much smaller voltage drop than if a diode was being used. D1 is reverse polarity protection for the DC jack input, where efficiency is much less important than running on batteries. 
--	R1 connects to the 5 V rail when the power switch is turned off, ensuring quick discharge and reducing the chance of strange operation during a slower power down.
+-	R1 discharges the 5 V rail when the power switch is turned off, ensuring quick discharge and reducing the chance of strange operation during a slower power down.
 -	U4 is a simple linear regulator for generating the 3.3 V supply necessary for the RAM and the CPU core. I considered using a SMPS instead, but the current requirements are so low, it seemed slightly overkill.
 -	The filters (EM6, 7, 8, and 10) are likely fine to exclude, but it doesn't hurt to include them just in case some weird high frequency components have the potential to screw something up down the line. I don't really have the capability (or desire) to properly test what effects removing them may have, but I suspect they're mostly for FCC compliance.
 -	Finally, there are five wires leading from the CPU board to the PWR board – VCC (battery voltage), VCC_SW (battery voltage after switch), DC_JACK (input from the DC jack), +5V (supply from the PWR board), and a GND reference. I also added test points for each of the three voltages as well for troubleshooting purposes.
@@ -58,11 +57,11 @@ The new audio driver on the CPU board is powered by the LM4853. This TI chip is 
 -	The headphone detect pin (HP_SWITCH) is connected to GND when the headphone jack is empty, and is pulled up to 5 V via R36 when headphones are inserted. This switches the output on the audio amplifier between the speakers and headphones. C51 is for debouncing the headphone detection.
 -	C18/C19 are DC blocking capacitors and RA1A/RA1B are current limiting resistors, so when the volume is turned all the way down, the S01 and S02 pins aren’t overloaded.
 -	C52/C53 are DC blocking capacitors so only the AC audio signal passes to the amplifier.
--	The ratio of R30/R31 and R32/R33 set the amplification of the audio amp - increase R30 and R32 to decrease the output volume. If you pick too low of values, the output will eventually get clipped and sound pretty gross. 47 kΩ seemed to hit a sweet spot for my tastes for a gain of 0.38. This is louder than the original GBC, but not too loud that the audio clips (or hurts my ears). If you pick 100 kΩ you’ll get output comparable to the original GBC. 
-    - The audio gain has quite a large effect on the power draw of the system when using the speaker. I did not do any tests with an audio gain greater than 0.38. A sufficiently larger gain than this might impact performance on the system and potentially cause brownouts, especially at low battery levels.
+-	The ratio of R30/R31 and R32/R33 set the amplification of the audio amp - increase R30 and R32 to decrease the output volume. 47 kΩ seemed to hit a sweet spot for my tastes for a gain of 0.38. This is louder than the original GBC, but not too loud that the audio quality is impacted. If you pick 100 kΩ you’ll get output comparable to the original GBC. 
+    - The audio gain has quite a large effect on the power draw of the system when using the speaker. I did not do any tests with an audio gain greater than ~0.6. A sufficiently larger gain than this might impact performance on the system and potentially cause brownouts, especially at low battery levels.
 -	The shutdown pin should be tied to GND to allow the amp to work. I made two different revisions that tied this to 5 V instead. Oops. (The output on the headphones will sound really quiet and the speaker won't work if the chip is shutdown)
 -	The speaker output *shouldn't* need a DC blocking capacitor, as the LM4853 outputs to the speaker as a bridge tied load (BTL). However, I found that if a DC blocking capacitor is not included, a strange issue happens. There’s a very brief moment when plugging the headphones in where the right output channel is shorted to ground (ring and sleeve are connected inside the jack). When this happens, the right output DC blocking cap is connected to GND, and causes a large surge of current from the power supply to charge it up. This can cause a brownout, and the system will reset. I have included a spot for one of these caps in series with the speaker on the IPS board.
--	If you cut the traces (shown below) between the HP-R pads and the HP-L/SPK- pads (below the via), and solder a wire from LOUT to HP-L and a wire from ROUT to HP-R (left-most), this will connect the output of the potentiometer directly to the headphone outputs. This is known as the “pro-sound” mod. I won’t use it, but maybe you think it sounds better this way.
+-	If you cut the traces (shown below) between the HP-R pads and the HP-L/SPK- pads (below the via), and solder a wire from LOUT to HP-L and a wire from ROUT to HP-R (left-most), this will connect the output of the potentiometer directly to the headphone outputs without disabling the speaker. This is known as the “pro-sound” mod. I won’t use it, but maybe you think it sounds better this way.
 
 ![image](https://user-images.githubusercontent.com/97127539/179895601-0d61ca63-916e-4ad9-ba16-519a22bcc837.png)
 
@@ -134,6 +133,7 @@ Here, I have provided links to components I used personally (or suitable replace
 -	<a href="https://gbdev.gg8.se/files/schematics/">Rolf, bit9, and nitro2k01’s DMG schematics and layouts</a>
 -	<a href="https://www.ti.com/lit/ds/symlink/lm4853.pdf?ts=1656384256966&ref_url=https%253A%252F%252Fwww.google.com%252F">LM4853 datasheet</a>
 -	<a href="https://www.youtube.com/watch?v=IrB-FPcv1Dc&ab_channel=Afrotechmods">Reverse polarity protection explanation</a>
+
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
