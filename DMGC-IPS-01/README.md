@@ -13,9 +13,10 @@ The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG 
+
 *(ENIG is required for reliable button press detection)*
 
-NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3 (only two changed wires), so I do not expect there to be any issues. See changelog below for more information.
+**NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3 (only two changed wires), so I do not expect there to be any issues. See changelog below for more information.**
 
 ## FFC Connectors
 There are two FFC connectors on the board - one to take the input from the CPU board, the other is for the Q5 board to connect to. The former is detailed in the CPU board section, and the latter simply omits a few pins to connect to the Q5 board, such as the speaker and button inputs. Notably, the connector going to the CPU board must be reversed due to the FFC cable connecting it to the CPU board.
