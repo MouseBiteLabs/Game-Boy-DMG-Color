@@ -11,7 +11,9 @@ The CPU board houses the majority of the electronics in the DMGC. Parts harveste
 The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
--	Surface Finish: ENIG (HASL is fine, but more difficult for soldering fine-pitch parts like the CPU and FFC connector)
+-	Surface Finish: ENIG 
+
+*(HASL is fine, but more difficult for soldering fine-pitch parts like the CPU and FFC connector)*
 
 **NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3, and all of the changes are for convenience in assembly and board measurements, so I do not expect there to be any issues. See changelog below for more information.**
 
