@@ -12,6 +12,8 @@ The zipped folder contains all the gerber files for this board.
 -	Thickness: 1.2 mm
 -	Surface Finish: HASL
 
+*Pictures show ENIG finish, but it gives no benefit over HASL.*
+
 ## Circuit Overview
 
 ![image](https://user-images.githubusercontent.com/97127539/179897524-bd74a364-c584-42a9-b284-9659ea163933.png)
