@@ -14,7 +14,7 @@ The zipped folder contains all the gerber files for this board.
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG 
 
-*(ENIG is required for reliable button press detection)*
+*ENIG is required for reliable button press detection.*
 
 **NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3 (only two changed wires), so I do not expect there to be any issues. See changelog below for more information.**
 
