@@ -60,7 +60,11 @@ First, I started with the back half of the DMG shell. The PWR board needs five ~
 
 ![PXL_20220802_000205491 MP](https://user-images.githubusercontent.com/97127539/184281792-0c624a67-98bf-4ab9-b36c-a5c6b19385f6.jpg)
 
-Then, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and soldered them on the brightness, palette, battery, and OSD input pads. These will be soldered to the rear of the IPS board after installed.
+Before placing the power switch cover in, I cut a notch in it so that it wouldn't prevent Game Boy Color games from being played in the system. In the left picture below I’m using Game Boy games, and in the right picture I'm using Game Boy Color. And you can see that the power switch is blocked from turning on by the GBC cartridge for the original model.
+
+![image](https://user-images.githubusercontent.com/97127539/184758903-56ca36e9-f98c-49bb-ae86-029ce5714033.png)
+
+After the back half was done, I prepared the Q5 board solder pads. I cut six 30 gauge wire segments and soldered them on the brightness, palette, battery, and OSD input pads. These will be soldered to the rear of the IPS board after installed.
 
 ![PXL_20220802_000117190](https://user-images.githubusercontent.com/97127539/184281803-ea1ec2ce-f2cf-489f-90db-754a21dc3f10.jpg)
 
