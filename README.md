@@ -1,9 +1,9 @@
 # Game Boy DMG Color
 
-![PXL_20220802_010635419 (2)](https://user-images.githubusercontent.com/97127539/184283833-da760645-fa9d-40e1-9a36-6cbecef1d47d.jpg)
+![system](https://user-images.githubusercontent.com/97127539/185296993-238dad78-1bf8-42d5-ae10-f1e0691ec1cc.png)
 
 This is my design for an original Game Boy (model name DMG) with native Game Boy Color support, and a handful of improved features! This is an original creation - newly designed PCBs, with only some necessary components harvested from an original Game Boy and Game Boy Color (no hardware emulation – this project uses the original CPU). Here are the project goals:
--	An original Game Boy aesthetic, using the original Game Boy shell and external parts (link port, volume wheel, power switch, etc.), but with the capability of playing Game Boy and Game Boy Color games.
+-	An original Game Boy aesthetic, using the original Game Boy shell and interface (link port, volume wheel, power switch, etc.), but with the capability of playing Game Boy and Game Boy Color games.
 -	A nice, large IPS screen – the GBC Q5 XL IPS Backlight with OSD kit – with brightness and color palette control via the "navigation switch" housed where the contrast wheel used to be. (I will refer to the PCB attached to the Q5 screen as the “Q5 board”)
 -	A modernized, efficient switch mode power supply that can run off 4x AA batteries or input from the DC jack, just like the original DMG. Testing shows that playing with NiMH AA batteries can yield more than 18 hours of gameplay at normal settings (AKA, the way I normally play it - maximum brightness and headphones). 
 -	Louder, warmer sound through a modern audio amplifier.
@@ -11,10 +11,6 @@ This is my design for an original Game Boy (model name DMG) with native Game Boy
 -	No externally viewable case modifications, outside of trimming the DMG power switch cover for Game Boy Color game compatibility.
 
 The code name for this project is DMGC. This console uses four PCBs, just as the original DMG model did - a CPU board (DMGC-CPU), display board (DMGC-IPS), power board (DMGC-PWR), and headphone board (DMGC-HDP). All circuit board assemblies have their own separate folders in this repository which contain detailed descriptions of operation, source files for schematics and board layouts (designed using Eagle), exported Gerber files, and some other relevant files. 
-
-Next to an original GBC… one can really see the improvements!
-
-![PXL_20220802_013041310](https://user-images.githubusercontent.com/97127539/184281124-67feb450-2f3b-4740-97d2-20761ef06153.jpg)
 
 ## Disclaimer
 
@@ -56,7 +52,7 @@ Note that the IPS kit I have listed is the *only* IPS kit that is compatible wit
 
 Here are some pictures of the assembly process. Detailed images of the circuit boards alone are shown in their respective folders.
 
-First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires, and the HDP board needs four ~2.6" wires. Also, the flex cable should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the two boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
+First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires, and the HDP board needs four ~2.6" wires. Also, the flat flex cable (FFC) should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the three boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
 
 ![PXL_20220802_000205491 MP](https://user-images.githubusercontent.com/97127539/184281792-0c624a67-98bf-4ab9-b36c-a5c6b19385f6.jpg)
 
@@ -77,6 +73,10 @@ Then I installed the front lens, and placed the screen, backed with the 3D print
 ![PXL_20220802_005512608](https://user-images.githubusercontent.com/97127539/184281827-b895435b-7d21-43ca-b96a-29d2cdd5e0c2.jpg)
 
 After that, it was just a matter of connecting the FFC from the CPU to the IPS board, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together.
+
+Next to an original DMG… one can really see the improvements!
+
+![PXL_20220816_034738908~2 (2)](https://user-images.githubusercontent.com/97127539/185297393-868a0e7d-a001-4ec9-b5f3-7ab8a57a6132.jpg)
 
 ## Auxilliary Controls
 ### Q5 XL IPS Backlight with OSD
@@ -113,7 +113,7 @@ I measured the power draws using a MiniWare MDP-XP Mini Digital Power Supply, an
 *Note: If powering through the DC jack instead of batteries, an OEM adapter may not be able to supply enough power to the DMGC at maximum settings. Furthermore, <a href = "https://retrogamerepairshop.com/products/dmg-game-boy-original-dmg-usb-power-cord-adapter?variant=39454726455468">cables like these</a> will require at least ~200 mA output from the USB port for reliable operation at all settings. (USB 1.0 and 2.0 are likely not sufficient for higher loads, such as with the button LEDs on)*
 
 ## Audio Recordings and Spectrum
-I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less buzzing background noise (owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. You can see the larger amplitudes of the lower frequencies in the spectrum plot of the DMGC. I'm not an audiophile, but I'm pretty sure it sounds nicer, at least through headphones. Listen for yourself! (GitHub only allows for video files to be embedded, MP3 files are provided above)
+I mentioned the sound of the DMGC is "warmer" than an original GBC - it's bassier with less buzzing background noise (owing mostly to the modernized power supply). I connected the headphone jack to my computer's microphone input, and used Audacity to obtain line out recordings. Then I graphed the spectrum using Audacity's "plot spectrum" analysis tool. You can see the larger gain at the lower frequencies in the spectrum plot of the DMGC. I'm not an audiophile, but I'm pretty sure it sounds nicer, at least through headphones. Listen for yourself! (GitHub only allows for video files to be embedded, MP3 files are provided above)
 
 ### Original GBC Audio
 
@@ -133,13 +133,13 @@ https://user-images.githubusercontent.com/97127539/180215280-5e533449-5116-4848-
 
 ## Possible Additions/Changes
 Want to improve this project? Maybe try one of these things (because I probably won’t):
-- This console uses 4x AAs instead of a single rechargeable battery in order to maintain the feel and weight of the original DMG model, but an obvious change to the build is to utilize a LiPo battery with proper battery management. The DC jack could be repurposed to charge the battery instead. With the advent of affordable rechargeable AAs, the appeal of the AC adapter is diminished, so this would be a good repurposing. However, the maximum output current of most DMG AC adapters is rated for ~200mA at ~6V, so charging would be considerably slower than, say, USB-C charging.
+- This console uses 4x AAs instead of a single rechargeable battery in order to maintain the feel and weight of the original DMG model, but an obvious change to the build is to utilize a LiPo battery with proper battery management. The DC jack could be repurposed to charge the battery instead. With the advent of affordable rechargeable AAs, the appeal of the AC adapter is diminished, so this would be a good repurposing. However, the maximum output current of most DMG AC adapters is rated for ~200mA at ~6V, so charging would be considerably slower than, say, fast USB-C charging.
 - A popular option for modern Game Boy mods is to use a laminated screen. This basically seals the front lens to the screen to prevent any dust from entering between the screen and lens, and makes the image look hella nice. There aren't any off-the-shelf laminated screen kits that would work with this build, but one could potentially do a custom lamination by hand. Unfortunately I think this would involve sealing the screen and lens to the front shell permanently - don't mess up!
 - Restoring the IR functionality of the GBC could also be done, as there is ample space for it on the circuit board and shell - I just do not trust myself with forming plastic to look nice, and it wasn't at all an important part of the build for me.
 - Finding aftermarket equivalents for all the different required DMG parts would be ideal, instead of using a (hopefully broken) DMG for a donor console. For my personal build, I used original DMG components because I had a damaged console lying around, but you can easily find DMG-style volume wheels and cartridge connectors online. The tricky parts are as follows:
   - A GBC EXT port can be used in place of the DMG one (but would look kind of weird in the DMG EXT hole in the shell).
   - There are a few power switches I've ordered to try out in place of the DMG one, but I haven't gotten around to testing them yet. There's no one fully drop-in replacement that I've found, though, so it would require circuit modifications.
-  - I haven't been able to locate a headphone jack exactly the same as the DMG one, but the circuit could easily be adapted to accept a different style.
+  - I haven't been able to locate a headphone jack exactly the same as the DMG one, but the circuit could be adapted to accept a different style.
   - The DC jack could be tricky. I haven't looked very hard for any kind of replacement for this.
 - Any other of the various popular GBC mods could be incorporated if desired - line out audio, bluetooth, overclocking, etc. With the ATTINY on the IPS board, one could incorporate button combinations to interface with these mods without the need of any additional buttons or (*shudder*) touch controls.
 - I thought about adding LEDs to the *back* of the front PCB, so that light would emit out the edges of the console with a translucent or transparent shell, but I never got around to trying it out.
