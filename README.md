@@ -22,6 +22,8 @@ This project is released under the Creative Commons Attribution-NonCommercial-Sh
 
 **DO NOT attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering!!**
 
+(If you attempt the build, start with DMGC-PWR-01. This is the toughest board to assemble and it requires no donor components.)
+
 ## Bill of Materials
 
 The master BOM with every electronic component required for the four circuit boards are provided in this root folder in Excel format. Furthermore, each folder for each board will contain their section of the BOM near the bottom of each README that contain all of the electronic components needed for that specific circuit board. Note that some parts may be out of stock at the links provided, but many can be found at alternate other retailers online, or have a proper substitute. <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=395da5fd9b">Here is a saved cart from Mouser that contains all the parts in the BOM Excel, including some duplicates.</a> Some parts might be out of stock, so double check to see what is missing, and consider ordering multiples of some parts.
