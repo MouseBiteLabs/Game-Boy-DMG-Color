@@ -8,10 +8,11 @@
 The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, crystal oscillator, and EM10 (which could likely be replaced or bypassed with little consequence). The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
 
 ## Board Characteristics
-The zipped folder contains all the gerber files for this board.
+The zipped folder contains all the gerber files for this board. When ordering circuit boards, some board preview tools will not work (confirmed with JLCPCB and PCBway). This should not be an issue, but you might have to manually enter the dimensions of the board yourself.
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG 
+-   Dimensions: 82.8 mm x 78.5 mm
 
 *(HASL is fine, but more difficult for soldering fine-pitch parts like the CPU and FFC connector)*
 
