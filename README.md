@@ -1,5 +1,7 @@
 # Game Boy DMG Color
 
+*Note: Version 2.0 will be coming soon - the only added feature is optional tactile switch pads for the DMGC-IPS-01 board. Everything else is essentially the same; there is no functional improvement in v2.0, but I will also be updating the license to allow for commercialization. If you want the tacticle switches, but have v1.3, the boards will all be interchangeable, so you can swap the new board in.*
+
 ![system](https://user-images.githubusercontent.com/97127539/185296993-238dad78-1bf8-42d5-ae10-f1e0691ec1cc.png)
 
 This is my design for an original Game Boy (model name DMG) with native Game Boy Color support, and a handful of improved features! This is an original creation - newly designed PCBs, with only some necessary components harvested from an original Game Boy and Game Boy Color (no hardware emulation – this project uses the original CPU). Here are the project goals:
