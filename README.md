@@ -50,7 +50,7 @@ The following is the high-level BOM for my specific build pictured above. Note t
 -	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
-Note that the IPS kit I have listed is the *only* IPS kit that is compatible with this build at the time of writing.
+Note that the IPS kit I have listed is the *only* IPS kit that is compatible with this build at the time of writing. It includes an image centering feature, so you don't need to fiddle with centering it manually in the shell. Other kits likely would not center nicely in the DMG shell!
 
 ## Assembly
 
@@ -76,7 +76,7 @@ Then I installed the front lens, and placed the screen, backed with the 3D print
 
 ![PXL_20220802_005512608](https://user-images.githubusercontent.com/97127539/184281827-b895435b-7d21-43ca-b96a-29d2cdd5e0c2.jpg)
 
-After that, it was just a matter of connecting the FFC from the CPU to the IPS board, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together.
+After that, it was just a matter of connecting the FFC from the CPU to the IPS board, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together. Once assembled, I opened the OSD menu for the IPS kit (Select + A + B) and changed the vertical and horizontal offsets (my values were 78 and 29, respectively) to center the image on the screen. The image centering function is one of the biggest reasons I chose this IPS kit.
 
 Next to an original DMG… one can really see the improvements!
 
