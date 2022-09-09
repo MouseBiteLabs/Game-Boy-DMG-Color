@@ -70,6 +70,10 @@ Always-on discrete LEDs are also an option - an 0603 LED will fit on half of the
 
 ![image](https://user-images.githubusercontent.com/97127539/180103597-06642f10-77f8-44f2-84d5-dac01b80fdf1.png)
 
+Oh, and when you solder the LEDs on, I recommend taping off the button contacts to make sure you don't get solder on them. It won't damage them to the point of non-function, but it can potentially reduce their useful lifetime and accurate detection depending on the severity. (But more importantly, it's not A E S T H E T I C)
+
+![image](https://user-images.githubusercontent.com/97127539/189253688-58df639c-7d75-41a7-a5bc-b63455be2266.png)
+
 ## Q5 IPS Screen Bracket
 I designed a bracket for holding the screen in place. This is placed between the screen and the DMGC-IPS-01 board. The model is available for download above. <a href="https://funnyplaying.com/products/dmg-retro-pixel-ips-lcd-holder">It is similar to Funnyplaying's model.</a>
 
