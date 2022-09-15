@@ -41,6 +41,8 @@ The ½ battery voltage is then cut in half again via the voltage divider made by
 
 The output of the op-amp is set at 5 V when the battery level is high, which turns on Q1; it is driven to GND when the battery level is low, which turns Q1 off. Therefore, the brightness of the LED during normal power is dictated only by the resistance of R1. When the combined battery voltage drops below the low battery threshold, R2 is placed in series with the LED as well, which dims the LED. I played around with these values to find ones that didn't burn my retinas for normal brightness, and produced a noticeably dimmed power LED when the low voltage detection is tripped.
 
+If you want to decrease the brightness of the LED, increase resistance values of R1 and/or R2 (increase R1 to decrease brightness for both normal and low battery levels, R2 to decrease brightness for only low battery level).
+
 ## Navigation Switch
 This takes place where the contrast wheel used to be. On the Q5 board, there are two capacitive touch sensors - one for changing brightness, one for changing the color palette. Instead of using the touch sensors in the DMGC, the navigation switch will toggle these inputs by connecting a series capacitance to ground to simulate a touch. This also has the benefit of not having to modify the driver board in any way, and instead just requiring soldered wires to the board where capacitive sensors were connected.
 
