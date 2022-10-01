@@ -158,7 +158,7 @@ Want to improve this project? Maybe try one of these things (because I probably 
 -	The board outlines and many of the footprints for the DMG components are adapted from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a>, so very special thanks to Rolf, bit9, and nitro2k01 for saving me hours of work!
 -	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
 -	Immense thanks to the users of the r/Gameboy and gbdev discord servers for technical resources, troubleshooting/feedback, and suggestions. Could not have done this without your support. Shout out to kevtris for design feedback and lidnariq for troubleshooting support!
--	Of course, huge thank you to everyone who has donated and supported me, and to those who have built their own DMGC! I love seeing pictures of builds, so feel free to share them with me on Twitter, <a href="https://discord.gg/FaQjyY2B">discord</a>, or via email!
+-	Of course, huge thank you to everyone who has donated and supported me, and to those who have built their own DMGC! I love seeing pictures of builds, so feel free to share them with me on Twitter, <a href="https://discord.gg/Y5aDvCcpbX">discord</a>, or via email!
 
 ## License
 
