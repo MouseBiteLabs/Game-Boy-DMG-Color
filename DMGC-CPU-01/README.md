@@ -1,5 +1,11 @@
 # DMGC-CPU-01
 
+## To-do:
+- Update with v2.0 pictures
+- Add explanation of pro-sound output
+- Add explanation of reset/button test pads
+- Upload v2.0 source files
+
 ![image](https://user-images.githubusercontent.com/97127539/180128233-93ae4e87-9549-4b95-807b-64d1d931315c.png)
 ![image](https://user-images.githubusercontent.com/97127539/180910725-e90a4a0b-95a7-44c1-bb9e-69372823e6a6.png)
 
