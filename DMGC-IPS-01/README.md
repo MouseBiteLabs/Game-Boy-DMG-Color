@@ -7,6 +7,7 @@
 - Add explanation of tactile switches
 - Add explanation of ATTINY85 headers and disable pads
 - Update BOM with tactile switches and header pins
+- Update license information
 
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
 ![image](https://user-images.githubusercontent.com/97127539/180912167-1ed4864c-d77d-4482-bf83-c783f309239a.png)
