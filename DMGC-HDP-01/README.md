@@ -1,5 +1,12 @@
 # DMGC-HDP-01
 
+## To-do:
+- Update with v2.0 pictures
+- Upload v2.0 source files
+- Update schematics
+- Update BOM
+- Update license information
+
 ![image](https://user-images.githubusercontent.com/97127539/180912937-187d7733-8892-47e4-9f4d-134d07def88b.png)
 
 *This specific board is v1.1, which only has minor differences from the updated v1.2*
@@ -40,6 +47,12 @@ All of the parts from the original headphone board can be transplanted here (exc
 | R1, R2                | 2   | 1 kΩ              | 0603    | Resistor                          |                                                    | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843 |
 
 ## Revision History
+
+### v2.0
+
+- Changed holes to slots where applicable
+- Made board/part measurements more accurate
+- Added pads for SMT inductors for L1-L3
 
 ### v1.2
 
