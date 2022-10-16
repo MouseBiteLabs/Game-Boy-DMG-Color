@@ -1,11 +1,10 @@
 # DMGC-PWR-01
 
 ## To-do:
-- Upload pictures of black PCBs
 - Update license
 
-![DMGC-PWR-01_2-0](https://user-images.githubusercontent.com/97127539/185033099-5e016feb-b057-4c79-92c1-4cf32b8e6cb4.png)
-![DMGC-PWR-01_2-0_assembled](https://user-images.githubusercontent.com/97127539/185033117-f6412697-4e74-4b9c-8e47-f9b04c6b4fd8.png)
+![DMGC-PWR-01_2-0_black](https://user-images.githubusercontent.com/97127539/196013270-510567e9-d96e-467d-9880-b106b62498b9.png)
+![DMGC-PWR-01_2-0_ASSEMBLED_black](https://user-images.githubusercontent.com/97127539/196013348-b0da11ba-1f93-4a57-be55-93847c8d9b15.png)
 
 The PWR board has gone through a few iterations. Because the system will run with 4x AA batteries or the DC jack input, the range of input voltages is relatively wide - anywhere between ~4 V up to ~8 V, plus margin. The output voltage must be maintained at 5 V. The logical choice would be a buck-boost converter. Thus, the DMGC-PWR-01 utilizes the TPS630702 (or TPS63070 or TPS630701) – a buck-boost converter with only a few external parts required for operation, that accepts anywhere between 2 V and 16 V to produce a 5 V output.
 
