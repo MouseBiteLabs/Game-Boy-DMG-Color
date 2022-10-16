@@ -3,10 +3,7 @@
 ## To-do:
 - Update with v2.0 pictures
 - Upload v2.0 source files
-- Update schematics
-- Add explanation of tactile switches
-- Add explanation of ATTINY85 headers and disable pads
-- Update BOM with tactile switches and header pins
+- Add picture of tactile switches
 - Update license information
 
 ![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
@@ -25,14 +22,13 @@ The zipped folder contains all the gerber files for this board.
 
 *ENIG is required for reliable button press detection.*
 
-**NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3 (only two changed wires), so I do not expect there to be any issues. See changelog below for more information.**
+## Optional Tactile Buttons
+Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. I did not however bother to add switches for start and select, due to the mismatched geometry (and you don't press them *that* often). If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
 
 ## FFC Connectors
 There are two FFC connectors on the board - one to take the input from the CPU board, the other is for the Q5 board to connect to. The former is detailed in the CPU board section, and the latter simply omits a few pins to connect to the Q5 board, such as the speaker and button inputs. Notably, the connector going to the CPU board must be reversed due to the FFC cable connecting it to the CPU board.
 
-![image](https://user-images.githubusercontent.com/97127539/175817051-5b833e8b-1a99-46bd-abc8-d2abbde9cd2a.png)
-
-All of the unused pins on the Q5 board (CLS, R0, G0, and B0) that are populated on the FFC connector are inconsequential, they just don’t go anywhere on the cable.
+![image](https://user-images.githubusercontent.com/97127539/196016635-e2304038-f734-4f08-a687-dbfb725eb1d6.png)
 
 ## Speaker
 I detail the operation of the audio amplifier on the CPU board in that corresponding README. I mention that a DC blocking capacitor needs to be included in series with the speaker output. That’s what C3 is for, a 100 uF capacitor. There are two capacitors called out as C3 – a space for an aluminum electrolytic capacitor, and one for an electrolytic tantalum. If you install the through-hole electrolytic, bend it down into the notch on the board. I have a ton of aluminums and they’re cheaper, so that’s the one I used. The speaker itself is an aftermarket FunnyPlaying model.
@@ -55,9 +51,11 @@ If you want to decrease the brightness of the LED, increase resistance values of
 ## Navigation Switch
 This takes place where the contrast wheel used to be. On the Q5 board, there are two capacitive touch sensors - one for changing brightness, one for changing the color palette. Instead of using the touch sensors in the DMGC, the navigation switch will toggle these inputs by connecting a series capacitance to ground to simulate a touch. This also has the benefit of not having to modify the driver board in any way, and instead just requiring soldered wires to the board where capacitive sensors were connected.
 
-![image](https://user-images.githubusercontent.com/97127539/179892312-2037ac53-8394-4e16-a0ad-1f3e53fa8b06.png)
+![image](https://user-images.githubusercontent.com/97127539/196016754-8daa1414-55d6-4baf-b579-997d016ffe82.png)
 
 Rocking up on the dial will toggle the brightness setting, rocking it down will toggle the color palette setting. Rocking up and holding it will toggle the battery level display on the screen, and rocking it down and holding it will toggle the pixel grid. Pushing in on the switch grounds the ATTINY85's PB3 pin (which is pulled up externally to 3.3V), if installed. Using the code I provide above, pushing in will advance to the next color of the button LEDs, and holding it while pressing left or right on the D-pad will change the brightness of the LEDs.
+
+Bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, which will prevent the LEDs from turning on at all.
 
 ## Q5 Board Pads
 There are six test points at the top of the IPS board for short wires to connect to the Q5 board. The Q5 board includes pads for the select, B, and A buttons for navigation in the OSD. There's also a battery pad, which is for measuring the battery life, as mentioned. And finally, there are two pads for brightness control and color palette swapping, which connect to the capacitive touch sensor inputs on the Q5 board. Before installation, stripped wires should be soldered to these corresponding pads on the Q5 board, so they may be soldered to the IPS board after assembly.
@@ -65,15 +63,15 @@ There are six test points at the top of the IPS board for short wires to connect
 ![image](https://user-images.githubusercontent.com/97127539/184361799-70131a36-ccb9-49c3-a647-12fdbeec042c.png)
 
 ## Button LEDs and ATTINY85
-One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. 
+One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. You can program the ATTINY in any number of ways, but I added pads for <a href="https://www.mouser.com/ProductDetail/200-TSM10601TSV">kinked header pins</a> to hopefully make it a bit easier.
 
-![image](https://user-images.githubusercontent.com/97127539/179892408-eaa9b55a-16b3-4a5e-b21f-08dbbbba21d7.png)
+![image](https://user-images.githubusercontent.com/97127539/196017477-729896fd-b926-4b42-8206-e60e46865483.png)
 
 *Note that if you do not wish to include LEDs for the buttons, you don't need to populate any of the parts shown in this screenshot.*
 
 There are nine color settings - red, orange, yellow, green, cyan, blue, purple, white, and off. These settings can be changed in the code (or additional settings could be appended) by changing the RGB values in the arrays. Pushing in on the navigation switch will toggle between these settings. Pushing and holding it in, and then pressing left or right will change the brightness of the LEDs. The settings are saved every time the brightness or color is changed, and will be reloaded when turning on the Game Boy. This feature was inspired by NiceMitch's RGB LED flex PCB for GBC.
 
-Code for the ATTINY85 is included here, however because I wrote this months ago (and forgot to comment it sufficiently...) I have forgotten how some of the code actually works. There's certainly room for improvement. But there *is* a nice startup effect to match the Game Boy Color boot sequence that a friend (jokingly) suggested I include. *Are you happy, Mike?*
+Code for the ATTINY85 is included here, however because I wrote this months ago (and forgot to comment it sufficiently...) I have forgotten how some of the code actually works. There's certainly room for improvement (and some really dumb inclusions). But there *is* a nice startup effect to match the Game Boy Color boot sequence that a friend (jokingly) suggested I include. *Are you happy, Mike?*
 
 *Note: I used Arduino IDE 1.8.15 to program the ATTINY85. I don't know if this makes a difference, but at least one other person was having issues on 2.0 and fixed it by downgrading to 1.8.*
 
@@ -98,11 +96,13 @@ Here, I have provided links to components I used personally (or suitable replace
 
 | Reference Designators   | Qty | Value/Part Number | Package             | Description                       | Comment                                                                        | Source                                                                                                                                                                                                                               |
 | ----------------------- | --- | ----------------- | ------------------- | --------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| B1-B6                   | 6   | SKRRAAE010        |                     | Tactile switch                    | Optional, can be omitted if you don't want clicky SP-style buttons             | [https://www.mouser.com/ProductDetail/688-SKRRAA](https://www.mouser.com/ProductDetail/688-SKRRAA)
 | C1, C2, C6, C7, C8, C24 | 6   | 100nF             | 0603                | Capacitor (MLCC)                  | Should be X5R (or better), at least 16V                                        | [https://www.mouser.com/ProductDetail/?qs=l5k%252BbMnNDknCtKnMv1oEgA%3D%3D](https://www.mouser.com/ProductDetail/?qs=l5k%252BbMnNDknCtKnMv1oEgA%3D%3D)                                                                               |
 | C3                      | 1   | 100uF             |                     | Capacitor (Aluminum electrolytic) | Board has space for a 100uF SMD tantalum electrolytic instead                  | [https://www.mouser.com/ProductDetail/KEMET/ESK107M010AC3AA?qs=9RUIYXQlAdBiO30krUyznA%3D%3D](https://www.mouser.com/ProductDetail/KEMET/ESK107M010AC3AA?qs=9RUIYXQlAdBiO30krUyznA%3D%3D)                                             |
 | C4, C5                  | 2   | 220pF             | 0603                | Capacitor (MLCC)                  |                                                                                | [https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL10B221KB8NFNC?qs=YCa%2FAAYMW03S2dLM1EfL7A%3D%3D](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL10B221KB8NFNC?qs=YCa%2FAAYMW03S2dLM1EfL7A%3D%3D) |
 | FFC Cable               | 1   | 0151660539‎       |                     | Flat Flexible Cable               |                                                                                | [https://www.mouser.com/ProductDetail/Molex/15166-0539?qs=N2VrfF4LzQecTCOx4K2VYA%3D%3D](https://www.mouser.com/ProductDetail/Molex/15166-0539?qs=N2VrfF4LzQecTCOx4K2VYA%3D%3D)                                                       |
 | J1, J2                  | 2   | FFC2B17-50-T      |                     | LCD connector                     |                                                                                | [https://www.mouser.com/ProductDetail/GCT/FFC2B17-50-T?qs=TuK3vfAjtkWT79JbRBZamg%3D%3D](https://www.mouser.com/ProductDetail/GCT/FFC2B17-50-T?qs=TuK3vfAjtkWT79JbRBZamg%3D%3D)                                                       |
+| J3                      | 1   | TSM-106-01-T-SV   |                     | Surface Mount Terminal Strip      | Optional for assembly, only helpful for programming the ATTINY                 | [https://www.mouser.com/ProductDetail/200-TSM10601TSV](https://www.mouser.com/ProductDetail/200-TSM10601TSV)
 | LED1                    | 1   | 151033RS03000     | 3mm                 | Red LED                           |                                                                                | [https://www.mouser.com/ProductDetail/Wurth-Elektronik/151033RS03000?qs=LlUlMxKIyB1%252BAw6bWFN43w%3D%3D](https://www.mouser.com/ProductDetail/Wurth-Elektronik/151033RS03000?qs=LlUlMxKIyB1%252BAw6bWFN43w%3D%3D)                   |
 | LED10-LED17             | 8   | WS2812            | 2020                | RGB LED                           | Link leads to a 10-pack. Discrete 0603-size LEDs can be used instead           | [https://www.mouser.com/ProductDetail/Adafruit/4684?qs=DPoM0jnrROWIv9%2FMCIm5vw%3D%3D](https://www.mouser.com/ProductDetail/Adafruit/4684?qs=DPoM0jnrROWIv9%2FMCIm5vw%3D%3D)                                                         |
 | Q1                      | 1   | 2N7002            | SOT23               | N-channel MOSFET                  |                                                                                | [https://www.mouser.com/ProductDetail/Nexperia/2N7002NXBKR?qs=%252B6g0mu59x7J2ddJstTJGkQ%3D%3D](https://www.mouser.com/ProductDetail/Nexperia/2N7002NXBKR?qs=%252B6g0mu59x7J2ddJstTJGkQ%3D%3D)                                       |
