@@ -20,7 +20,7 @@ The zipped folder contains all the gerber files for this board.
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG 
 
-*ENIG is required for reliable button press detection.*
+*ENIG is required for reliable button press detection, if tactile buttons are not used.*
 
 ## Optional Tactile Buttons
 Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. I did not however bother to add switches for start and select, due to the mismatched geometry (and you don't press them *that* often). If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
