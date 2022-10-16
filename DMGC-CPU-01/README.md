@@ -3,9 +3,7 @@
 ## To-do:
 - Update with v2.0 pictures
 - Upload v2.0 source files
-- Update schematics
-- Add explanation of pro-sound output
-- Add explanation of reset/button test pads
+- Add note about milling layer
 - Update license information
 
 ![image](https://user-images.githubusercontent.com/97127539/180128233-93ae4e87-9549-4b95-807b-64d1d931315c.png)
@@ -23,8 +21,6 @@ The zipped folder contains all the gerber files for this board. When ordering ci
 -   Dimensions: 82.8 mm x 78.5 mm
 
 *(HASL is fine, but more difficult for soldering fine-pitch parts like the CPU and FFC connector)*
-
-**NOTE: At the time of writing, v1.3 is untested. I will be ordering boards to verify function myself. There are only minor differences between v1.2 and v1.3, and all of the changes are for convenience in assembly and board measurements, so I do not expect there to be any issues. See changelog below for more information.**
 
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
@@ -54,20 +50,21 @@ The majority of the crucial power supply circuitry is on the PWR board, but the 
 
 For this build, as mentioned, I'm using the GBC Q5 XL IPS Backlight with OSD kit. It comes with a separate circuit board to properly drive the IPS screen (which I’m henceforth calling the “Q5 board”). In order to determine which pins were necessary for the Q5 board, I looked at the cable connected to the board and noted which traces actually go somewhere. The pins in red are unused, the ones in blue are used. The pin names are from the GBC schematic. Some of the unused pins are used for other functions on the connector to connect to the IPS board.
 
-![image](https://user-images.githubusercontent.com/97127539/175816590-79a22d11-6112-4800-8ace-188f5491b4db.png)
+![image](https://user-images.githubusercontent.com/97127539/196016168-a3d0321a-0d49-4150-9fe4-bc5f5dac4a82.png)
 
 -	Pin 1 and 2 are connected to the output of the power switch. This is sent to the IPS board, which uses it for battery level detection to control the brightness of the power LED, and has a pad for connection to the OSD kit (after a voltage divider). As the kit is for the GBC, cutting the battery voltage in half simulates 2x AA batteries like the GBC uses.
--	Pins 33 to 35 are used for GND. This just reduces the current through one individual pin on the FFC connector. Probably not necessary, but who knows. Maybe you'd want to put bluetooth or Wi-Fi or a media server on the front display board, I'm not your dad.
+-	Pins 33 and 34 are used for GND. This just reduces the current through one individual pin on the FFC connector. Probably not necessary, but who knows. Maybe you'd want to put bluetooth or Wi-Fi or a media server on the front display board, I'm not your dad.
 -	Pins 38 and 39 are similarly doubled up for the 5 V supply. I wanted to keep some empty space around these pins to reduce the likelihood of shorting something to the power rail when soldering the FCC connector on, specifically the buttons (which are referenced to the 3.3 V supply in the CPU).
 -	Pins 41 to 48 are used for the face buttons.
 -	Pins 49 and 50 are for the speaker.
 -	TEST1 is used for GND on this cable, but I kept the ground connection to just a few pins to reduce the chance for ground loops between the CPU and IPS boards. But on the IPS board connector to the Q5 board, this TEST1 pin is connected to GND.
--	The CLS pin isn’t used by this kit, but is by another kit I was considering using. I just forgot to remove the connection.
+-   Pin 4 connects to a test pad called PUSH. This pad connects to the rocker switch on the IPS board through the FFC, specifically the push-in function of the rocker switch. You can use this for all sorts of shenanigans if you want to try being clever with it.
+-	The CLS and LP pins aren’t used by this kit, but is by another kit that is potentially usable.
 
 ## Audio Amplifier
 The new audio driver on the CPU board is powered by the LM4853. This TI chip is perfectly suited for the Game Boy - it has stereo inputs and headphone outputs, and mono speaker output. Makes it quite easy to implement without extra circuitry shenanigans.
 
-![image](https://user-images.githubusercontent.com/97127539/179894089-6e030cc1-7275-4b9e-9c6c-87692c4713c4.png)
+![image](https://user-images.githubusercontent.com/97127539/196014076-dc2daf51-1e44-411c-b78f-dc869343b168.png)
 
 -	The four outputs on the right are for the DMGC-HDP board. (This board has the DC blocking capacitors needed for the headphones)
 -	The headphone detect pin (HP_SWITCH) is connected to GND when the headphone jack is empty, and is pulled up to 5 V via R36 when headphones are inserted. This switches the output on the audio amplifier between the speakers and headphones. C51 is for debouncing the headphone detection.
@@ -77,16 +74,20 @@ The new audio driver on the CPU board is powered by the LM4853. This TI chip is 
     - The audio gain has quite a large effect on the power draw of the system when using the speaker. I did not do any tests with an audio gain greater than ~0.6. A sufficiently larger gain than this will drain batteries faster if the volume is turned up.
 -	The shutdown pin should be tied to GND to allow the amp to work. I made two different revisions that tied this to 5 V instead. Oops. (The output on the headphones will sound really quiet and the speaker won't work if the chip is shutdown)
 -	The speaker output *shouldn't* need a DC blocking capacitor, as the LM4853 outputs to the speaker as a bridge tied load (BTL). However, I found that if a DC blocking capacitor is not included, a strange issue is possible in specific situations. There’s a very brief moment when plugging the headphones in where the right output channel is shorted to ground (ring and sleeve are connected inside the jack). When this happens, the right output DC blocking cap is connected to GND, and causes a large surge of current from the power supply to charge it up. In my testing, this sometimes would cause a brownout, causing the power supply to shut off. So I have included a spot for one of these caps in series with the speaker on the IPS board.
--	If you cut the traces (shown below) between the HP-R pads and the HP-L/SPK- pads (below the via), and solder a wire from LOUT to HP-L and a wire from ROUT to HP-R (left-most), this will connect the output of the potentiometer directly to the headphone outputs without disabling the speaker. This is known as the “pro-sound” mod. I won’t use it, but maybe you think it sounds better this way.
-
-![image](https://user-images.githubusercontent.com/97127539/179895601-0d61ca63-916e-4ad9-ba16-519a22bcc837.png)
+-	Added in version 2.0, opposite of the regular headphone outputs, are another set of audio outputs that are completely optional. These are denoted as "pre-pot audio," and include a left, right, and ground connection. The left and right connect directly to the VR1-S01 and VR1-S02 nets, which allows you to grab the audio unfiltered, unamplified, right from the GBC CPU (through a protection resistor/capacitor combo). This is colloquailly known as the "pro-sound" mod, and is typically used in conjunction with a *second* audio jack. Audiophiles like to use this raw output with their audio equipment. You could use this jack for headphones if you want, but it will always be max volume and it won't disable output from the speaker (though, you can turn the volume off if you wanted - hence, "pre-pot"). This should make the system compatible with any pro-sound headphone boards, <a href="https://www.retromodding.com/products/gameboy-pcb-mount-pro-sound-v3">like this one.</a>
 
 ## CPU Reset
 The last major change to the CPU board is the reset IC. I’ve replaced the original PST9135N with a TPS3840DL35. These chips pull the /RESET pin on the CPU low when the voltage supply drops below 3.5 V (/RESET set to low turns off the CPU). The TPS3840DL35 does the same thing. The reason this chip is included is to hold the CPU off while powering down so no random instructions are made while the game is turning off.
 
 R3 and C17 introduces a time delay on the /RESET pin during start-up, to allow the rest of the power supplies to stabilize before letting the CPU operate. This is called a "power-on reset" circuit, and I used values that the original GBC schematic used. (The DMG, GBC, and GBA all use the same odd 18 ms time constant!)
 
-![image](https://user-images.githubusercontent.com/97127539/179895977-f3fe5390-cec4-48c5-ab2a-16f82795af4d.png)
+![image](https://user-images.githubusercontent.com/97127539/196014140-c814788d-86aa-4e9f-ad44-4304cce65992.png)
+
+### Adding a Reset Button
+
+Version 2.0 introduces a test pad labelled "RST" that connects directly to the /RESET pin. If this pin is pulled to GND, when it's released it the system will reset back to the boot screen. If you wire this pad to a button that connects the pad to GND when pressed, you basically have added a reset button to your DMGC. 
+
+There is also a pad near the FFC connector that was added labelled "PUSH" that connects to the rocker switch on the DMGC-IPS-01 board (version 2.0 and later). This pad becomes connected to GND when the rocker switch is pushed in (as long as you remove R10 on the DMGC-IPS-01 board). In a normal configuration, pushing in on the rocker switch will control the button LEDs, but if you are not using these LEDs, then adding a wire from the PUSH to RST pads will turn the rocker switch into a reset button when it's pressed in (rocking up and down retains normal function). 
 
 ## Bill of Materials
 
