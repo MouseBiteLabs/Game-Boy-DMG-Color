@@ -55,6 +55,8 @@ This takes place where the contrast wheel used to be. On the Q5 board, there are
 
 Rocking up on the dial will toggle the brightness setting, rocking it down will toggle the color palette setting. Rocking up and holding it will toggle the battery level display on the screen, and rocking it down and holding it will toggle the pixel grid. Pushing in on the switch grounds the ATTINY85's PB3 pin (which is pulled up externally to 3.3V), if installed. Using the code I provide above, pushing in will advance to the next color of the button LEDs, and holding it while pressing left or right on the D-pad will change the brightness of the LEDs.
 
+If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then make sure to remove R10.
+
 Bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, which will prevent the LEDs from turning on at all.
 
 ## Q5 Board Pads
