@@ -1,3 +1,7 @@
+// ********************************************************************
+// *DISCONNECT THE CPU AND Q5 KIT RIBBON CABLES BEFORE PROGRAMMING!!!!*
+// ********************************************************************
+
 #include <Adafruit_NeoPixel.h>
 #include <EEPROM.h>
 
