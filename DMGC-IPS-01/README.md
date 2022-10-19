@@ -75,7 +75,7 @@ There are nine color settings - red, orange, yellow, green, cyan, blue, purple, 
 
 Code for the ATTINY85 is included here, however because I wrote this months ago (and forgot to comment it sufficiently...) I have forgotten how some of the code actually works. There's certainly room for improvement (and some really dumb inclusions). But there *is* a nice startup effect to match the Game Boy Color boot sequence that a friend (jokingly) suggested I include. *Are you happy, Mike?*
 
-*Note: I used Arduino IDE 1.8.15 to program the ATTINY85. I don't know if this makes a difference, but at least one other person was having issues on 2.0 and fixed it by downgrading to 1.8.*
+*NOTE: If you are programming the ATTINY after it is already soldered to the IPS board, be sure to disconnect the ribbon cable going to the CPU board and the ribbon cable going to the Q5 kit.*
 
 If you hold the navigation switch in as you turn on the console, the LEDs will be disabled until power is cycled. (This is probably more for my benefit as I used it while testing very discharged batteries to skip the start-up LED sequence)
 
