@@ -31,7 +31,7 @@ The master BOM with every electronic component required for the four circuit boa
 The following is the high-level BOM for my specific build pictured above. Note that parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications, or end up being incompatible. 
 
 - Original Game Boy Color console
-  -	U1 - CGB CPU (I used version B, I expect any revision except for E, which has a different pinout, will work)
+  -	U1 - CGB CPU (all revisions *except* REV E)
   - U2 - LH52256CVTXIZ
   - X1 – 8.388 MHz crystal oscillator
   - EM10 - <a href="https://www.mouser.com/ProductDetail/Wurth-Elektronik/744235601?qs=BXmE%252BJ0Y7xYO4MPd53j2NQ%3D%3D">A replacement can be purchased here</a>
