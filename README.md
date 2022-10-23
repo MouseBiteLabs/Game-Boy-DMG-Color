@@ -1,7 +1,5 @@
 # Game Boy DMG Color
 
-*Note: Version 2.0 will be coming soon - the only added feature is optional tactile switch pads for the DMGC-IPS-01 board. Everything else is essentially the same; there is no functional improvement in v2.0, but I will also be updating the license to allow for commercialization. If you want the tacticle switches, but have v1.3, the boards will all be interchangeable, so you can swap the new board in.*
-
 ![system](https://user-images.githubusercontent.com/97127539/185296993-238dad78-1bf8-42d5-ae10-f1e0691ec1cc.png)
 
 This is my design for an original Game Boy (model name DMG) with native Game Boy Color support, and a handful of improved features! This is an original creation - newly designed PCBs, with only some necessary components harvested from an original Game Boy and Game Boy Color (no hardware emulation – this project uses the original CPU). Here are the project goals:
@@ -18,13 +16,13 @@ The code name for this project is DMGC. This console uses four PCBs, just as the
 
 **Before I go any further, please read this VERY important disclaimer, if you are thinking about making this yourself.**
 
-I made this project first and foremost **for my own purposes**. All of the features I have included are things I **personally** wanted. I have tried my hardest to make the project modular, if others would like to improve or change things easily, and I have also tried very hard to make the design somewhat less prone to potential errors during assembly (such as spacing out power pins on the FFC connectors). But in the end, every decision I made was for what I wanted the final product to be, with my skill level in mind.
+I made this project first and foremost **for my own purposes**. Nearly all of the features I have included are things I **personally** wanted. I have tried my hardest to make the project modular, if others would like to improve or change things easily, and I have also tried very hard to make the design somewhat less prone to potential errors during assembly (such as spacing out power pins on the FFC connectors). But in the end, every decision I made was for what I wanted the final product to be, with my skill level in mind.
 
-This project is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license. Schematics, gerbers, and the BOM are provided in the various folders. If you choose to build this project yourself, be warned - this is a considerably advanced, and expensive build. **You are 100% liable for any damage done to your property or yourself. I am not responsible for any damage or loss of property incurred while attempting this project, or after completion of the project - you alone accept all risk.** While I am confident in this design, I cannot claim full compatibility with every system configuration. And there may be latent issues that have yet to crop up. I will update this page if I encounter any, and if you see anything I may have missed, or some dubious design choice, feel free to ask questions or comment as such. Corrections are welcome. However, I **will not** obligate myself to providing tech support. You accept all risks and costs associated to this build if you choose to attempt it.
+Schematics, gerbers, and the BOM are provided in the various folders. If you choose to build this project yourself, be warned - this is a considerably advanced, and expensive build. You must be comfortable with the fact that you may lose or damage expensive components. **You are 100% liable for any damage done to your property or yourself. I am not responsible for any damage or loss of property incurred while attempting this project, or after completion of the project - you alone accept all risk.** While I am confident in this design, I cannot claim full compatibility with every system configuration. And there may be latent issues that have yet to crop up. I will update this repo if I encounter any, and if you see anything I may have missed, or some dubious design choice, feel free to ask questions or comment as such. Corrections are welcome. However, I **will not** obligate myself to providing tech support. You accept all risks and costs associated to this build if you choose to attempt it.
 
 **DO NOT attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering!!**
 
-(If you attempt the build, start with DMGC-PWR-01. This is the toughest board to assemble and it requires no donor components.)
+(If you attempt the build, start with attempting to assemble DMGC-PWR-01. This is the toughest board to assemble, and it requires no donor components.)
 
 ## Bill of Materials
 
@@ -36,25 +34,25 @@ The following is the high-level BOM for my specific build pictured above. Note t
   -	U1 - CGB CPU (I used version B, I expect any revision except for E, which has a different pinout, will work)
   - U2 - LH52256CVTXIZ
   - X1 – 8.388 MHz crystal oscillator
-  - EM10
+  - EM10 - <a href="https://www.mouser.com/ProductDetail/Wurth-Elektronik/744235601?qs=BXmE%252BJ0Y7xYO4MPd53j2NQ%3D%3D">A replacement can be purchased here</a>
 - Original Game Boy DMG console
   -	VR1 – Volume dial
   -	SW1 – Power switch
   -	P1 – Cartridge connector
   -	EXT port
   -	DC jack
-  -	Headphone board components (importantly the headphone jack)
+  -	Headphone jack
 -	<a href="https://retrogamerepairshop.com/products/game-boy-color-q5-ips-backlight-with-osd?variant=37646279213228">GBC Q5 XL IPS Backlight with OSD</a>
 -	<a href="https://retrogamerepairshop.com/collections/dmg-lenses/products/funnyplaying-dmg-q5-ips-lens?variant=39626455187628">FunnyPlaying DMG Q5 IPS Lens (black)</a>
 -	Custom designed 3D-printed IPS bracket (file located within the DMGC-IPS-01 folder)
 -	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
-Note that the IPS kit I have listed is the *only* IPS kit that is compatible with this build at the time of writing. It includes an image centering feature, so you don't need to fiddle with centering it manually in the shell. Other kits likely would not center nicely in the DMG shell!
+Note that the IPS kit I have listed is the *easiest* IPS kit to use that is compatible with this build. It includes an image centering feature, so you don't need to fiddle with centering it manually in the shell. Other kits likely would not center nicely in the DMG shell! <a href="https://retrogamerepairshop.com/collections/gbc-displays/products/game-boy-color-2-6-ips-high-brightness-drop-in-backlight-lcd-kit?variant=41398632251564">This kit works electrically, but requires you to center the image yourself.</a> If you end up making some sort of 3D-printed bracket to support this screen, feel free to share it here.
 
 ## Assembly
 
-Here are some pictures of the assembly process. Detailed images of the circuit boards alone are shown in their respective folders.
+Here are some pictures of the assembly process. Detailed images of the circuit boards alone are shown in their respective folders. These pictures are of a previous revision, v1.2, but the process remains the same. You may notice some minor cosmetic differences in these pictures from the current revision boards.
 
 First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires that wrap around the screw post on the side of the shell. *Note: Before fully assembling the build, I tested the 5 V output of the PWR board while it was disconnected from the CPU board. You want to make sure the output of the 5 V wire from the PWR board is outputting 5 V! If it is higher, you can easily damage electronics on the CPU board.*
 
@@ -140,14 +138,13 @@ https://user-images.githubusercontent.com/97127539/180215280-5e533449-5116-4848-
 ## Possible Additions/Changes
 Want to improve this project? Maybe try one of these things (because I probably won’t):
 - This console uses 4x AAs instead of a single rechargeable battery in order to maintain the feel and weight of the original DMG model, but an obvious change to the build is to utilize a LiPo battery with proper battery management. The DC jack could be repurposed to charge the battery instead. With the advent of affordable rechargeable AAs, the appeal of the AC adapter is diminished, so this would be a good repurposing. However, the maximum output current of most DMG AC adapters is rated for ~200mA at ~6V, so charging would be considerably slower than, say, fast USB-C charging.
-- A popular option for modern Game Boy mods is to use a laminated screen. This basically seals the front lens to the screen to prevent any dust from entering between the screen and lens, and makes the image look hella nice. There aren't any off-the-shelf laminated screen kits that would work with this build, but one could potentially do a custom lamination by hand. Unfortunately I think this would involve sealing the screen and lens to the front shell permanently - don't mess up!
 - Restoring the IR functionality of the GBC could also be done, as there is ample space for it on the circuit board and shell - I just do not trust myself with forming plastic to look nice, and it wasn't at all an important part of the build for me.
 - Finding aftermarket equivalents for all the different required DMG parts would be ideal, instead of using a (hopefully broken) DMG for a donor console. For my personal build, I used original DMG components because I had a damaged console lying around, but you can easily find DMG-style volume wheels and cartridge connectors online. The tricky parts are as follows:
   - A GBC EXT port can be used in place of the DMG one (but would look kind of weird in the DMG EXT hole in the shell).
   - There are a few power switches I've ordered to try out in place of the DMG one, but I haven't gotten around to testing them yet. There's no one fully drop-in replacement that I've found, though, so it would require circuit modifications.
   - I haven't been able to locate a headphone jack exactly the same as the DMG one, but the circuit could be adapted to accept a different style.
   - The DC jack could be tricky. I haven't looked very hard for any kind of replacement for this.
-- Any other of the various popular GBC mods could be incorporated if desired - line out audio, bluetooth, overclocking, etc. With the ATTINY on the IPS board, one could incorporate button combinations to interface with these mods without the need of any additional buttons or (*shudder*) touch controls.
+- Any other of the various popular GBC mods could be incorporated if desired - bluetooth, overclocking, etc. With the ATTINY on the IPS board, one could incorporate button combinations to interface with these mods without the need of any additional buttons or (*shudder*) touch controls.
 - I thought about adding LEDs to the *back* of the front PCB, so that light would emit out the edges of the console with a translucent or transparent shell, but I never got around to trying it out.
 
 ## Potential Issues/Annoyances
@@ -155,15 +152,14 @@ Want to improve this project? Maybe try one of these things (because I probably 
 -	The original DMG A/C adapter that plugs into the DC jack cannot support play with maximum settings (backlit buttons, maximum brightness, maximum speaker volume, flash cart). If you start up the Game Boy with less than maximum settings, then during gameplay increase the load on the power supply such as by increasing the screen brightness or maxing out the volume on the speakers, the console may shut off. If you're powering the console through the DC jack, I suggest using a USB adapter cable into a USB 3.0 port (or some style of USB wall charger)
 
 ## Acknowledgements
--	The board outlines and many of the footprints for the DMG components are adapted from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a>, so very special thanks to Rolf, bit9, and nitro2k01 for saving me hours of work!
+-	The board outlines and many of the footprints for the DMG components from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a> were used for reference on the original revision of the project, so very special thanks to Rolf, bit9, and nitro2k01!
 -	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
 -	Immense thanks to the users of the r/Gameboy and gbdev discord servers for technical resources, troubleshooting/feedback, and suggestions. Could not have done this without your support. Shout out to kevtris for design feedback and lidnariq for troubleshooting support!
--	Of course, huge thank you to everyone who has donated and supported me, and to those who have built their own DMGC! I love seeing pictures of builds, so feel free to share them with me on Twitter, <a href="https://discord.gg/Y5aDvCcpbX">discord</a>, or via email!
+-	Of course, huge thank you to everyone who has <a href="https://ko-fi.com/bucketmouse">donated and supported me</a>, and to those who have built their own DMGC! I love seeing pictures of builds, so feel free to share them with me on Twitter, <a href="https://discord.gg/Y5aDvCcpbX">discord</a>, or via email!
 
 ## License
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are able to copy and redistribute the material in any medium or format, as well as remix, transform, or build upon the material for any purpose (even commercial) - but you **must** give appropriate credit, provide a link to the license, and indicate if any changes were made.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br /><a href="https://gbdev.gg8.se/files/schematics/DMG-Rolf/">Rolf's DMG recreation</a> was used as a basis for this project, which is released under the Creative Commons Attribution-NonCommercial-ShareAlike license. Therefore, this work is similarly licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-
-This project is the culmination of over half a year of research, development, and testing. Please give me appropriate credit, provide a link to the license, and indicate if any changes were made to this project if you modify and share it. You may not use this work for commercial purposes. If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
+This project is the culmination of nearly a full year of research, development, and testing. I have made this project completely open-source, and have put hundreds, if not *thousands* of hours of work into it, so that many people can enjoy it. **Please** give me appropriate credit where credit is due.
 
 ©MouseBiteLabs 2022
