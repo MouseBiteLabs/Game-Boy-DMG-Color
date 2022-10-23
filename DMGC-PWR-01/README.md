@@ -1,8 +1,5 @@
 # DMGC-PWR-01
 
-## To-do:
-- Update license
-
 ![DMGC-PWR-01_2-0_black](https://user-images.githubusercontent.com/97127539/196013270-510567e9-d96e-467d-9880-b106b62498b9.png)
 ![DMGC-PWR-01_2-0_ASSEMBLED_black](https://user-images.githubusercontent.com/97127539/196013348-b0da11ba-1f93-4a57-be55-93847c8d9b15.png)
 
@@ -101,6 +98,9 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
+### v2.1 (PLANNED)
+- Move R12/R13 to front of the board
+
 ### v2.0
 - Release version
 
@@ -112,6 +112,6 @@ Here, I have provided links to components I used personally (or suitable replace
 -	<a href="https://data.energizer.com/pdfs/nickelmetalhydride_appman.pdf">Nickel Metal Hydride (NiMH) Handbook and Application Manual</a>
 
 ## License
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are able to copy and redistribute the material in any medium or format, as well as remix, transform, or build upon the material for any purpose (even commercial) - but you **must** give appropriate credit, provide a link to the license, and indicate if any changes were made.
 
 ©MouseBiteLabs 2022
