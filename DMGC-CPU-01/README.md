@@ -3,7 +3,7 @@
 ![DMGC-CPU-01_2-0_scan](https://user-images.githubusercontent.com/97127539/197366822-2d2c5070-24f8-466a-82d7-326c69fd7b25.jpg)
 ![DMGC-CPU-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197366878-ae154a5e-c2df-48f9-88fb-2e1cacaa1770.jpg)
 
-The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, crystal oscillator, and EM10 (which could likely be replaced or bypassed with little consequence). The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
+The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, and crystal oscillator. EM10 may be trasnferred as well, but a good enough replacement is included in the BOM if you need a new part. The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
 
 *Note: I have not tested the "pro-sound" output, but do not anticiapte any issues. I am also unable to confirm link port operation on this version, but it remains largely unchanged compared to previous revisions and should not pose an issue.*
 
@@ -83,6 +83,11 @@ R3 and C17 introduces a time delay on the /RESET pin during start-up, to allow t
 Version 2.0 introduces a test pad labelled "RST" that connects directly to the /RESET pin. If this pin is pulled to GND, when it's released it the system will reset back to the boot screen. If you wire this pad to a button that connects the pad to GND when pressed, you basically have added a reset button to your DMGC. 
 
 There is also a pad near the FFC connector that was added labelled "PUSH" that connects to the rocker switch on the DMGC-IPS-01 board (version 2.0 and later). This pad becomes connected to GND when the rocker switch is pushed in (as long as you remove R10 on the DMGC-IPS-01 board). In a normal configuration, pushing in on the rocker switch will control the button LEDs, but if you are not using these LEDs, then adding a wire from the PUSH to RST pads will turn the rocker switch into a reset button when it's pressed in (rocking up and down retains normal function). 
+
+## Errors
+
+The silkscreen text indicating the pins of the link port is incorrect. SOUT and GND should be flipped. The actual pins are connected correctly, so this is only a cosmetic issue. It will be fixed on the next update.
+![image](https://user-images.githubusercontent.com/97127539/197369269-57a89500-8915-40cf-90f6-10fd6513bb74.png)
 
 ## Bill of Materials
 
