@@ -1,26 +1,21 @@
 # DMGC-CPU-01
 
-## To-do:
-- Update with v2.0 pictures
-- Upload v2.0 source files
-- Add note about milling layer
-- Update license information
-
-![image](https://user-images.githubusercontent.com/97127539/180128233-93ae4e87-9549-4b95-807b-64d1d931315c.png)
-![image](https://user-images.githubusercontent.com/97127539/180910725-e90a4a0b-95a7-44c1-bb9e-69372823e6a6.png)
-
-*This specific board is v1.2, which only has minor differences from the updated v1.3*
+![DMGC-CPU-01_2-0_scan](https://user-images.githubusercontent.com/97127539/197366822-2d2c5070-24f8-466a-82d7-326c69fd7b25.jpg)
+![DMGC-CPU-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197366878-ae154a5e-c2df-48f9-88fb-2e1cacaa1770.jpg)
 
 The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, crystal oscillator, and EM10 (which could likely be replaced or bypassed with little consequence). The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
 
+*Note: I have not tested the "pro-sound" output, but do not anticiapte any issues. I am also unable to confirm link port operation on this version, but it remains largely unchanged compared to previous revisions and should not pose an issue.*
+
 ## Board Characteristics
-The zipped folder contains all the gerber files for this board. When ordering circuit boards, some board preview tools will not work (confirmed with JLCPCB and PCBway). This should not be an issue, but you might have to manually enter the dimensions of the board yourself.
+The zipped folder contains all the gerber files for this board. 
+
 -	Layers: 2
 -	Thickness: 1.2 mm
--	Surface Finish: ENIG 
--   Dimensions: 82.8 mm x 78.5 mm
+-	Surface Finish: ENIG or HASL
+-   **NOTE: When ordering PCBs, add this note to the order: "The file milling.gbr contains outlines for plated slots. Please add plated slots on the PCB according to this layer."**
 
-*(HASL is fine, but more difficult for soldering fine-pitch parts like the CPU and FFC connector)*
+*HASL will work, but will potentially be more difficult for soldering fine-pitch parts like the CPU and FFC connector.*
 
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
@@ -137,6 +132,13 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
+### v2.1 (PLANNED)
+
+- Fix silkscreen text error on link port
+- Add through-holes for potential crystal oscillator replacement
+- Add test pad that connects to the rock-down function of the navigation dial on the IPS board
+- Move version number text above cart connector footprint
+
 ### v2.0
 
 - Changed holes to slots where applicable
@@ -163,6 +165,6 @@ Here, I have provided links to components I used personally (or suitable replace
 -	<a href="https://www.youtube.com/watch?v=IrB-FPcv1Dc&ab_channel=Afrotechmods">Reverse polarity protection explanation</a>
 
 ## License
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are able to copy and redistribute the material in any medium or format, as well as remix, transform, or build upon the material for any purpose (even commercial) - but you **must** give appropriate credit, provide a link to the license, and indicate if any changes were made.
 
 ©MouseBiteLabs 2022
