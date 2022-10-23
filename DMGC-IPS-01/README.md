@@ -1,15 +1,7 @@
 # DMGC-IPS-01
 
-## To-do:
-- Update with v2.0 pictures
-- Upload v2.0 source files
-- Add picture of tactile switches
-- Update license information
-
-![image](https://user-images.githubusercontent.com/97127539/180129119-8bb84143-6f4e-4875-b3c3-675d98bbcf43.png)
-![image](https://user-images.githubusercontent.com/97127539/180912167-1ed4864c-d77d-4482-bf83-c783f309239a.png)
-
-*This specific board is v1.2, which only has minor differences from the updated v1.3 (some minor bodge fixes)*
+![DMGC-IPS-01_2-0_scan](https://user-images.githubusercontent.com/97127539/197367471-2bdfcaa6-c19a-4c33-977c-d3e0061d932d.jpg)
+![DMGC-IPS-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197367472-31a2fdb9-6a8e-41a7-8fdc-138f91f944bb.jpg)
 
 The IPS board is in the front of the DMG shell. This holds the IPS screen kit (and has pads for interfacing with it), has the dimmable power LED, button inputs along with pads for optional LEDs, a navigation switch on the side for changing settings on the IPS screen and the backlit buttons, and the speaker.
 
@@ -20,10 +12,13 @@ The zipped folder contains all the gerber files for this board.
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG 
 
-*ENIG is required for reliable button press detection, if tactile buttons are not used.*
+*ENIG is required for reliable button press detection.*
 
 ## Optional Tactile Buttons
 Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. I did not however bother to add switches for start and select, due to the mismatched geometry (and you don't press them *that* often). If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
+
+![image](https://user-images.githubusercontent.com/97127539/197367604-69478124-7a7e-4d84-897d-eac90462ccb7.png)
+In this image, tactile switches are on the left, and pads for simple membranes are on the right. Either method for button presses works perfectly fine.
 
 ## FFC Connectors
 There are two FFC connectors on the board - one to take the input from the CPU board, the other is for the Q5 board to connect to. The former is detailed in the CPU board section, and the latter simply omits a few pins to connect to the Q5 board, such as the speaker and button inputs. Notably, the connector going to the CPU board must be reversed due to the FFC cable connecting it to the CPU board.
@@ -31,7 +26,7 @@ There are two FFC connectors on the board - one to take the input from the CPU b
 ![image](https://user-images.githubusercontent.com/97127539/196016635-e2304038-f734-4f08-a687-dbfb725eb1d6.png)
 
 ## Speaker
-I detail the operation of the audio amplifier on the CPU board in that corresponding README. I mention that a DC blocking capacitor needs to be included in series with the speaker output. That’s what C3 is for, a 100 uF capacitor. There are two capacitors called out as C3 – a space for an aluminum electrolytic capacitor, and one for an electrolytic tantalum. If you install the through-hole electrolytic, bend it down into the notch on the board. I have a ton of aluminums and they’re cheaper, so that’s the one I used. The speaker itself is an aftermarket FunnyPlaying model.
+I detail the operation of the audio amplifier on the CPU board in that corresponding README. I mention that a DC blocking capacitor needs to be included in series with the speaker output. That’s what C3 is for, a 100 uF capacitor. There are two capacitors called out as C3 – a space for an aluminum electrolytic capacitor, and one for an electrolytic tantalum (or other surface mount varieties - do you fancy yourself a film cap?). If you install the through-hole electrolytic, bend it down into the notch on the board. I have a ton of aluminums and they’re cheaper, so that’s the one I used. The speaker itself is an aftermarket FunnyPlaying model.
 
 ![image](https://user-images.githubusercontent.com/97127539/185511435-2cb1f5ca-924b-4827-beea-9865a0716af6.png)
 
@@ -65,7 +60,7 @@ There are six test points at the top of the IPS board for short wires to connect
 ![image](https://user-images.githubusercontent.com/97127539/184361799-70131a36-ccb9-49c3-a647-12fdbeec042c.png)
 
 ## Button LEDs and ATTINY85
-One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. You can program the ATTINY in any number of ways, but I added pads for <a href="https://www.mouser.com/ProductDetail/200-TSM10601TSV">kinked header pins</a> to hopefully make it a bit easier.
+One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. You can program the ATTINY in any number of ways, but I added pads for <a href="https://www.mouser.com/ProductDetail/200-TSM10601TSH">kinked header pins</a> to hopefully make it a bit easier.
 
 ![image](https://user-images.githubusercontent.com/97127539/196017477-729896fd-b926-4b42-8206-e60e46865483.png)
 
@@ -123,6 +118,13 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
+### v2.1 (PLANNED)
+
+- Fix cosmetic error in A button tstop layer
+- Explore options for start/select tactile switches
+- Add warning about programming on silkscreen text
+- Add trace that connects to a test pad on the CPU board for the rock-down function of the navigation dial
+
 ### v2.0
 
 - Made board/part measurements more accurate
@@ -148,6 +150,6 @@ Here, I have provided links to components I used personally (or suitable replace
 -	<a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">Instructables post for programming an ATTINY85 with an Arduino</a>
 
 ## License
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are able to copy and redistribute the material in any medium or format, as well as remix, transform, or build upon the material for any purpose (even commercial) - but you **must** give appropriate credit, provide a link to the license, and indicate if any changes were made.
 
 ©MouseBiteLabs 2022
