@@ -11,6 +11,10 @@ The zipped folder contains all the gerber files for this board.
 -	Surface Finish: HASL
 - **NOTE: When ordering PCBs, add this note to the order: "The file milling.gbr contains outlines for plated slots. Please add plated slots on the PCB according to this layer."**
 
+You can buy the board from PCBWay using this link (disclosure: I receive 10% credit towards future PCB orders):
+
+<a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_HDP_01_bdacd78d.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+
 ## Circuit Overview
 
 ![image](https://user-images.githubusercontent.com/97127539/197369045-dd0a85d2-1ccb-44ef-8f6c-d4758343486b.png)
