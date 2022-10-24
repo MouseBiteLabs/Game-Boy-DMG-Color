@@ -14,6 +14,10 @@ The zipped folder contains all the gerber files for this board.
 
 *ENIG is required for reliable button press detection.*
 
+You can buy the board from PCBWay using this link (disclosure: I receive 10% credit towards future PCB orders):
+
+<a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_IPS_01_82a454c9.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+
 ## Optional Tactile Buttons
 Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. I did not however bother to add switches for start and select, due to the mismatched geometry (and you don't press them *that* often). If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
 
