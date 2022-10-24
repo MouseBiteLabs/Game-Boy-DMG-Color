@@ -11,7 +11,9 @@ The zipped folder contains all the gerber files for this board.
 -	Surface Finish: HASL
 - **NOTE: When ordering PCBs, add this note to the order: "The file milling.gbr contains outlines for plated slots. Please add plated slots on the PCB according to this layer."**
 
-You can buy the board from PCBWay using this link (disclosure: I receive 10% credit towards future PCB orders):
+<a href="https://www.etsy.com/listing/1331671237/game-boy-dmgc-hdp-board-headphone-board">**I sell this board on Etsy, so you don't have to buy multiples from board fabricators.**</a>
+
+You can atlernatively use the zipped folder at any board fabricator you like. You may also buy the board from PCBWay using this link (disclosure: I receive 10% of the  sale value to go towards future PCB orders):
 
 <a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_HDP_01_bdacd78d.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
