@@ -17,6 +17,10 @@ The zipped folder contains all the gerber files for this board.
 
 *HASL will work, but will potentially be more difficult for soldering fine-pitch parts like the CPU and FFC connector.*
 
+You can buy the boards from PCBWay using this link (disclosure: I receive 10% credit towards future PCB orders)
+
+<a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_CPU_01_2f5c743d.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a> 
+
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
 
