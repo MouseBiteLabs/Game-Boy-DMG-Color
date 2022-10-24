@@ -24,7 +24,7 @@ Schematics, gerbers, and the BOM are provided in the various folders. If you cho
 
 (If you attempt the build, start with attempting to assemble DMGC-PWR-01. This is the toughest board to assemble, and it requires no donor components.)
 
-## Bill of Materials
+## Bill of Materials (BOM)
 
 The master BOM with every electronic component required for the four circuit boards are provided in this root folder in Excel format. Furthermore, each folder for each board will contain their section of the BOM near the bottom of each README that contain all of the electronic components needed for that specific circuit board. Note that some parts may be out of stock at the links provided, but many can be found at alternate other retailers online, or have a proper substitute. <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=3454c930ba">Here is a saved cart from Mouser that contains all the parts in the BOM Excel, including some duplicates.</a> Double check to see if any parts are missing, and consider ordering multiples of some parts.
 
@@ -49,6 +49,14 @@ The following is the high-level BOM for my specific build pictured above. Note t
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
 Note that the IPS kit I have listed is the *easiest* IPS kit to use that is compatible with this build. It includes an image centering feature, so you don't need to fiddle with centering it manually in the shell. Other kits likely would not center nicely in the DMG shell! <a href="https://retrogamerepairshop.com/collections/gbc-displays/products/game-boy-color-2-6-ips-high-brightness-drop-in-backlight-lcd-kit?variant=41398632251564">This kit works electrically, but requires you to center the image yourself.</a> If you end up making some sort of 3D-printed bracket to support this screen, feel free to share it here.
+
+### Circuit Boards
+
+For the circuit boards themselves, I have provided the zipped Gerbers and ordering details in each of the board folders above, <a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F">as well as shared projects on PCBWay.</a> For full disclosure, if you buy the PCBs from PCBWay, I will receive 10% of the total sale towards buying more boards from PCBWay. You can alternatively use these Gerbers at other PCB fabricators if you would like. 
+
+<a href="https://www.etsy.com/shop/MouseBiteLabs">I also sell them on my Etsy store, so you don't have to buy multiples!</a>
+
+<a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 ## Assembly
 
