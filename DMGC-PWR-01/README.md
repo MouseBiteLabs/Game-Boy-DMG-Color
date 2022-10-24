@@ -15,6 +15,10 @@ The zipped folder contains all the gerber files for this board.
 
 *HASL is acceptable, but might introduce a bit of difficulty soldering the QFN chip owing to the possibly uneven surface compared to an ENIG finish.*
 
+You can buy the board from PCBWay using this link (disclosure: I receive 10% credit towards future PCB orders):
+
+<a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_PWR_01_f8f2e84a.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+
 ## Schematic and CPU Board Interfacing
 
 There are five wires that connect to the CPU board power supply circuitry. Pin 1 is the GND reference and pin 2 is the 5 V output from the PWR board. Pin 4, VCC, is the input voltage, which is always powered from the CPU board. SW is the output of half the power switch on the CPU board - connected to VCC when on, floating when off (ultimately tied to GND through R16 on the PWR board). On the CPU board, pin 3 is connected to the DC jack output, but on this board I connect this to VCC as well, so that either batteries or the DC jack will power this board. A different revision might utilize the DC jack for something else, such as charging a LiPo battery, which is why I left these pins separate.
