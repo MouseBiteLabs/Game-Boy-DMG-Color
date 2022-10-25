@@ -168,6 +168,27 @@ Want to improve this project? Maybe try one of these things (because I probably 
 -	When the button LEDs are on max brightness, using the NeoPixel LEDs specifically (especially on the white color setting), a ~1 kHz whine can be heard through the speakers or headphones. I attempted to remove this whine with different methods – adding filtering to the supplies, using separate supplies for the audio/LEDs, etc. –  this lowered the noise amplitude, but I wasn’t able to remove it completely. And obviously adding a filter on the audio output is a no-go since 1 kHz is smack dab in the middle of the audible range. Changing to different color settings can reduce the volume of the whine, red in particular seems to be quite low, and setting the LEDs at lower brightness levels (or just completely off) removes it. So just don’t play with the LEDs on really bright if it bugs you! I kept the color sweep during power-on enabled on every color setting - if you want to disable the LEDs for the entire play session, hold the navigation dial in when you turn it on (but at that point... why did you bother adding the LEDs in the first place?)
 -	The original DMG A/C adapter that plugs into the DC jack cannot support play with maximum settings (backlit buttons, maximum brightness, maximum speaker volume, flash cart). If you start up the Game Boy with less than maximum settings, then during gameplay increase the load on the power supply such as by increasing the screen brightness or maxing out the volume on the speakers, the console may shut off. If you're powering the console through the DC jack, I suggest using a USB adapter cable into a USB 3.0 port (or some style of USB wall charger)
 
+## Frequently Asked Questions
+
+I'll update this section as more people begin to build these.
+
+Q: How do I lower the brightness of the power LED? I can't see anymore.
+A: You can pick a different LED model with lower brightness, or you can simply increase the resistance of R1 on the IPS board. Higher resistance = lower brightness. I would try 10 kΩ first if 5.6 kΩ is too bright. (If you want to dim the low power level LED brightness, increase R2 resistance as well!)
+
+Q: Why does the audio sound like [not normal]? (Usually asked while testing during the middle of a build)
+A: The audio will sound terrible if you do not have your IPS kit installed. The speaker will also be muted if you do not install the headphone board. Also, if you have the NeoPixel LEDs on full brightness, you will hear an audible buzz on some color settings.
+
+Q: Sometimes the power switch is finnicky and the system won't power on consistently. Sometimes the IPS screen will turn on, but only the backlight, not the actual image. What gives?
+A: Clean your power switch (without batteries inserted or power applied) by dripping isopropyl alcohol inside and flipping it off and on a few times. This will hopefully clear up debris or oxidation. Opening up a DMG power switch isn't the funnest thing to do. I have found that if the IPS kits receive intermittent power while turning on, it will lock out their image processing until you power cycle. It's not damaging, just annoying.
+
+Q: When I have the front and back halves of the DMGC separate, everything powers on correctly. But when I screw the two halves together, it doesn't turn on. Why?
+A: Check to make sure the wires connecting the CPU and PWR boards do not have long stubs of wire sticking up out of the CPU board. The IPS board's navigation dial has metal housing that can short these wire stubs together if they are too long. Trim them short so they don't touch the metal shielding.
+
+Q: Sometimes when I'm using batteries and turn the power switch on, nothing happens.
+-AND/OR-
+Q: Sometimes when I play my DMGC, and I set it on the table too hard, the game resets. Why?
+A: Usually this is because you're using NiMH AA batteries, like eneloop pros. These batteries have *slightly* shallower positive tabs than regular alkaline AA batteries. This makes contact from the batteries to the tabs not as robust as regular AA batteries. Unfortunately this is a problem on *ALL* DMG consoles, not specifically the DMGC. This could be due to a poor connection on any one of the four batteries inside the bay. You can swap out battery contacts that stick out a bit farther that make better contact with the batteries, or you can try reseating or literally spinning the batteries in the battery bay to make better contact. (Or, you could always use regular AA batteries or an A/C adapter!)
+
 ## Acknowledgements
 -	The board outlines and many of the footprints for the DMG components from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a> were used for reference on the original revision of the project, so very special thanks to Rolf, bit9, and nitro2k01!
 -	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
