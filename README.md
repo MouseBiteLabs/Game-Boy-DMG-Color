@@ -7,6 +7,7 @@ This is my design for an original Game Boy (model name DMG) with native Game Boy
 -	A nice, large IPS screen – the GBC Q5 XL IPS Backlight with OSD kit – with brightness and color palette control via the "navigation switch" housed where the contrast wheel used to be. (I will refer to the PCB attached to the Q5 screen as the “Q5 board”)
 -	A modernized, efficient switch mode power supply that can run off 4x AA batteries or input from the DC jack, just like the original DMG. Testing shows that playing with NiMH AA batteries can yield more than 18 hours of gameplay at normal settings (AKA, the way I normally play it - maximum brightness and headphones). 
 -	Louder, warmer sound through a modern audio amplifier.
+-	The option for tactile switches for the face buttons - like the GBA SP.
 -	The option for backlit buttons, with multiple color modes and brightness control.
 -	No externally viewable case modifications, outside of trimming the DMG power switch cover for Game Boy Color game compatibility.
 
