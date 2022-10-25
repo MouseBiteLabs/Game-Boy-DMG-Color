@@ -199,6 +199,14 @@ A: Check to make sure the wires connecting the CPU and PWR boards do not have lo
 
 A: Usually this is because you're using NiMH AA batteries, like eneloop pros. These batteries have *slightly* shallower positive tabs than regular alkaline AA batteries. This makes contact from the batteries to the tabs not as robust as regular AA batteries. Unfortunately this is a problem on *ALL* DMG consoles, not specifically the DMGC. This could be due to a poor connection on any one of the four batteries inside the bay. You can swap out battery contacts that stick out a bit farther that make better contact with the batteries, or you can try reseating or literally spinning the batteries in the battery bay to make better contact. (Or, you could always use regular AA batteries or an A/C adapter!)
 
+**Q: Can I use this with a DMG CPU?**
+
+A: No, this is only for use with Game Boy Color CPUs. There are some other projects around that recreate the DMG, <a href="https://github.com/kamicane/DMG-01-B">like this one</a>.
+
+**Q: I really like this project, but I just wish it was in a smaller, more cramped shell, with way worse battery life. Can you help?**
+
+A: <a href="https://imgur.com/a/JgXPnYc">I'm working on it.</a>
+
 ## Acknowledgements
 -	The board outlines and many of the footprints for the DMG components from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a> were used for reference on the original revision of the project, so very special thanks to Rolf, bit9, and nitro2k01!
 -	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
