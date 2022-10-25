@@ -172,21 +172,31 @@ Want to improve this project? Maybe try one of these things (because I probably 
 
 I'll update this section as more people begin to build these.
 
-Q: How do I lower the brightness of the power LED? I can't see anymore.
+**Q: How do I lower the brightness of the power LED? I can't see anymore.**
+
 A: You can pick a different LED model with lower brightness, or you can simply increase the resistance of R1 on the IPS board. Higher resistance = lower brightness. I would try 10 kΩ first if 5.6 kΩ is too bright. (If you want to dim the low power level LED brightness, increase R2 resistance as well!)
 
-Q: Why does the audio sound like [not normal]? (Usually asked while testing during the middle of a build)
-A: The audio will sound terrible if you do not have your IPS kit installed. The speaker will also be muted if you do not install the headphone board. Also, if you have the NeoPixel LEDs on full brightness, you will hear an audible buzz on some color settings.
 
-Q: Sometimes the power switch is finnicky and the system won't power on consistently. Sometimes the IPS screen will turn on, but only the backlight, not the actual image. What gives?
+**Q: Why does the audio sound like [not normal]? (Usually asked while testing during the middle of a build)**
+
+A: The audio will sound terrible if you do not have your IPS kit connected. You can use the CPU board's FFC connnector for the IPS kit if you would like to test it without the IPS board in the middle. Furthermore, the speaker will be muted if you do not install the headphone board.
+
+
+**Q: Sometimes the power switch is finnicky and the system won't power on consistently. Sometimes the IPS screen will turn on, but only the backlight, not the actual image. What gives?**
+
 A: Clean your power switch (without batteries inserted or power applied) by dripping isopropyl alcohol inside and flipping it off and on a few times. This will hopefully clear up debris or oxidation. Opening up a DMG power switch isn't the funnest thing to do. I have found that if the IPS kits receive intermittent power while turning on, it will lock out their image processing until you power cycle. It's not damaging, just annoying.
 
-Q: When I have the front and back halves of the DMGC separate, everything powers on correctly. But when I screw the two halves together, it doesn't turn on. Why?
+**Q: When I have the front and back halves of the DMGC separate, everything powers on correctly. But when I screw the two halves together, it doesn't turn on. Why?**
+
 A: Check to make sure the wires connecting the CPU and PWR boards do not have long stubs of wire sticking up out of the CPU board. The IPS board's navigation dial has metal housing that can short these wire stubs together if they are too long. Trim them short so they don't touch the metal shielding.
 
-Q: Sometimes when I'm using batteries and turn the power switch on, nothing happens.
+
+**Q: Sometimes when I'm using batteries and turn the power switch on, nothing happens.**
+
 -AND/OR-
-Q: Sometimes when I play my DMGC, and I set it on the table too hard, the game resets. Why?
+
+**Q: Sometimes when I play my DMGC, and I set it on the table too hard, the game resets. Why?**
+
 A: Usually this is because you're using NiMH AA batteries, like eneloop pros. These batteries have *slightly* shallower positive tabs than regular alkaline AA batteries. This makes contact from the batteries to the tabs not as robust as regular AA batteries. Unfortunately this is a problem on *ALL* DMG consoles, not specifically the DMGC. This could be due to a poor connection on any one of the four batteries inside the bay. You can swap out battery contacts that stick out a bit farther that make better contact with the batteries, or you can try reseating or literally spinning the batteries in the battery bay to make better contact. (Or, you could always use regular AA batteries or an A/C adapter!)
 
 ## Acknowledgements
