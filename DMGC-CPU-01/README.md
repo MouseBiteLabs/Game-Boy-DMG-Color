@@ -5,7 +5,7 @@
 
 The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, and crystal oscillator. EM10 may be trasnferred as well, but a good enough replacement is included in the BOM if you need a new part. The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
 
-*Note: I have not tested the "pro-sound" output, but do not anticiapte any issues. I am also unable to confirm link port operation on this version, but it remains largely unchanged compared to previous revisions and should not pose an issue.*
+*Note: I am unable to confirm link port operation on this version, but it remains largely unchanged compared to previous revisions and should not pose an issue.*
 
 ## Board Characteristics
 The zipped folder contains all the gerber files for this board. 
