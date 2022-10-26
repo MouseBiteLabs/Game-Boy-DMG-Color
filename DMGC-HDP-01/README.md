@@ -37,10 +37,10 @@ All of the parts from the original headphone board can be transplanted here (exc
 
 | Reference Designators | Qty | Value/Part Number | Package | Description                       | Comment                                            | Source                                                                 |
 |-----------------------|-----|-------------------|---------|-----------------------------------|----------------------------------------------------|------------------------------------------------------------------------|
-| C1, C2                | 2   | 100 uF            |         | Capacitor (Aluminum electrolytic) | Panasonic ECE-A0JKA101 might be a good replacement | Salvaged (DMG)                                                         |
-| L1, L2, L3            | 3   | 3.3 uH            |         | Filter                            | Can use BLM18BD102SN1D as well: https://www.digikey.com/en/products/detail/murata-electronics/BLM18BD102SN1D/584235                                                   | Salvaged (DMG)                                                         |
+| C1, C2                | 2   | 100 uF            |         | Capacitor (Aluminum electrolytic) | Replacement: https://www.mouser.com/ProductDetail/Panasonic/ECE-A0JKA101I?qs=WYPlz5ezODCWQbvWRFj8Mg%3D%3D | Salvaged (DMG)                                                         |
+| L1, L2, L3            | 3   | 3.3 uH            |         | Filter                            | Surface mount replacement: https://www.mouser.com/ProductDetail/Murata-Electronics/BLM18BD102SN1D?qs=h3IWXJJGQQWi4eZyJq6ScQ%3D%3D | Salvaged (DMG)                                                         |
 | JACK                  | 1   |                   |         | Headphone jack                    |                                                    | Salvaged (DMG)                                                         |
-| R1, R2                | 2   | 1 kΩ              | 0603    | Resistor                          |                                                    | https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843 |
+| R1, R2                | 2   | 1 kΩ              | 0603    | Resistor                          |                                                    | https://www.mouser.com/ProductDetail/YAGEO/RC0603FR-071KL?qs=VU8sRB4EgwApHsk4rF%2F3zg%3D%3D |
 
 ## Revision History
 
