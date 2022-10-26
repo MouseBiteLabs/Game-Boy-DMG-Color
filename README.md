@@ -33,7 +33,7 @@ The following is the high-level BOM for my specific build pictured above. Note t
 
 - Original Game Boy Color console
   -	U1 - CGB CPU (all revisions *except* REV E)
-  - U2 - LH52256CVTXIZ
+  - U2 - LH52256CVTXIZ - <a href="https://www.mouser.com/ProductDetail/Alliance-Memory/AS6C62256-55STIN?qs=sGAEpiMZZMutXGli8Ay4kJJGFDXf1yJRtysCHUCJ96k%3D">A potential replacement can be purchased here (not fully tested!)</a>
   - X1 – 8.388 MHz crystal oscillator
   - EM10 - <a href="https://www.mouser.com/ProductDetail/Wurth-Elektronik/744235601?qs=BXmE%252BJ0Y7xYO4MPd53j2NQ%3D%3D">A replacement can be purchased here</a>
 - Original Game Boy DMG console
