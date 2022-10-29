@@ -32,7 +32,7 @@ There are two FFC connectors on the board - one to take the input from the CPU b
 ![image](https://user-images.githubusercontent.com/97127539/196016635-e2304038-f734-4f08-a687-dbfb725eb1d6.png)
 
 ## Speaker
-I detail the operation of the audio amplifier on the CPU board in that corresponding README. I mention that a DC blocking capacitor needs to be included in series with the speaker output. That’s what C3 is for, a 100 uF capacitor. There are two capacitors called out as C3 – a space for an aluminum electrolytic capacitor, and one for an electrolytic tantalum (or other surface mount varieties - do you fancy yourself a film cap?). If you install the through-hole electrolytic, bend it down into the notch on the board. I have a ton of aluminums and they’re cheaper, so that’s the one I used. The speaker itself is an aftermarket FunnyPlaying model.
+I detail the operation of the audio amplifier on the CPU board in that corresponding README. I mention that a DC blocking capacitor needs to be included in series with the speaker output. That’s what C3 is for, a 100 uF capacitor. There are two capacitors called out as C3 – a space for an aluminum electrolytic capacitor, and one for an electrolytic tantalum (or other surface mount varieties - do you fancy yourself a film cap?). The surface mount pad is size 3528, sized up for compatibility with many different types of SMT capacitor sizes. If you install the through-hole electrolytic, bend it down into the notch on the board. I have a ton of aluminums and they’re cheaper, so that’s the one I used. The speaker itself is an aftermarket FunnyPlaying model.
 
 ![image](https://user-images.githubusercontent.com/97127539/185511435-2cb1f5ca-924b-4827-beea-9865a0716af6.png)
 
