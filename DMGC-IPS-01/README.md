@@ -65,6 +65,10 @@ There are six test points at the top of the IPS board for short wires to connect
 
 ![image](https://user-images.githubusercontent.com/97127539/184361799-70131a36-ccb9-49c3-a647-12fdbeec042c.png)
 
+Note: If you intend to use LSDJ on the DMGC, you might run into a conflict with pressing A + B + Select. This is a specific combination for control in LSDJ. You don't *have* to use those pads at the top for the button inputs for the OSD. You can run wires down to the middle of the board instead. Instead of A, B, and Select, you could pick A, B, and Start for example. Just keep in mind you have to press all three at the same time to open the menu, so don't pick Left and Right as two of the inputs.
+
+![image](https://user-images.githubusercontent.com/97127539/198910151-42c03aed-8008-4fe5-9ae2-14c5da2cadfb.png)
+
 ## Button LEDs and ATTINY85
 One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. You can program the ATTINY in any number of ways, but I added pads for <a href="https://www.mouser.com/ProductDetail/200-TSM10601TSH">kinked header pins</a> to hopefully make it a bit easier.
 
