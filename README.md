@@ -61,11 +61,11 @@ For the circuit boards themselves, I have provided the zipped Gerbers and orderi
 
 ## Assembly
 
-Here are some pictures of the assembly process. Detailed images of the circuit boards alone are shown in their respective folders. These pictures are of a previous revision, v1.2, but the process remains the same. You may notice some minor cosmetic differences in these pictures from the current revision boards.
+**I highly recommend reading the information in the Troubleshooting and Testing folder above. In it, I detail the testing procedure that I follow before fully assembling a DMGC. It is far easier to do this than to have to disassemble things when something doesn't work.**
 
-First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires that wrap around the screw post on the side of the shell. *Note: Before fully assembling the build, I tested the 5 V output of the PWR board while it was disconnected from the CPU board. You want to make sure the output of the 5 V wire from the PWR board is outputting 5 V! If it is higher, you can easily damage electronics on the CPU board.*
+Here are some pictures of the assembly process *after* testing the functionality of all the boards separately. Detailed images of the circuit boards alone are shown in their respective folders. These pictures are of a previous revision, v1.2, but the process remains the same. You may notice some minor cosmetic differences in these pictures from the current revision boards.
 
-In addition to the PWR board connections, the HDP board needs four ~2.6" wires. Also, the flat flex cable (FFC) should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the three boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
+First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires that wrap around the screw post on the side of the shell. In addition to the PWR board connections, the HDP board needs four ~2.6" wires. Also, the flat flex cable (FFC) should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the three boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
 
 ![PXL_20220802_000205491 MP](https://user-images.githubusercontent.com/97127539/184281792-0c624a67-98bf-4ab9-b36c-a5c6b19385f6.jpg)
 
