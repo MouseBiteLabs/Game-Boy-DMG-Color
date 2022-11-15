@@ -10,7 +10,7 @@ This board is likely the most complex part of the build. I spent a lot of time t
 ## Board Characteristics
 The zipped folder contains all the gerber files for this board.
 -	Layers: 2
--	Thickness: 1.2 mm
+-	Thickness: 1.2 mm or smaller
 -	Surface Finish: ENIG or HASL
 
 *HASL is acceptable, but might introduce a bit of difficulty soldering the QFN chip owing to the possibly uneven surface compared to an ENIG finish.*
