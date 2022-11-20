@@ -104,8 +104,9 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
-### v2.1 (PLANNED)
-- Move R12/R13 to front of the board
+### v2.1
+- Moved R12/R13 to front of the board
+- Removed F1
 
 ### v2.0
 - Release version
