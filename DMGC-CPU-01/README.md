@@ -150,6 +150,7 @@ Here, I have provided links to components I used personally (or suitable replace
 - Fixed tstop layer offset on SRAM package
 - Added CLK1/2 on backside silkscreen
 - Adjusted X1 through-hole location
+- Nudged volume dial out a bit
 - Cleaned up some trace layouts/silkscreen
 
 ### v2.1
