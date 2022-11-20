@@ -142,12 +142,22 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
-### v2.1 (PLANNED)
+### v2.2
 
-- Fix silkscreen text error on link port
-- Add through-holes for potential crystal oscillator replacement
-- Add test pad that connects to the rock-down function of the navigation dial on the IPS board
-- Move version number text above cart connector footprint
+- Added more clearance on screwhole on cart connector
+- Adjusted screwhole placement near power switch
+- Removed unnecessary vestigal dots on X1 and EM10 silkscreen
+- Fixed tstop layer offset on SRAM package
+- Added CLK1/2 on backside silkscreen
+- Adjusted X1 through-hole location
+- Cleaned up some trace layouts/silkscreen
+
+### v2.1
+
+- Fixed silkscreen text error on link port
+- Added through-holes for potential crystal oscillator replacement
+- Added test pad that connects to the rock-down function of the navigation dial on the IPS board
+- Moved version number text above cart connector footprint
 
 ### v2.0
 
