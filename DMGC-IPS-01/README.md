@@ -128,12 +128,19 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
-### v2.1 (PLANNED)
+### v2.2 (PLANNED)
 
-- Fix cosmetic error in A button tstop layer
-- Explore options for start/select tactile switches
-- Add warning about programming on silkscreen text
-- Add trace that connects to a test pad on the CPU board for the rock-down function of the navigation dial
+- Removed start button from PB5 on ATTINY85, added pull-up resistor
+- Added 3.3V connection to programming header
+- Added option for larger tactile switch on start/select
+
+### v2.1
+
+- Fixed cosmetic error in A button tstop layer
+- Added options for start/select tactile switches
+- Added warning about programming on silkscreen text
+- Added trace that connects to a test pad on the CPU board for the rock-down function of the navigation dial
+- Connected start button to PB5 on ATTINY85
 
 ### v2.0
 
