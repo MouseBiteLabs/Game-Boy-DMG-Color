@@ -151,6 +151,7 @@ Here, I have provided links to components I used personally (or suitable replace
 - Added CLK1/2 on backside silkscreen
 - Adjusted X1 through-hole location
 - Nudged volume dial out a bit
+- Add note about trimming wire stubs on PWR board connections
 - Cleaned up some trace layouts/silkscreen
 
 ### v2.1
