@@ -133,6 +133,7 @@ Here, I have provided links to components I used personally (or suitable replace
 - Removed start button from PB5 on ATTINY85, added pull-up resistor
 - Added 3.3V connection to programming header
 - Added option for larger tactile switch on start/select
+- Expanded pads for tactile switches for easier soldering
 
 ### v2.1
 
