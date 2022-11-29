@@ -20,11 +20,17 @@ You can atlernatively use the zipped folder at any board fabricator you like. Yo
 
 <a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_IPS_01_82a454c9.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
-## Optional Tactile Buttons
-Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. I did not however bother to add switches for start and select, due to the mismatched geometry (and you don't press them *that* often). If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
+## Customization Options
 
-![image](https://user-images.githubusercontent.com/97127539/197367604-69478124-7a7e-4d84-897d-eac90462ccb7.png)
-In this image, tactile switches are on the left, and pads for simple membranes are on the right. Either method for button presses works perfectly fine.
+This section will briefly mention all of the different customization options you have on this board while assembling. More detail on implementing the options are in further sections.
+
+- **Tactile Buttons:** Pads are included for tactile switches (clicky buttons like the GBA SP) to be installed on the board. If using tactile buttons, HASL can be used as the surface finish.
+- **Power LED Brightness:** Increase the value of R1 to decrease the brightness of the power LED during normal battery levels. Increase the value of R2 to decrease the brightness of the power LED during low battery levels. It is suggested to try changing resistances in ~5 kΩ increments.
+- **RGB Backlit Buttons:** If you would like RGB LEDs behind the buttons, you must install LED10-LED17, R9, C2, and U2.
+- **Always-on Single Color Backlit Buttons:** If you only want backlit buttons with non-controllable LEDs, you can omit R9, C2, and U2. You must install R22-R29, as well as the discrete 0603 LEDs as detailed in a below section.
+- **No Button LEDs:** You do not need to populate LED10-LED17, R9, R22-R29, C2, or U2.
+- **Alternate OSD Controls:** You don't need to use the SEL, A, and B pads at the top of the board for the OSD controls. You can alternatively use the button pads in the middle of the board instead.
+- **Navigation Dial Push-in as Reset Button:** Do not populate R10. See DMGC-CPU-01 notes for further instructions.
 
 ## FFC Connectors
 There are two FFC connectors on the board - one to take the input from the CPU board, the other is for the Q5 board to connect to. The former is detailed in the CPU board section, and the latter simply omits a few pins to connect to the Q5 board, such as the speaker and button inputs. Notably, the connector going to the CPU board must be reversed due to the FFC cable connecting it to the CPU board.
@@ -84,13 +90,19 @@ Code for the ATTINY85 is included here, however because I wrote this months ago 
 
 If you hold the navigation switch in as you turn on the console, the LEDs will be disabled until power is cycled. (This is probably more for my benefit as I used it while testing very discharged batteries to skip the start-up LED sequence)
 
-Always-on discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB LED pads, from VDD to DO. The pads for this are indicated by the arrows. The picture below shows which pads to use for discrete LEDs (view of the D-pad) - the A indicates the anode of the diode. There are spaces for a resistor for each LED on the back of the board (R22 to R29). If you're using the RGB LEDs, or no LEDs at all, the resistors aren't necessary.
+Always-on discrete LEDs are also an option - an 0603 LED will fit on half of the 4-pin RGB LED pads, from VDD to DO. The pads for this are indicated by the arrows. The picture below shows which pads to use for discrete LEDs (view of the D-pad) - the A indicates the anode of the diode. There are spaces for a resistor for each LED on the back of the board (R22 to R29, circled in red below). If you're using the RGB LEDs, or no LEDs at all, the resistors aren't necessary.
 
-![image](https://user-images.githubusercontent.com/97127539/180103597-06642f10-77f8-44f2-84d5-dac01b80fdf1.png)
+![image](https://user-images.githubusercontent.com/97127539/204422623-57abeab7-5053-45d7-bc14-ba01a4393fed.png)
 
 Oh, and when you solder the LEDs on, I recommend taping off the button contacts to make sure you don't get solder on them. It won't damage them to the point of non-function, but it can potentially reduce their useful lifetime and accurate detection depending on the severity. (But more importantly, it's not A E S T H E T I C)
 
 ![image](https://user-images.githubusercontent.com/97127539/189253688-58df639c-7d75-41a7-a5bc-b63455be2266.png)
+
+## Optional Tactile Buttons
+Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. I did not however bother to add switches for start and select, due to the mismatched geometry (and you don't press them *that* often). If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
+
+![image](https://user-images.githubusercontent.com/97127539/197367604-69478124-7a7e-4d84-897d-eac90462ccb7.png)
+In this image, tactile switches are on the left, and pads for simple membranes are on the right. Either method for button presses works perfectly fine.
 
 ## Q5 IPS Screen Bracket
 I designed a bracket for holding the screen in place. This is placed between the screen and the DMGC-IPS-01 board. The model is available for download above. <a href="https://funnyplaying.com/products/dmg-retro-pixel-ips-lcd-holder">It is similar to Funnyplaying's model.</a>
