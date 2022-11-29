@@ -23,6 +23,13 @@ You can atlernatively use the zipped folder at any board fabricator you like. Yo
 
 <a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_CPU_01_2f5c743d.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a> 
 
+## Customization Options
+
+This section will briefly mention all of the different customization options you have on this board while assembling. More detail on implementing the options are in further sections.
+
+- **Maximum Volume:** Increase R30 and R32 to decrease the maximum output volume. 100 kΩ will yield approximately the same volume as a stock GBC. Values below 20 kΩ are not recommended due to power draw considerations.
+- **Navigation Dial Push-in as Reset Button:** Solder a wire from the PUSH pad to the RST pad. Make sure you do not populate R10 on the DMGC-IPS-01.
+
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
 
