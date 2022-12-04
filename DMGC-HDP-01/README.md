@@ -27,6 +27,8 @@ On the top of the board: pin 1 is the left output, pin 2 is the right output, pi
 
 R1 and R2 are included to pull down the negative sides of the DC blocking capacitors C1 and C2 when headphones are not connected – without them, the outputs would be floating. This will prevent inrush current during headphone insertion, which I have seen cause issues with the LM4853 in the past.
 
+On v2.1, C1 and C2 can be replaced with tantalum electrolytic capacitors if you would like - the pads are for size 1411 (3528 metric).
+
 ## Using the Original DMG Headphone Board
 
 You can easily use the original DMG board instead of ordering this one, just be sure to put 1 kΩ resistors from the right output and left output to ground. Otherwise, when plugging in headphones, the system might shut itself off.
