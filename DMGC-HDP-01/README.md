@@ -44,6 +44,10 @@ All of the parts from the original headphone board can be transplanted here (exc
 
 ## Revision History
 
+### v2.1
+
+- Add surface mount pads for tantalum capacitors, size 1411 (3528 metric)
+
 ### v2.0
 
 - Changed holes to slots where applicable
