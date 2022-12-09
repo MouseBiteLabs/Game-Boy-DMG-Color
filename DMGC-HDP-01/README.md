@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/97127539/197369125-de12c47d-8e7d-44e5-8a83-9c06892fa89d.png)
 
-*The image above is of v2.0, not the current revision of v2.1. The differences are very minor.*
+*The image above is of v2.0, not the current revision of v2.1. The differences are very minor, see below.*
 
 This little board is quite simple. You can transplant all of the parts from the original DMG headphone board to this one. This board also uses an original DMG headphone jack. Modifications to the circuit would be required to use an off-the-shelf jack.
 
@@ -52,7 +52,7 @@ All of the parts from the original headphone board can be transplanted here (exc
 
 - Add surface mount pads for tantalum capacitors, size 1411 (3528 metric)
 
-### v2.0
+### v2.0 (for sale)
 
 - Changed holes to slots where applicable
 - Made board/part measurements more accurate
