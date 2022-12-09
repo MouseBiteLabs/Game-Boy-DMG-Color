@@ -3,6 +3,8 @@
 ![DMGC-IPS-01_2-0_scan](https://user-images.githubusercontent.com/97127539/197367471-2bdfcaa6-c19a-4c33-977c-d3e0061d932d.jpg)
 ![DMGC-IPS-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197367472-31a2fdb9-6a8e-41a7-8fdc-138f91f944bb.jpg)
 
+*The image above is of v2.0, not the current revision of v2.1. The differences are very minor, see below.*
+
 The IPS board is in the front of the DMG shell. This holds the IPS screen kit (and has pads for interfacing with it), has the dimmable power LED, button inputs along with pads for optional LEDs, a navigation switch on the side for changing settings on the IPS screen and the backlit buttons, and the speaker.
 
 ## Board Characteristics
@@ -147,13 +149,13 @@ Here, I have provided links to components I used personally (or suitable replace
 - Added option for larger tactile switch on start/select
 - Expanded pads for tactile switches for easier soldering
 
-### v2.1
+### v2.1 (for sale)
 
 - Fixed cosmetic error in A button tstop layer
 - Added options for start/select tactile switches
 - Added warning about programming on silkscreen text
 - Added trace that connects to a test pad on the CPU board for the rock-down function of the navigation dial
-- Connected start button to PB5 on ATTINY85
+- ~~Connected start button to PB5 on ATTINY85~~ Reworked
 
 ### v2.0
 
