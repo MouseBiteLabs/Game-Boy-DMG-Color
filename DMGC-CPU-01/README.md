@@ -96,11 +96,6 @@ Version 2.0 introduces a test pad labelled "RST" that connects directly to the /
 
 There is also a pad near the FFC connector that was added labelled "PUSH" that connects to the rocker switch on the DMGC-IPS-01 board (version 2.0 and later). This pad becomes connected to GND when the rocker switch is pushed in (as long as you remove R10 on the DMGC-IPS-01 board). In a normal configuration, pushing in on the rocker switch will control the button LEDs, but if you are not using these LEDs, then adding a wire from the PUSH to RST pads will turn the rocker switch into a reset button when it's pressed in (rocking up and down retains normal function). 
 
-## Errors
-
-The silkscreen text indicating the pins of the link port is incorrect. SOUT and GND should be flipped. The actual pins are connected correctly, so this is only a cosmetic issue. It will be fixed on the next update.
-![image](https://user-images.githubusercontent.com/97127539/197369269-57a89500-8915-40cf-90f6-10fd6513bb74.png)
-
 ## Bill of Materials
 
 Here, I have provided links to components I used personally (or suitable replacements). This BOM is also included in Excel format in the root folder.
