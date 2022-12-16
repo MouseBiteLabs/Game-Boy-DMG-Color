@@ -50,15 +50,13 @@ Turn power on, and do a voltage check on the CPU board's 5 V pad and 3.3 V pad t
 
 Before testing anything, if you have a stock Game Boy Color, consider testing the kit in that before using it here. These kits can come defective.
 
-Did you know you can connect the Q5 IPS kit to the CPU board directly, without the DMGC-IPS-01? Well, you can. Plug it into the FFC connector, J1, and make sure no metallic surface is shorting between the kit's board or the back of the display and the CPU board. Turn power on, and you should get the GBC splash screen.
-
 You can test a game at this point too. If you put a game in the cart slot, it should start to run normally. If you get a garbled logo, or it otherwise doesn't start up properly, then you might have a dirty cart slot or poor connection from the cart connector to the CPU.
 
 If the screen doesn't turn on at all - no backlight or anything - check to make sure your 5 V output is still at 5 V. If it's not, then turn off power, remove the screen kit, and test again to see if the 5 V output comes back. Again, if you have a working GBC to test with, you should check to see if the kit does the same thing there.
 
 If you get a garbled image, or no image at all (but the screen still lights up), check these things:
 
-- Make sure the bale of the FFC connector is in all the way, and the cable is seated all the way in. Try to clean out any flux that might be hiding inside the connector.
+- Make sure the bales of the FFC connectors are in all the way, and the cable is seated all the way in. Try to clean out any flux that might be hiding inside the connector.
 - Check for solder bridges on all the pins of the CPU, FFC connector, and RAM. *Note that some adjacent pins are supposed to be connected together on the FFC connector - check the schematic.*
 - Check to make sure all legs of the CPU, FFC, and RAM have a good connection to the board. Missing any one of these pins could cause the screen to not work.
 - Once again, try the IPS kit inside an actual Game Boy Color, if you have one available to test.
