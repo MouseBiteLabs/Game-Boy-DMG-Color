@@ -14,6 +14,8 @@ If you place the CPU board (by itself) in the DMG shell and insert batteries, or
 
 If VCC does not read any voltage (and you're using batteries), measure the voltage right at the battery terminals and check if it's zero there as well - sometimes using NiMH batteries in DMG shells causes poor contact with the battery tabs, because some NiMH batteries have shallower positive terminals than alkalines.
 
+Also, check the orientation of Q1. If it's backwards, you will be shorting the battery terminals together. In this case, you would read voltage across the battery terminals, but not on VCC itself.
+
 If SW doesn't read a voltage with the switch on, your power switch is potentially damaged or too dirty/oxidized.
 
 ### 2) Testing DMGC-PWR-01
@@ -25,10 +27,11 @@ Place the CPU board in the back DMG shell and insert batteries, or use the DC ja
 
 If you get something else, check these things:
 - Check for good solder joints on all parts.
-- Check the orientation of Q6.  Pins 1, 2, 5, and 6 should all have continuity, and should not have continuity with pins 3 and 4. It's a small part with hard to read markings, so it might be backwards.
+- Check the orientation of Q6. Pins 1, 2, 5, and 6 should all have continuity, and should not have continuity with pins 3 and 4. It's a small part with hard to read markings, so it might be backwards.
 - Are you using TPS630701? If you are, make sure you have shorted R8 with a solder bridge, and didn't actually include a resistor there. You also don't need R9 in the circuit, but it won't hurt to include it. If you don't short R8 and you use the TPS630701, your output will shoot past 5 V.
 - Check the resistance across R9, or the pads of R9. If it's short circuited, that means you likely have a solder bridge from U2's feedback pin to GND (which would cause the output to shoot higher than 5 V). Also check for continuity across R13. If it's shorted, that means you have shorted the enable pin to GND, which will always keep U2 off.
 	- Generally, U2 is usually at the heart of most problems, at least as far as I've seen. It's a difficult chip to solder properly. If you detect any shorts, reflow U2 with flux, or consider removing it completely and resoldering it.
+- If you don't have a short across R8 or R9 and you're using the TPS63070 or TPS630702, check the resistance values of these resistors. If they are wrong, you can get the incorrect voltage on the 5V output.
 - Check the orientation of U3. Also, if it's easy to do, try removing U3 completely and checking the output again with the power switch on. If the output now reads *above* 5 V, then double check R8 and R9 mentioned earlier.
 
 ### 3) Testing DMGC-CPU-01
