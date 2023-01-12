@@ -65,11 +65,13 @@ For the circuit boards themselves, I have provided the zipped Gerbers and orderi
 
 ## Assembly
 
-**I highly recommend reading the information in the Troubleshooting and Testing folder above. In it, I detail the testing procedure that I follow before fully assembling a DMGC. It is far easier to do this than to have to disassemble things when something doesn't work.**
+You can check out Tito's video on the DMGC to get an idea of how the assembly process generally goes.
 
-<a href="https://www.youtube.com/watch?v=4U8Tqu7uxLo&ab_channel=MachoNachoProductions">Check out Tito's video on the DMGC to get an idea of how the assembly process generally goes.</a>
+[![MachoNacho DMGC Video](https://img.youtube.com/vi/4U8Tqu7uxLo/maxresdefault.jpg)](https://youtu.be/4U8Tqu7uxLo?t=352)
 
 Here are some pictures of the assembly process *after* testing the functionality of all the boards separately. Detailed images of the circuit boards alone are shown in their respective folders. These pictures are of a previous revision, v1.2, but the process remains the same. You may notice some minor cosmetic differences in these pictures from the current revision boards.
+
+**I highly recommend reading the information in the Troubleshooting and Testing folder above. In it, I detail the testing procedure that I follow before fully assembling a DMGC. It is far easier to do this than to have to disassemble things when something doesn't work.**
 
 First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires that wrap around the screw post on the side of the shell. In addition to the PWR board connections, the HDP board needs four ~2.6" wires. Also, the flat flex cable (FFC) should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the three boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
 
