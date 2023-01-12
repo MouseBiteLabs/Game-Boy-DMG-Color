@@ -67,6 +67,8 @@ For the circuit boards themselves, I have provided the zipped Gerbers and orderi
 
 **I highly recommend reading the information in the Troubleshooting and Testing folder above. In it, I detail the testing procedure that I follow before fully assembling a DMGC. It is far easier to do this than to have to disassemble things when something doesn't work.**
 
+<a href="https://www.youtube.com/watch?v=4U8Tqu7uxLo&ab_channel=MachoNachoProductions">Check out Tito's video on the DMGC to get an idea of how the assembly process generally goes.</a>
+
 Here are some pictures of the assembly process *after* testing the functionality of all the boards separately. Detailed images of the circuit boards alone are shown in their respective folders. These pictures are of a previous revision, v1.2, but the process remains the same. You may notice some minor cosmetic differences in these pictures from the current revision boards.
 
 First, I started with the back half of the DMG shell. The PWR board needs five ~2.25" wires that wrap around the screw post on the side of the shell. In addition to the PWR board connections, the HDP board needs four ~2.6" wires. Also, the flat flex cable (FFC) should be inserted into the CPU board first, because the connector will be inaccessible after screwing the CPU board in the shell. After I soldered all the wires between the three boards and secured the FFC, I placed the assembly in the shell, and secured it with the proper screws. I put a game in the cartridge slot to keep the CPU board in place easier while assembling.
@@ -215,6 +217,7 @@ A: <a href="https://imgur.com/a/JgXPnYc">I'm working on it.</a>
 -	The board outlines and many of the footprints for the DMG components from <a href="https://gbdev.gg8.se/files/schematics/">this DMG recreation project</a> were used for reference on the original revision of the project, so very special thanks to Rolf, bit9, and nitro2k01!
 -	Thank you to gekkio for their <a href="https://gbhwdb.gekkio.fi/">Game Boy repository</a> and <a href="https://github.com/Gekkio/gb-schematics">github</a>: I referenced many of the DMG and GBC resources during this build, even just for looking at pictures of different PCBs.
 -	Immense thanks to the users of the r/Gameboy and gbdev discord servers for technical resources, troubleshooting/feedback, and suggestions. Could not have done this without your support. Shout out to kevtris for design feedback and lidnariq for troubleshooting support!
+- Thank you to Tito, aka Macho Nacho, for <a href="https://www.youtube.com/watch?v=4U8Tqu7uxLo&ab_channel=MachoNachoProductions">his amazing video covering the project.</a>
 -	Of course, huge thank you to everyone who has <a href="https://ko-fi.com/bucketmouse">donated and supported me</a>, and to those who have built their own DMGC! I love seeing pictures of builds, so feel free to share them with me on Twitter, <a href="https://discord.gg/Y5aDvCcpbX">discord</a>, or via email!
 
 ## License
