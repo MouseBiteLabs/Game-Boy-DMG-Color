@@ -66,7 +66,7 @@ Rocking up on the dial will toggle the brightness setting, rocking it down will 
 
 If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then make sure to remove R10.
 
-Bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, which will prevent the LEDs from turning on at all.
+Bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, which will prevent the LEDs from turning on at all. You can ignore it if you aren't using Neopixels at all.
 
 ## Q5 Board Pads
 There are six test points at the top of the IPS board for short wires to connect to the Q5 board. The Q5 board includes pads for the select, B, and A buttons for navigation in the OSD. There's also a battery pad, which is for measuring the battery life, as mentioned. And finally, there are two pads for brightness control and color palette swapping, which connect to the capacitive touch sensor inputs on the Q5 board. Before installation, stripped wires should be soldered to these corresponding pads on the Q5 board, so they may be soldered to the IPS board after assembly.
