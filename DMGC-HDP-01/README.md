@@ -39,20 +39,20 @@ You can easily use the original DMG board instead of ordering this one, just be 
 
 All of the parts from the original headphone board can be transplanted here (except the two 1k resistors). You can even use the original headphone board if you want, just add the 1k resistors as indicated on the schematic. This BOM is also included in Excel format in the root folder.
 
-| Reference Designators | Qty | Value/Part Number | Package | Description                       | Comment                                            | Source                                                                 |
-|-----------------------|-----|-------------------|---------|-----------------------------------|----------------------------------------------------|------------------------------------------------------------------------|
-| C1, C2                | 2   | 100 uF            |         | Capacitor (Aluminum electrolytic) | Replacement: https://www.mouser.com/ProductDetail/Panasonic/ECE-A0JKA101I?qs=WYPlz5ezODCWQbvWRFj8Mg%3D%3D | Salvaged (DMG)                                                         |
-| L1, L2, L3            | 3   | 3.3 uH            |         | Filter                            | Surface mount replacement: https://www.mouser.com/ProductDetail/Murata-Electronics/BLM18BD102SN1D?qs=h3IWXJJGQQWi4eZyJq6ScQ%3D%3D | Salvaged (DMG)                                                         |
-| JACK                  | 1   |                   |         | Headphone jack                    |                                                    | Salvaged (DMG)                                                         |
-| R1, R2                | 2   | 1 kΩ              | 0603    | Resistor                          |                                                    | https://www.mouser.com/ProductDetail/YAGEO/RC0603FR-071KL?qs=VU8sRB4EgwApHsk4rF%2F3zg%3D%3D |
+| Reference Designators | Qty | Value/Part Number | Package | Description                       | Comment                                                                                                                           | Source                                                                                                                                                                                       |
+| --------------------- | --- | ----------------- | ------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C1, C2                | 2   | 100uF             |         | Capacitor (Aluminum electrolytic) | Can be salvaged from DMG instead                                                                                                  | [https://www.mouser.com/ProductDetail/Panasonic/ECE-A0JKA101I?qs=WYPlz5ezODCWQbvWRFj8Mg%3D%3D](https://www.mouser.com/ProductDetail/Panasonic/ECE-A0JKA101I?qs=WYPlz5ezODCWQbvWRFj8Mg%3D%3D) |
+| L1, L2, L3            | 3   | 3.3uH             |         | Filter                            | Surface mount replacement: https://www.mouser.com/ProductDetail/Murata-Electronics/BLM18BD102SN1D?qs=h3IWXJJGQQWi4eZyJq6ScQ%3D%3D | Salvaged (DMG)                                                                                                                                                                               |
+| JACK                  | 1   |                   |         | Headphone jack                    |                                                                                                                                   | Salvaged (DMG)                                                                                                                                                                               |
+| R1, R2                | 2   | 1k                | 0603    | Resistor                          |                                                                                                                                   | [https://www.mouser.com/ProductDetail/YAGEO/RC0603FR-071KL?qs=VU8sRB4EgwApHsk4rF%2F3zg%3D%3D](https://www.mouser.com/ProductDetail/YAGEO/RC0603FR-071KL?qs=VU8sRB4EgwApHsk4rF%2F3zg%3D%3D)   |
 
 ## Revision History
 
-### v2.1
+### v2.1 (for sale)
 
 - Add surface mount pads for tantalum capacitors, size 1411 (3528 metric)
 
-### v2.0 (for sale)
+### v2.0
 
 - Changed holes to slots where applicable
 - Made board/part measurements more accurate
