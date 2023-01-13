@@ -50,7 +50,7 @@ Turn power on, and do a voltage check on the CPU board's 5 V pad and 3.3 V pad t
 
 Before testing anything, if you have a stock Game Boy Color, consider testing the kit in that before using it here. These kits can come defective.
 
-Did you know you can connect the Q5 IPS kit to the CPU board directly, without the DMGC-IPS-01? Well, you can. Plug it into the FFC connector, J1, and make sure no metallic surface is shorting between the kit's board or the back of the display and the CPU board. Turn power on, and you should get the GBC splash screen.
+Did you know you can connect the Q5 IPS kit to the CPU board directly, without the DMGC-IPS-01? Well, you can, at least at the time of writing. Plug it into the FFC connector, J1, and make sure no metallic surface is shorting between the kit's board or the back of the display and the CPU board. Turn power on, and you should get the GBC splash screen.
 
 You can test a game at this point too. If you put a game in the cart slot, it should start to run normally. If you get a garbled logo, or it otherwise doesn't start up properly, then you might have a dirty cart slot or poor connection from the cart connector to the CPU.
 
