@@ -1,6 +1,6 @@
 # DMGC-CPU-01
 
-![DMGC-CPU-01_2-3_scan](https://user-images.githubusercontent.com/97127539/212452569-f6366288-e1dc-4168-ac17-46c67a953209.jpg)
+![DMGC-CPU-01_2-3_scan](https://user-images.githubusercontent.com/97127539/212452961-b9c53a46-5c29-4012-afe8-3af43f842dfc.jpg)
 ![DMGC-CPU-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197366878-ae154a5e-c2df-48f9-88fb-2e1cacaa1770.jpg)
 
 *The image above of the assembled board is of v2.0, not the current revision of v2.3. The differences in appearance are minor, see below.*
