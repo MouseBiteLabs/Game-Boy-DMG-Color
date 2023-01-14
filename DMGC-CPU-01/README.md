@@ -29,6 +29,7 @@ This section will briefly mention all of the different customization options you
 
 - **Maximum Volume:** Increase R30 and R32 to decrease the maximum output volume. 100 kΩ will yield approximately the same volume as a stock GBC. Values below 20 kΩ are not recommended due to power draw considerations.
 - **Navigation Dial Push-in as Reset Button:** Solder a wire from the PUSH pad to the RST pad. Make sure you do not populate R10 on the DMGC-IPS-01.
+- **Navigation Dial Rock Down as Reset Button:** Solder a wire from the ROCK DOWN pad to the RST pad. Make sure you do not populate C5 on the DMGC-IPS-01.
 
 ## Power Supply
 The majority of the crucial power supply circuitry is on the PWR board, but the CPU board still has some portion of power supply interfacing. 
