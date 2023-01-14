@@ -94,7 +94,11 @@ R3 and C17 introduces a time delay on the /RESET pin during start-up, to allow t
 
 Version 2.0 introduces a test pad labelled "RST" that connects directly to the /RESET pin. If this pin is pulled to GND, when it's released it the system will reset back to the boot screen. If you wire this pad to a button that connects the pad to GND when pressed, you basically have added a reset button to your DMGC. 
 
-There is also a pad near the FFC connector that was added labelled "PUSH" that connects to the rocker switch on the DMGC-IPS-01 board (version 2.0 and later). This pad becomes connected to GND when the rocker switch is pushed in (as long as you remove R10 on the DMGC-IPS-01 board). In a normal configuration, pushing in on the rocker switch will control the button LEDs, but if you are not using these LEDs, then adding a wire from the PUSH to RST pads will turn the rocker switch into a reset button when it's pressed in (rocking up and down retains normal function). 
+There are also pads near the FFC connector that are added labelled "PUSH" and "ROCK DOWN". These connect to the rocker switch on the DMGC-IPS-01 board (version 2.0 and later). The PUSH pad becomes connected to GND when the rocker switch is pushed in and floats when not pressed (as long as you remove R10 on the DMGC-IPS-01 board). The ROCK_DOWN pad connects to GND when the rocker switch is rocked down, and floats when not pressed (as long as you remove C5 on the DMGC-IPS-01 board).
+
+In a normal configuration, pushing in on the rocker switch will control the button LEDs, and rocking down will swap the Q5 color settings, but if you don't want to use one of these features, then adding a wire from the PUSH or ROCK DOWN pad to RST pad will turn the rocker switch into a reset button for the system for that specific action and replace its normal function.
+
+**CAUTION: Remember to remove R10 or C5 on the IPS board if you plan to use this feature!!!**
 
 ## Bill of Materials
 
