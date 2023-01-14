@@ -33,6 +33,7 @@ This section will briefly mention all of the different customization options you
 - **No Button LEDs:** You do not need to populate LED10-LED17, R9, R22-R29, C2, or U2.
 - **Alternate OSD Controls:** You don't need to use the SEL, A, and B pads at the top of the board for the OSD controls. You can alternatively use the button pads in the middle of the board instead.
 - **Navigation Dial Push-in as Reset Button:** Do not populate R10. See DMGC-CPU-01 notes for further instructions.
+- **Navigation Dial Rock Down as Reset Button:** Do not populate C5. See DMGC-CPU-01 notes for further instructions.
 
 ## FFC Connectors
 There are two FFC connectors on the board - one to take the input from the CPU board, the other is for the Q5 board to connect to. The former is detailed in the CPU board section, and the latter simply omits a few pins to connect to the Q5 board, such as the speaker and button inputs. Notably, the connector going to the CPU board must be reversed due to the FFC cable connecting it to the CPU board.
@@ -64,7 +65,9 @@ This takes place where the contrast wheel used to be. On the Q5 board, there are
 
 Rocking up on the dial will toggle the brightness setting, rocking it down will toggle the color palette setting. Rocking up and holding it will toggle the battery level display on the screen, and rocking it down and holding it will toggle the pixel grid. Pushing in on the switch grounds the ATTINY85's PB3 pin (which is pulled up externally to 3.3V), if installed. Using the code I provide above, pushing in will advance to the next color of the button LEDs, and holding it while pressing left or right on the D-pad will change the brightness of the LEDs.
 
-If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then make sure to remove R10.
+**IMPORTANT NOTE:**
+- If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then **make sure to remove R10.**
+- If you are using the rock down function of the navigation switch to reset the console instead of controlling the Q5 palette setting (see more info on the CPU README), then **make sure to remove C5.**
 
 Bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, which will prevent the LEDs from turning on at all. You can ignore it if you aren't using Neopixels at all.
 
