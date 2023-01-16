@@ -108,7 +108,7 @@ Version 2.0 introduced the option for including tactile switches for the buttons
 
 ![image](https://user-images.githubusercontent.com/97127539/197367604-69478124-7a7e-4d84-897d-eac90462ccb7.png)
 
-In this image, tactile switches are on the left, and pads for simple membranes are on the right. Either method for button presses works perfectly fine.
+In this image, tactile switches are on the left, and pads for simple membranes are on the right. Either method for button presses works perfectly fine. But make sure you put them in the correct way. The little "wings" on the switches should be oriented where there is blank board space.
 
 If you're doing tactile switches on the start and select buttons, you should do a trace cut as indicated where the white lines are pointing. If you don't, the membranes can still activate the start/select buttons on the exposed area without actuating the tactile switch. You may also want to tape over the exposed copper not underneath the switches while soldering them on to avoid getting stray solder on the exposed traces and ruin the A E S T H E T I C.
 
