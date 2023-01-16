@@ -93,6 +93,10 @@ Then I installed the front lens, and placed the screen, backed with the 3D print
 
 ![PXL_20220802_005512608](https://user-images.githubusercontent.com/97127539/184281827-b895435b-7d21-43ca-b96a-29d2cdd5e0c2.jpg)
 
+If you installed the 7-pin headers for programming the ATTINY easier, you might want to tape off the headers with kapton tape. If everything is installed correctly, these shouldn't interfere with anything on the CPU board after the halves are screwed together (C47 is the closest component), but you may want to consider it anyway.
+
+![image](https://user-images.githubusercontent.com/97127539/212705014-71392d5a-732d-4403-bb79-74a6bb1515f7.png)
+
 After that, it was just a matter of connecting the FFC from the CPU to the IPS board, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together. Once assembled, I opened the OSD menu for the IPS kit (Select + A + B) and changed the vertical and horizontal offsets (my values were 78 and 29, respectively) to center the image on the screen. The image centering function is one of the biggest reasons I chose this IPS kit.
 
 Next to an original DMG… one can really see the improvements!
