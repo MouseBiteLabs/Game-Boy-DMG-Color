@@ -65,11 +65,16 @@ This takes place where the contrast wheel used to be. On the Q5 board, there are
 
 Rocking up on the dial will toggle the brightness setting, rocking it down will toggle the color palette setting. Rocking up and holding it will toggle the battery level display on the screen, and rocking it down and holding it will toggle the pixel grid. Pushing in on the switch grounds the ATTINY85's PB3 pin (which is pulled up externally to 3.3V), if installed. Using the code I provide above, pushing in will advance to the next color of the button LEDs, and holding it while pressing left or right on the D-pad will change the brightness of the LEDs.
 
-**IMPORTANT NOTE:**
-- If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then **make sure to remove R10.**
-- If you are using the rock down function of the navigation switch to reset the console instead of controlling the Q5 palette setting (see more info on the CPU README), then **make sure to remove C5.**
-
 Bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, which will prevent the LEDs from turning on at all. You can ignore it if you aren't using Neopixels at all.
+
+### Adding Reset Button Functionality
+
+- If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then **make sure to remove R10.** You will not have the ability to control Neopixel LEDs with this change (without other code/hardware modifications).
+- If you are using the rock down function of the navigation switch to reset the console instead of controlling the Q5 palette setting (see more info on the CPU README), then **make sure to remove C5.** You will not have the ability to use the palette swap function of the Q5 kit with this change (but who really cares, amirite?)
+
+![image](https://user-images.githubusercontent.com/97127539/212698838-54887abe-b375-4d92-8055-f685bbe7f395.png)
+
+![image](https://user-images.githubusercontent.com/97127539/212698813-adca871d-f0ee-4811-bd3e-451bd55554b8.png)
 
 ## Q5 Board Pads
 There are six test points at the top of the IPS board for short wires to connect to the Q5 board. The Q5 board includes pads for the select, B, and A buttons for navigation in the OSD. There's also a battery pad, which is for measuring the battery life, as mentioned. And finally, there are two pads for brightness control and color palette swapping, which connect to the capacitive touch sensor inputs on the Q5 board. Before installation, stripped wires should be soldered to these corresponding pads on the Q5 board, so they may be soldered to the IPS board after assembly.
