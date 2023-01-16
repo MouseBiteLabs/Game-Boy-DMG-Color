@@ -26,7 +26,7 @@ You can alternatively use the zipped folder at any board fabricator you like. Yo
 
 This section will briefly mention all of the different customization options you have on this board while assembling. More detail on implementing the options are in further sections.
 
-- **Tactile Buttons:** Pads are included for tactile switches (clicky buttons like the GBA SP) to be installed on the board. If using tactile buttons, HASL can be used as the surface finish.
+- **Tactile Buttons:** Pads are included for tactile switches (clicky buttons like the GBA SP) to be installed on the board. If using tactile buttons, HASL can be used as the surface finish. <a href="https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/tree/main/DMGC-IPS-01#optional-tactile-buttons">**See more information on how to install start/select tactiles below**.</a>
 - **Power LED Brightness:** Increase the value of R1 to decrease the brightness of the power LED during normal battery levels. Increase the value of R2 to decrease the brightness of the power LED during low battery levels. It is suggested to try changing resistances in ~5 kΩ increments.
 - **RGB Backlit Buttons:** If you would like RGB LEDs behind the buttons, you must install LED10-LED17, R9, C2, and U2.
 - **Always-on Single Color Backlit Buttons:** If you only want backlit buttons with non-controllable LEDs, you can omit R9, C2, and U2. You must install R22-R29, as well as the discrete 0603 LEDs as detailed in a below section.
@@ -107,7 +107,12 @@ Oh, and when you solder the LEDs on, I recommend taping off the button contacts 
 Version 2.0 introduced the option for including tactile switches for the buttons, much like the Game Boy Advance SP had. If you do not wish to use these kinds of buttons, the button contacts are still set up to act just like the regular set up with membranes.
 
 ![image](https://user-images.githubusercontent.com/97127539/197367604-69478124-7a7e-4d84-897d-eac90462ccb7.png)
+
 In this image, tactile switches are on the left, and pads for simple membranes are on the right. Either method for button presses works perfectly fine.
+
+If you're doing tactile switches on the start and select buttons, you should do a trace cut as indicated where the white lines are pointing. If you don't, the membranes can still activate the start/select buttons on the exposed area without actuating the tactile switch. You may also want to tape over the exposed copper not underneath the switches while soldering them on to avoid getting stray solder on the exposed traces and ruin the A E S T H E T I C.
+
+![image](https://user-images.githubusercontent.com/97127539/212601374-e33e4c9e-bb8b-460e-9545-4cd10e7bbc5f.png)
 
 ## Q5 IPS Screen Bracket
 I designed a bracket for holding the screen in place. This is placed between the screen and the DMGC-IPS-01 board. The model is available for download above. <a href="https://funnyplaying.com/products/dmg-retro-pixel-ips-lcd-holder">It is similar to Funnyplaying's model.</a>
