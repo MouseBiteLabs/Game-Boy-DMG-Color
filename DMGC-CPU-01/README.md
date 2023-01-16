@@ -91,7 +91,7 @@ R3 and C17 introduces a time delay on the /RESET pin during start-up, to allow t
 
 ![image](https://user-images.githubusercontent.com/97127539/196014140-c814788d-86aa-4e9f-ad44-4304cce65992.png)
 
-### Adding a Reset Button
+### Adding Reset Button Functionality
 
 Version 2.0 introduces a test pad labelled "RST" that connects directly to the /RESET pin. If this pin is pulled to GND, when it's released it the system will reset back to the boot screen. If you wire this pad to a button that connects the pad to GND when pressed, you basically have added a reset button to your DMGC. 
 
@@ -100,6 +100,10 @@ There are also pads near the FFC connector that are added labelled "PUSH" and "R
 In a normal configuration, pushing in on the rocker switch will control the button LEDs, and rocking down will swap the Q5 color settings, but if you don't want to use one of these features, then adding a wire from the PUSH or ROCK DOWN pad to RST pad will turn the rocker switch into a reset button for the system for that specific action and replace its normal function.
 
 **CAUTION: Remember to remove R10 or C5 on the IPS board if you plan to use this feature!!!**
+
+![image](https://user-images.githubusercontent.com/97127539/212701220-f6f169aa-ac0d-43c7-b2bb-800e9bb0fbe5.png)
+
+![image](https://user-images.githubusercontent.com/97127539/212701236-c7038fb0-1e24-4f0d-ba9c-39718c1c74f7.png)
 
 ## Bill of Materials
 
