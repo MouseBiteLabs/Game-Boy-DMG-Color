@@ -3,7 +3,7 @@
 ![DMGC-IPS-01_2-3_scan](https://user-images.githubusercontent.com/97127539/212456708-4a70f93c-80a2-43e3-9a98-edb6a8041518.jpg)
 ![DMGC-IPS-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197367472-31a2fdb9-6a8e-41a7-8fdc-138f91f944bb.jpg)
 
-*The image above is of v2.0, not the current revision of v2.3. The differences are very minor, see below.*
+*The image above of the assembled board is of v2.0, not the current revision of v2.3. The differences are very minor, see below.*
 
 The IPS board is in the front of the DMG shell. This holds the IPS screen kit (and has pads for interfacing with it), has the dimmable power LED, button inputs along with pads for optional LEDs, a navigation switch on the side for changing settings on the IPS screen and the backlit buttons, and the speaker.
 
@@ -86,7 +86,7 @@ Note: If you intend to use LSDJ on the DMGC, you might run into a conflict with 
 ![image](https://user-images.githubusercontent.com/97127539/198910151-42c03aed-8008-4fe5-9ae2-14c5da2cadfb.png)
 
 ## Button LEDs and ATTINY85
-One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. You can program the ATTINY in any number of ways, but I added pads for <a href="https://www.mouser.com/ProductDetail/200-TSM10601TSH">kinked header pins</a> to hopefully make it a bit easier.
+One popular feature for Game Boy mods are backlit buttons. On the front PCB I included spaces for eight WS2812B-2020 RGB LEDs. These are controlled via an ATTINY85 with the Adafruit NeoPixel library. You can program the ATTINY in any number of ways, but I added pads for <a href="https://www.mouser.com/ProductDetail/200-TSM10601TSH">kinked header pins</a> to hopefully make it a bit easier. You may want to tape off these pins with kapton tape, but they should not interfere with any component on the CPU board when assembled if installed correctly.
 
 ![image](https://user-images.githubusercontent.com/97127539/196017477-729896fd-b926-4b42-8206-e60e46865483.png)
 
