@@ -18,6 +18,12 @@ Also, check the orientation of Q1. If it's backwards, you will be shorting the b
 
 If SW doesn't read a voltage with the switch on, your power switch is potentially damaged or too dirty/oxidized.
 
+If you want to test the power board by itself without the CPU board, use this set up to test.
+
+![image](https://user-images.githubusercontent.com/97127539/213359732-871cb948-52e9-41f5-9524-5a6a8a0f0887.png)
+
+You need to switch voltage onto the SW pin - you cannot short SW to the input power and start up the board. Doing so will activate the undervoltage lockout, and it'll appear that the board does not work.
+
 ### 2) Testing DMGC-PWR-01
 
 *This step assumes you have the correct voltages on VCC and SW from step 1.*
