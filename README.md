@@ -53,6 +53,15 @@ The following is the high-level BOM for my specific build pictured above. Note t
 -	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
+<b>Buying from RGRS? Consider helping out some cool people with these referral links:</b>
+- <a href="https://retrogamerepairshop.com/?ref=ltyD2rUX">CodyWick13</a>
+- <a href="https://retrogamerepairshop.com/?ref=HSj4v5OO">Jack</a>
+
+<b>Or use one of these discount codes at checkout:</b>
+- Nataliethenerd
+- B23N
+- Tito
+
 Note that the IPS kit I have listed is the *easiest* IPS kit to use that is compatible with this build. It includes an image centering feature, so you don't need to fiddle with centering it manually in the shell. Other kits likely would not center nicely in the DMG shell! <a href="https://retrogamerepairshop.com/collections/gbc-displays/products/game-boy-color-2-6-ips-high-brightness-drop-in-backlight-lcd-kit?variant=41398632251564">This kit works electrically, but requires you to center the image yourself.</a> If you end up making some sort of 3D-printed bracket to support this screen, feel free to share it here.
 
 ### Circuit Boards
