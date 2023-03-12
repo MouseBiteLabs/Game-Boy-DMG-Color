@@ -54,8 +54,8 @@ The following is the high-level BOM for my specific build pictured above. Note t
 -	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
 
 <b>Buying from RGRS? Consider helping out some cool people with these referral links:</b>
-- <a href="https://retrogamerepairshop.com/?ref=ltyD2rUX">CodyWick13</a>
-- <a href="https://retrogamerepairshop.com/?ref=HSj4v5OO">Jack</a>
+- <a href="https://retrogamerepairshop.com/?ref=ltyD2rUX">CodyWick</a>
+- <a href="https://retrogamerepairshop.com/?ref=HSj4v5OO">JackV</a>
 
 <b>Or use one of these discount codes at checkout:</b>
 - Nataliethenerd
