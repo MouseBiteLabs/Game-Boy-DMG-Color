@@ -197,11 +197,13 @@ I'll update this section as more people begin to build these.
 
 A: You can pick a different LED model with lower brightness, or you can simply increase the resistance of R1 on the IPS board. Higher resistance = lower brightness. I would try 10 kΩ first if 5.6 kΩ is too bright. (If you want to dim the low power level LED brightness, increase R2 resistance as well!)
 
+**Q: My EM10 has an extra leg in-between two of the other ones. Can I use this part?**
+
+A: Yes, just bend up the extra pin so that it doesn't contact any of the nearby pads. It is an unused anchor pin.
 
 **Q: Why does the audio sound like [not normal]? (Usually asked while testing during the middle of a build)**
 
 A: The audio will sound terrible if you do not have your IPS kit connected. You can use the CPU board's FFC connnector for the IPS kit if you would like to test it without the IPS board in the middle. Furthermore, the speaker will be muted if you do not install the headphone board.
-
 
 **Q: Sometimes the power switch is finnicky and the system won't power on consistently. Sometimes the IPS screen will turn on, but only the backlight, not the actual image. What gives?**
 
@@ -210,7 +212,6 @@ A: Clean your power switch (without batteries inserted or power applied) by drip
 **Q: When I have the front and back halves of the DMGC separate, everything powers on correctly. But when I screw the two halves together, it doesn't turn on. Why?**
 
 A: Check to make sure the wires connecting the CPU and PWR boards do not have long stubs of wire sticking up out of the CPU board. The IPS board's navigation dial has metal housing that can short these wire stubs together if they are too long. Trim them short so they don't touch the metal shielding.
-
 
 **Q: Sometimes when I'm using batteries and turn the power switch on, nothing happens.**
 
