@@ -64,6 +64,19 @@ When you solder the LEDs on, I recommend taping off the button contacts to make 
 
 If you install the LEDs and determine they just aren't for you, but don't want want to spend time removing the LEDs themsleves, then bridging the solder pad labeled "NEOPIXEL DISABLE" will ground the navigation switch push function, preventing the LEDs from turning on at all.
 
+#### Programming the ATTINY85
+
+An easy way to program the ATTINY with the code for the backlit buttons is to use an Arduino Uno or Arduino Mega. Check out these tutorials for how to program ATTINY chips with them:
+
+-	<a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">Instructables post for programming an ATTINY85 with an Arduino Mega</a>
+-	<a href="https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/">Instructables post for programming an ATTINY85 with an Arduino Uno</a>
+
+The code is provided above (the .ino file) and you will likely need to install Adafruit's NeoPixel library as well to get it to compile correctly. That can be found here:
+
+- <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-installation">Installing Adafruit's NeoPixel Library to Arduino IDE</a>
+
+If you're programming the ATTINY while it's installed on the IPS board, be sure to remove the cables from J1 and J2, otherwise your Arduino will attempt to backfeed the Gameboy and/or the IPS screen kit.
+
 ### Adding Reset Button Functionality
 
 - If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then **make sure to remove R10.** You will not have the ability to control Neopixel LEDs with this change (without other code/hardware modifications).
