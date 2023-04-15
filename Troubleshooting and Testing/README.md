@@ -10,7 +10,7 @@ This is the order of testing I usually go in when assembling a DMGC. I recommend
 
 ### 1) Testing the output of the power switch
 
-If you place the CPU board (by itself) in the DMG shell and insert batteries, or use the DC jack, you can check the voltage with a multimeter on the VCC and SW holes that go to the PWR board. VCC should *always* read the battery or DC jack voltage, and SW should read zero when the power switch is off, and the same voltage as VCC when the power switch is on.
+If you place the CPU board (by itself) in the DMG shell and insert batteries, or use the DC jack, you can check the voltage with a multimeter on the VCC pad and SW hole that go to the PWR board. VCC should *always* read the battery or DC jack voltage, and SW should read zero when the power switch is off, and the same voltage as VCC when the power switch is on.
 
 If VCC does not read any voltage (and you're using batteries), measure the voltage right at the battery terminals and check if it's zero there as well - sometimes using NiMH batteries in DMG shells causes poor contact with the battery tabs, because some NiMH batteries have shallower positive terminals than alkalines.
 
