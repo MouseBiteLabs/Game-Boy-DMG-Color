@@ -102,7 +102,7 @@ Then I installed the front lens, and placed the screen, backed with the 3D print
 
 ![PXL_20220802_005512608](https://user-images.githubusercontent.com/97127539/184281827-b895435b-7d21-43ca-b96a-29d2cdd5e0c2.jpg)
 
-**Note: Be extremely careful with the screen. It is fragile. If you break it, you can sometimes buy one separately. They're just screens that were used in Blackberry Q5 phones. <a href="https://retrogamerepairshop.com/collections/gbc-displays/products/funnyplaying-lg-gba-gbc-replacement-ips-lcd?variant=32483070083146">Here's a link to one sold separately on RGRS.</a>**
+**Note: Be extremely careful with the screen. It is fragile. If you break it, you can sometimes buy one separately.
 
 If you installed the 7-pin headers for programming the ATTINY easier, you might want to tape off the headers with kapton tape. If everything is installed correctly, these shouldn't interfere with anything on the CPU board after the halves are screwed together (C47 is the closest component), but you may want to consider it anyway.
 
