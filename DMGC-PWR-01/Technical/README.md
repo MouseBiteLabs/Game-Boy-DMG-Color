@@ -6,7 +6,7 @@ This write-up serves as a technical explainer for the DMGC-PWR-01. This board is
 
 There are five wires that connect to the CPU board power supply circuitry. Pin 1 is the GND reference and pin 2 is the 5 V output from the PWR board. Pin 4, VCC, is the input voltage, which is always powered from the CPU board. SW is the output of half the power switch on the CPU board - connected to VCC when on, floating when off (ultimately tied to GND through R16 on the PWR board). On the CPU board, pin 3 is connected to the DC jack output, but on this board I connect this to VCC as well, so that either batteries or the DC jack will power this board. A different revision might utilize the DC jack for something else, such as charging a LiPo battery, which is why I left these pins separate.
 
-![DMGC-PWR-01_2-0_schematic](https://user-images.githubusercontent.com/97127539/185033755-d05ea71d-6bab-43c9-b1e9-5914af33e55c.png)
+![image](https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/assets/97127539/7b807e4d-9cdc-43d2-9089-be53a827e335)
 
 The battery voltage, VCC, is applied to the buck-boost input voltage pin, without routing through the power switch on the CPU. Instead, the power switch controls the buck-boost converter’s enable pin through a load switch circuit.
 
