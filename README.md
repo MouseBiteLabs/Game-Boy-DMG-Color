@@ -35,10 +35,10 @@ There are a handful of categories for the parts you need for this build. Please 
 
 First and foremost, the circuit boards. I have created these four boards myself, and you will need all of them:
 
-1) DMGC-CPU-01: The CPU board, where the brains are held
-2) DMGC-IPS-01: The front display board
-3) DMGC-PWR-01: The power supply board
-4) DMGC-HDP-01: The board that holds the headphone jack
+1) <a href="https://www.etsy.com/listing/1317688422/game-boy-dmgc-cpu-board">DMGC-CPU-01</a>: The CPU board, where the brains are held
+2) <a href="https://www.etsy.com/listing/1331663235/game-boy-dmgc-ips-board">DMGC-IPS-01</a>: The front display board
+3) <a href="https://www.etsy.com/listing/1317694018/game-boy-dmgc-pwr-board">DMGC-PWR-01</a>: The power supply board
+4) <a href="https://www.etsy.com/listing/1331671237/game-boy-dmgc-hdp-board-headphone-board">DMGC-HDP-01</a>: The board that holds the headphone jack
 
 I have provided the zipped Gerbers and ordering details in each of the board folders above, <a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F">as well as shared projects on PCBWay.</a> For full disclosure, if you buy the PCBs from PCBWay, I will receive 10% of the total sale towards buying more boards from PCBWay. You can alternatively use these Gerbers at other PCB fabricators if you would like. 
 
