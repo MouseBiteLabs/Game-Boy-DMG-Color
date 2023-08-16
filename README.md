@@ -29,29 +29,91 @@ Schematics, gerbers, and the BOM are provided in the various folders. If you cho
 
 ## Bill of Materials (BOM)
 
-The master BOM with every electronic component required for the four circuit boards are provided in this root folder in Excel format. Furthermore, each folder for each board will contain their section of the BOM near the bottom of each README that contain all of the electronic components needed for that specific circuit board. Note that some parts may be out of stock at the links provided, but many can be found at alternate other retailers online, or have a proper substitute. <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=51360db3da">Here is a saved cart from Mouser that contains all the parts in the BOM Excel, including some duplicates.</a> Double check to see if any parts are missing, and consider ordering multiples of some parts. There also may be some parts you want to remove (like the tactile switches).
+There are a handful of categories for the parts you need for this build. Please review all of them! The total BOM cost will come out to anywhere between $200 and $250 (NOT including the cost of a donor Game Boy Color console!) depending on the options you choose, which OEM parts you re-use, and any potential deals you can get on certain parts. Note that with the exception of a few components from a donor Game Boy Color, *most* of the electronic parts are brand new.
+
+### I. Circuit Boards
+
+First and foremost, the circuit boards. I have created these four boards myself, and you will need all of them:
+
+1) DMGC-CPU-01: The CPU board, where the brains are held
+2) DMGC-IPS-01: The front display board
+3) DMGC-PWR-01: The power supply board
+4) DMGC-HDP-01: The board that holds the headphone jack
+
+I have provided the zipped Gerbers and ordering details in each of the board folders above, <a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F">as well as shared projects on PCBWay.</a> For full disclosure, if you buy the PCBs from PCBWay, I will receive 10% of the total sale towards buying more boards from PCBWay. You can alternatively use these Gerbers at other PCB fabricators if you would like. 
+
+<a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+
+I also sell them on my Etsy store, so you don't have to buy multiples! (Click the banner!)
+
+<a href="https://www.etsy.com/shop/MouseBiteLabs"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
+
+### II. Brand New Electronic Parts
+
+The DMGC uses mostly all-new parts. This isn't a direct-transfer style project! The master BOM with every electronic component required for the four circuit boards are provided in this root folder in Excel format. Furthermore, each folder for each board will contain their section of the BOM near the bottom of each README that contain all of the electronic components needed for that specific circuit board. Note that some parts may be out of stock at the links provided, but many can be found at alternate other retailers online, or have a proper substitute. <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=51360db3da">Here is a saved cart from Mouser that contains all the parts in the BOM Excel, including some duplicates.</a> Double check to see if any parts are missing, and consider ordering multiples of some parts. There also may be some parts you want to remove (like the tactile switches).
 
 **If a part is backordered, or out of stock** - check the Excel file, or the BOMs listed at the bottom of each board's folder in this repo. There may be alternate part options. You can also check for stock at places like Digikey. And you can always use Octopart.com to help find in-stock parts at other websites. I can't maintain the cart for every out-of-stock part, so please do some research :)
 
-The following is the high-level BOM for my specific build pictured above. Note that parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications, or end up being incompatible. 
+### III. Game Boy Electronic Parts
 
-- Original Game Boy Color console
-  -	U1 - CGB CPU (all revisions *except* REV E)
-  - U2 - LH52256CVTXIZ - <a href="https://www.mouser.com/ProductDetail/Alliance-Memory/AS6C62256-55STIN?qs=sGAEpiMZZMutXGli8Ay4kJJGFDXf1yJRtysCHUCJ96k%3D">A potential replacement can be purchased here (not fully tested!)</a>
+*This project requires at the very least a donor DMG console and a donor GBC console.*
+
+There are a handful of parts that I have not located aftermarket substitutes for, and will therefore necessitate an original Game Boy console to salvage from. Please note that removing these parts is not a trivial task, and **requires advanced soldering and desoldering skills to be successful.**
+
+The following parts are required from an original Game Boy Color console:
+
+  -	U1 – CGB CPU (all revisions *except* REV E, which is *incompatible*)
   - X1 – 8.388 MHz crystal oscillator
-  - EM10 - <a href="https://www.mouser.com/ProductDetail/Wurth-Elektronik/744235601?qs=BXmE%252BJ0Y7xYO4MPd53j2NQ%3D%3D">A replacement can be purchased here</a>
-- Original Game Boy DMG console
-  -	VR1 – Volume dial
-  -	SW1 – Power switch
-  -	P1 – Cartridge connector
-  -	EXT port
+
+The following parts can be salvaged from a Game Boy Color, but aftermarket options exist:
+
+  - U2 – LH52256CVTXIZ (SRAM); alternate: https://mou.sr/3f8G0Mi
+  - EM10 – input filter; alternate: https://mou.sr/3FiMvXw
+
+The following parts are required from an original Game Boy (DMG) console:
+  
+  -	SW1 - Power switch
   -	DC jack
   -	Headphone jack
--	<a href="https://retrogamerepairshop.com/products/game-boy-color-q5-ips-backlight-with-osd?variant=37646279213228">GBC Q5 XL IPS Backlight with OSD</a>
--	<a href="https://retrogamerepairshop.com/collections/dmg-lenses/products/funnyplaying-dmg-q5-ips-lens?variant=39626455187628">FunnyPlaying DMG Q5 IPS Lens (black)</a>
--	Custom designed 3D-printed IPS bracket (file located within the DMGC-IPS-01 folder)
--	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A (Midnight Blue)</a>
--	<a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Kitsch-Bent clear silicone DMG buttons</a>
+
+The following part is required from an original Game Boy (DMG), or a Game Boy Four Player Adapter:
+
+  -	EXT port
+
+The following parts can be salvaged from an original Game Boy (DMG), but aftermarket options exist:
+
+  -	VR1 – Volume dial
+  -	P1 – Cartridge connector
+
+### IV. External Build Parts
+
+The following is the high-level BOM - basically, the Game Boy part. Note that parts that deviate from the ones listed here (like different shell designs) might necessitate different fitment modifications, or end up being incompatible. Note that this list is not a comprehensive list of all the places you can get these parts. I encourage you to search around if you can't find what you want here.
+
+-	**Shell:** I generally recommend the Funnyplaying "IPS Ready" ones if you don't want to trim anything, but the color and style options are limited. If you don't use these, then you're on your own for how to prepare it - generally, you can follow guides for preparing a Pocket for an IPS screen kit.
+    - RGRS:	<a href="https://retrogamerepairshop.com/collections/game-boy-dmg-shells/products/game-boy-dmg-original-new-shells-factory-a?variant=32530346967114">Game Boy DMG Shell – Factory A</a> [Note: this one requires trimming!]
+    - Funnyplaying: <a href="https://funnyplaying.com/products/dmg-ips-coustom-housing">DMG IPS Q5 Custom Housing</a>
+- **Screen Kit:** This is the important one. You need this specific type of kit - the Q5 IPS with OSD. It goes by many names, the maker is Hispeedido (*not* FunnyPlaying). Laminated ones are *not* compatible, but kits that include a lit-up logo are fine to use. Make sure you DO NOT get any Game Boy DMG versions - they are not compatible! Also, be sure to test this screen kit before installing it, preferrably with an original Game Boy Color. Sometimes they arrive damaged, and once you've installed, it may not be possible to get a refund.
+  - RGRS: <a href="https://retrogamerepairshop.com/products/game-boy-color-q5-ips-backlight-with-osd?variant=37646279213228">GBC Q5 XL IPS Backlight with OSD</a> OR <a href="https://retrogamerepairshop.com/collections/gbc-displays/products/game-boy-color-q5-osd-ips-kit-with-color-changing-logo?variant=41819042185388">Game Boy Color Q5 OSD IPS Kit with Color Changing Logo 
+  - AliExpress: <a href="https://www.aliexpress.us/item/3256801650459088.html?spm=a2g0o.productlist.main.1.758e53f17WUFK2&algo_pvid=24ef67e3-d608-4269-a663-05eafed1bd17&algo_exp_id=24ef67e3-d608-4269-a663-05eafed1bd17-0&pdp_npi=3%40dis%21USD%2145.9%2145.9%21%21%21%21%21%4021224e9b16816641208271256d074d%2112000017802039303%21sea%21US%210&curPageLogUid=dCymHIE0cr4X">GBC Q5 IPS LCD Kit</a>
+  - HHL: <a href="https://handheldlegend.com/products/game-boy-color-ips-lcd-q5-hispeedido">Game Boy Color IPS LCD Q5 - Hispeedido</a>  
+- **Screen Centering Bracket:** You can find the design file for this bracket in the DMGC-IPS-01 folder. It's a custom designed bracket I made that *is required* for holding the screen in place. You will need access to a 3D printer for this part, or you can order it online from 3D printing services by uploading the file.
+  - <a href="https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/blob/main/DMGC-IPS-01/dmgc_q5_bracket.stl">DMGC Q5 Bracket 3D Model .stl File</a>
+-	**Lens:** You must get the "IPS" style of lens, as the viewing area is larger.
+    -	RGRS: <a href="https://retrogamerepairshop.com/collections/dmg-lenses/products/funnyplaying-dmg-q5-ips-lens?variant=39626455187628">FunnyPlaying DMG Q5 IPS Lens</a>
+    - FunnyPlaying: <a href="https://funnyplaying.com/products/dmg-retro-pixel-ips-glass-lens">DMG RetroPixel IPS Glass Lens</a>
+- **Buttons:** Funnyplaying models are generally OEM-like (IMO), but you can also use OEM ones. For the above build, I used Kitsch-Bent silicone buttons. Bonus: NES controller buttons fit inside the DMG.
+  -	Kitsch-Bent: <a href="https://store.kitsch-bent.com/products/silicone-buttons?variant=40627510771907">Clear Silicone DMG Buttons</a>
+  - RGRS: <a href="https://retrogamerepairshop.com/collections/dmg-buttons">DMG Buttons</a>
+  - LabFifteen: <a href="https://labfifteenco.com/en-us/collections/game-boy-dmg-buttons">Game Boy DMG Buttons</a>
+  - FunnyPlaying: <a href="https://funnyplaying.com/products/gb-dmg-custom-buttons">DMG Custom Buttons</a>  
+- **Membranes:** Important, but very forgettable! You will need them even if you install tactile switches. You will, however, *not* need them if you use the Kitsch-Bent buttons.
+  - RGRS: <a href="https://retrogamerepairshop.com/collections/dmg-buttons/products/funnyplaying-game-boy-dmg-silicone-button-contact-pad-membranes">FunnyPlaying Game Boy DMG Silicone Button Contact Pad Membranes
+  - FunnyPlaying: <a href="https://funnyplaying.com/products/replacement-silicone-pads-for-gb-dmg">DMG Replacement Silicone Pads</a>  
+- **Speaker:** There are tons of options for this as well, including using the OEM one.
+  - RGRS: <a href="https://retrogamerepairshop.com/collections/dmg-audio/products/funnyplaying-clear-game-boy-dmg-original-speaker?variant=37728957726892">FunnyPlaying Clear Game Boy DMG Original Speaker</a>
+  - FunnyPlaying: <a href="https://funnyplaying.com/products/clear-dmg-speaker">Clear DMG Speaker</a>
+- **Battery Tabs:** This one is another part I commonly forget about. You can use a salvaged set of tabs, or order new ones.
+  - RGRS: <a href="https://retrogamerepairshop.com/collections/dmg-power/products/game-boy-dmg-original-high-quality-replacement-battery-contact-terminals?variant=37893135794348">Game Boy DMG Original High Quality Replacement Battery Contact Terminals
 
 <b>Buying from RGRS? Consider helping out some cool people with these referral links:</b>
 - <a href="https://retrogamerepairshop.com/?ref=ltyD2rUX">CodyWick</a>
@@ -63,14 +125,6 @@ The following is the high-level BOM for my specific build pictured above. Note t
 - Tito
 
 Note that the IPS kit I have listed is the *easiest* IPS kit to use that is compatible with this build. It includes an image centering feature, so you don't need to fiddle with centering it manually in the shell. Other kits likely would not center nicely in the DMG shell! <a href="https://retrogamerepairshop.com/collections/gbc-displays/products/game-boy-color-2-6-ips-high-brightness-drop-in-backlight-lcd-kit?variant=41398632251564">This kit works electrically, but requires you to center the image yourself.</a> If you end up making some sort of 3D-printed bracket to support this screen, feel free to share it here.
-
-### Circuit Boards
-
-For the circuit boards themselves, I have provided the zipped Gerbers and ordering details in each of the board folders above, <a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F">as well as shared projects on PCBWay.</a> For full disclosure, if you buy the PCBs from PCBWay, I will receive 10% of the total sale towards buying more boards from PCBWay. You can alternatively use these Gerbers at other PCB fabricators if you would like. 
-
-<a href="https://www.etsy.com/shop/MouseBiteLabs">I also sell them on my Etsy store, so you don't have to buy multiples!</a>
-
-<a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 ## Assembly
 
