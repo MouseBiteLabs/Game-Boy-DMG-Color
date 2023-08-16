@@ -114,6 +114,8 @@ The following is the high-level BOM - basically, the Game Boy part. Note that pa
   - FunnyPlaying: <a href="https://funnyplaying.com/products/clear-dmg-speaker">Clear DMG Speaker</a>
 - **Battery Tabs:** This one is another part I commonly forget about. You can use a salvaged set of tabs, or order new ones.
   - RGRS: <a href="https://retrogamerepairshop.com/collections/dmg-power/products/game-boy-dmg-original-high-quality-replacement-battery-contact-terminals?variant=37893135794348">Game Boy DMG Original High Quality Replacement Battery Contact Terminals
+- **Stickers:** Completely optional, but they can really bring a build together. Especially if you have custom DMG Color stickers!
+  - Nextstopplease: <a href="https://nextstopplease.square.site/product/dmgc-label/230?cp=true&sa=true&sbp=false&q=false">GB Pocket Color Label</a>
 
 <b>Buying from RGRS? Consider helping out some cool people with these referral links:</b>
 - <a href="https://retrogamerepairshop.com/?ref=ltyD2rUX">CodyWick</a>
