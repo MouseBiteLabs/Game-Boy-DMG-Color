@@ -166,6 +166,10 @@ If you installed the 7-pin headers for programming the ATTINY easier, you might 
 
 After that, it was just a matter of connecting the FFC from the CPU to the IPS board, tucking it under the boards ensuring no kinks or sharp bends, and screwing it together. Once assembled, I opened the OSD menu for the IPS kit (Select + A + B) and changed the vertical and horizontal offsets (my values were 78 and 29, respectively) to center the image on the screen. The image centering function is one of the biggest reasons I chose this IPS kit.
 
+I suggest running the color tests in the <a href="https://github.com/pinobatch/240p-test-mini/releases/">240p test suite ROM</a>, if you have a flash cart to run it on. It will tell you if you have any poor connections on the FFC lines - the screen might work, but you might be missing a connection on one of the 15 RGB pins! If your colors look off, reflow the connections on the top row of pins on the CPU and/or the FFC connectors (the issue may be on the CPU board, *or* the IPS board). This picture (provided by <a href="https://retrogamerepairshop.com/?ref=HSj4v5OO">JackV</a>) shows a before and after pic for reflowing a few mis-soldered color pins.
+
+![image](https://user-images.githubusercontent.com/97127539/235316239-43251055-ed33-4d0a-b5b8-bf5c3a8b2e9e.png)
+
 Next to an original DMG… one can really see the improvements!
 
 ![PXL_20220816_034738908~2 (2)](https://user-images.githubusercontent.com/97127539/185297393-868a0e7d-a001-4ec9-b5f3-7ab8a57a6132.jpg)
