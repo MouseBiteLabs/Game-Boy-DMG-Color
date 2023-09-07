@@ -69,6 +69,8 @@ If you get a garbled image, or no image at all (but the screen still lights up),
 - Check to make sure all legs of the CPU, FFC, and RAM have a good connection to the board. Missing any one of these pins could cause the screen to not work.
 - Once again, try the IPS kit inside an actual Game Boy Color, if you have one available to test.
 
+If you have an image on the screen, but it has odd colors, or freezes, or something else, check the section at the bottom of this post for information on specific troubleshooting tips for the CPU and RAM.
+
 If you still have problems with the IPS kit not working properly, you can continue to step 5 to check the audio output. This might point you to a problem elsewhere on the CPU board.
 
 ### 5) Testing DMGC-HDP-01 and audio output
@@ -106,3 +108,15 @@ Make sure the power LED turns on when you turn the power on (did you put it in b
 - Make sure the cables are inserted in the connectors all the way and the bales are pressed in all the way. Clean out any leftover flux that might be inside the connectors when you soldered them on.
 
 At this point you should also have the speaker installed. If after turning the system on, you don't get any sound, check the HP and GND pins on the headphone board or CPU board - the HP pin should be shorted to GND when headphones are not inserted. If the HP pin is not shorted to GND, then the speaker won't output any sound. You have a dirty or damaged headphone jack - clean or replace. You can manually short HP to GND with a wire to check the audio output of the speaker if you'd like.
+
+## Troubleshooting Common Issues Related to CPU and RAM
+
+Depending on the problem you're encountering, it could be worth reflowing the pins on the CPU that correspond to the aspect you're having problems with.
+- For miscolored screens, reflow the top display pins.
+- For *glitchy* screens, or frozen/all-white screens, reflow the SRAM pins.
+- If you're missing button inputs, reflow the bottom left corner button pins.
+- If you have games that don't start up properly and hang at the Nintendo logo during start-up, display a glitchy Nintendo logo, or randomly freeze during gameplay, reflow the cartridge pins and clean your cartridge connector. The freezing may also be caused by poorly connected SRAM as well.
+- Three link port pins are on the bottom right, but there is one lone one at the top.
+- In general, reflowing the clock and power pins (colored red, pink, and black) can solve problems as well.
+
+![image](https://user-images.githubusercontent.com/97127539/235403819-e2aaaf66-5f18-482f-b601-76027f41c5d1.png)
