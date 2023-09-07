@@ -35,10 +35,10 @@ There are a handful of categories for the parts you need for this build. Please 
 
 First and foremost, the circuit boards. I have created these four boards myself, and you will need all of them:
 
-1) <a href="https://www.etsy.com/listing/1317688422/game-boy-dmgc-cpu-board">DMGC-CPU-01</a>: The CPU board, where the brains are held
-2) <a href="https://www.etsy.com/listing/1331663235/game-boy-dmgc-ips-board">DMGC-IPS-01</a>: The front display board
-3) <a href="https://www.etsy.com/listing/1317694018/game-boy-dmgc-pwr-board">DMGC-PWR-01</a>: The power supply board
-4) <a href="https://www.etsy.com/listing/1331671237/game-boy-dmgc-hdp-board-headphone-board">DMGC-HDP-01</a>: The board that holds the headphone jack
+1) <a href="https://mousebitelabs.etsy.com/listing/1317688422/game-boy-dmgc-cpu-board?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1694126428997">DMGC-CPU-01</a>: The CPU board, where the brains are held
+2) <a href="https://mousebitelabs.etsy.com/listing/1331663235/game-boy-dmgc-ips-board?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1694126445880">DMGC-IPS-01</a>: The front display board
+3) <a href="https://mousebitelabs.etsy.com/listing/1317694018/game-boy-dmgc-pwr-board?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1694126458438">DMGC-PWR-01</a>: The power supply board
+4) <a href="https://mousebitelabs.etsy.com/listing/1331671237/game-boy-dmgc-hdp-board-headphone-board?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1694126482746">DMGC-HDP-01</a>: The board that holds the headphone jack
 
 I have provided the zipped Gerbers and ordering details in each of the board folders above, <a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F">as well as shared projects on PCBWay.</a> For full disclosure, if you buy the PCBs from PCBWay, I will receive 10% of the total sale towards buying more boards from PCBWay. You can alternatively use these Gerbers at other PCB fabricators if you would like. 
 
@@ -46,7 +46,7 @@ I have provided the zipped Gerbers and ordering details in each of the board fol
 
 I also sell them on my Etsy store, so you don't have to buy multiples! (Click the banner!)
 
-<a href="https://www.etsy.com/shop/MouseBiteLabs"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
+<a href="https://mousebitelabs.etsy.com"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
 
 ### II. Brand New Electronic Parts
 
