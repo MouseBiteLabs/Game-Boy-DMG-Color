@@ -10,11 +10,21 @@ This is the order of testing I usually go in when assembling a DMGC. I recommend
 
 ### 1) Testing the output of the power switch
 
-If you place the CPU board (by itself) in the DMG shell and insert batteries, or use the DC jack, you can check the voltage with a multimeter on the VCC pad and SW hole that go to the PWR board. VCC should *always* read the battery or DC jack voltage, and SW should read zero when the power switch is off, and the same voltage as VCC when the power switch is on.
+First, you should populate the following parts on the CPU board:
 
-If VCC does not read any voltage (and you're using batteries), measure the voltage right at the battery terminals and check if it's zero there as well - sometimes using NiMH batteries in DMG shells causes poor contact with the battery tabs, because some NiMH batteries have shallower positive terminals than alkalines.
+![image](https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/assets/97127539/79a81757-e111-48c3-9882-2dca77323d8e)
 
-Also, check the orientation of Q1. If it's backwards, you will be shorting the battery terminals together. In this case, you would read voltage across the battery terminals, but not on VCC itself.
+Then, if you place the CPU board (by itself) in the DMG shell and insert batteries, you can check the voltage with a multimeter on the VCC pad and SW hole that go to the PWR board. If you are testing with an A/C adapter, then you'll only be able to measure the voltage on the DC pin, so test with batteries first. 
+
+VCC should *always* read the battery voltage, and SW should read zero when the power switch is off, and the same voltage as VCC when the power switch is on.
+
+If VCC does not read any voltage, measure the voltage right at the battery terminals and check if it's zero there as well - sometimes using NiMH batteries in DMG shells causes poor contact with the battery tabs, because some NiMH batteries have shallower positive terminals than alkalines. If you get voltage at the terminals, then check all the parts in line between the battery tab and the VCC net in the diagram.
+
+- Check if F1 is blown.
+- Check Q1 orientation.
+- Check EM10 orientation. (Check with a meter in continuity mode if the top two pins are connected, and if the bottom two pins are connected - the ones connected by a horizontal line are the ones that should show connectivity).
+- Check if pins 3 and 4 on the DC jack are connected. If they are not, then the switch is likely dirty, corroded, or damaged somehow. If you don't want to use the DC jack, you can connect pins 3 and 4 together with a wire.
+- If you are testing voltages by using an A/C adapter plugged into the DC jack, make sure D1 is in the correct orientation and F2 isn't blown.
 
 If SW doesn't read a voltage with the switch on, your power switch is potentially damaged or too dirty/oxidized.
 
