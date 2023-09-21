@@ -25,6 +25,14 @@ You can alternatively use the zipped folder at any board fabricator you like. Yo
 
 <a href="https://www.pcbway.com/project/shareproject/Game_Boy_DMG_Color_DMGC_PWR_01_f8f2e84a.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
+## Configuring for Different TPS chips on U2
+
+For TPS63070 or TPS630702, R8 needs to be 523k and R9 needs to be 100k, as indicated in the BOM.
+
+For TPS630701, you need to short R8 with a solder bridge/wire or a zero ohm resistor, and remove R9 completely.
+
+**It is critical you configure the board correctly, otherwise you may damage your system.**
+
 ## Using in an Original DMG (UNTESTED!)
 
 This board can (probably) be used as a replacement to the original DMG power board, provided you are using an IPS screen that only requires a 5 V output. This board will not supply voltages for the LCD, so it cannot be used in an unmodded DMG.
