@@ -15,7 +15,9 @@ The code name for this project is DMGC. This console uses four PCBs, just as the
 
 ## Disclaimer
 
-**Before I go any further, please read this VERY important disclaimer, if you are thinking about making this yourself.**
+**Before I go any further, please read this VERY important disclaimer, if you are thinking about making this yourself. Don't let this picture happen to you!**
+
+![image](https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/assets/97127539/a9f60f46-4bb5-462a-b314-5a9ee38e7c4d)
 
 I made this project first and foremost **for my own purposes**. Nearly all of the features I have included are things I **personally** wanted. I have tried my hardest to make the project modular, if others would like to improve or change things easily, and I have also tried very hard to make the design somewhat less prone to potential errors during assembly (such as spacing out power pins on the FFC connectors). But in the end, every decision I made was for what I wanted the final product to be, with my skill level in mind.
 
@@ -25,7 +27,7 @@ Schematics, gerbers, and the BOM are provided in the various folders. If you cho
 
 **DO NOT attempt this project if you are uncomfortable or inexperienced with detailed electronics troubleshooting, or are not proficient in soldering! You will AT MINIMUM need to be proficient in drag soldering and hot air reflowing. If you have not gained proficiency in these soldering skills, DO NOT ATTEMPT THIS PROJECT.**
 
-(If you attempt the build, start with attempting to assemble DMGC-PWR-01. This is the toughest board to assemble, and it requires no donor components.)
+If you attempt the build, start with trying to assemble DMGC-PWR-01. This is the toughest board to assemble, and it requires no donor components.
 
 ## Bill of Materials (BOM)
 
