@@ -13,6 +13,8 @@ This is my design for an original Game Boy (model name DMG) with native Game Boy
 
 The code name for this project is DMGC. This console uses four PCBs, just as the original DMG model did - a CPU board (DMGC-CPU), display board (DMGC-IPS), power board (DMGC-PWR), and headphone board (DMGC-HDP). All circuit board assemblies have their own separate folders in this repository which contain detailed descriptions of operation, source files for schematics and board layouts (designed using Eagle), exported Gerber files, and some other relevant files. 
 
+**Do you want to make one?** Then you NEED TO READ this entire page. Seriously. All your questions will be answered.
+
 ## Disclaimer
 
 **Before I go any further, please read this VERY important disclaimer, if you are thinking about making this yourself. Don't let this picture happen to you!**
