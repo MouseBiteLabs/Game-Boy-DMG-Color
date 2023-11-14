@@ -77,6 +77,16 @@ The code is provided above (the .ino file) and you will likely need to install A
 
 If you're programming the ATTINY while it's installed on the IPS board, be sure to remove the cables from J1 and J2, otherwise your Arduino will attempt to backfeed the Gameboy and/or the IPS screen kit.
 
+You can use the 7-pin connector on the side of the IPS board to connect to the ATTINY if it's already on the PCB. (You don't need the 3.3V pin to program, it's there for helping you develop your own ATTINY code if you want to use it)
+
+![image](https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/assets/97127539/a97c10c5-b4f5-4180-91f4-f4a405cafcff)
+
+**NOTE: VERSION DIFFERENCE**
+
+On the v2.0 and v2.1 boards, pins 1 and 8 are flipped! And the 3.3V pin does not exist.
+
+![image](https://github.com/MouseBiteLabs/Game-Boy-DMG-Color/assets/97127539/9d8de0d7-d491-436b-957c-0831eabe584b)
+
 ### Adding Reset Button Functionality
 
 - If you are using the push function of the navigation switch to reset the console instead of controlling the button LEDs (see more info on the CPU README), then **make sure to remove R10.** You will not have the ability to control Neopixel LEDs with this change (without other code/hardware modifications).
