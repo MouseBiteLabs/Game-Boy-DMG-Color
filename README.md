@@ -136,7 +136,7 @@ Note that the IPS kit I have listed is the *easiest* IPS kit to use that is comp
 
 You can check out Tito's video on the DMGC to get an idea of how the assembly process generally goes.
 
-[![MachoNacho DMGC Video](https://img.youtube.com/vi/4U8Tqu7uxLo/maxresdefault.jpg)](https://youtu.be/4U8Tqu7uxLo?t=352)
+[![MachoNacho DMGC Video](https://img.youtube.com/vi/4U8Tqu7uxLo/maxresdefault.jpg)](https://youtu.be/4U8Tqu7uxLo)
 
 Here are some pictures of the assembly process *after* testing the functionality of all the boards separately. Detailed images of the circuit boards alone are shown in their respective folders. These pictures are of a previous revision, v1.2, but the process remains the same. You may notice some minor cosmetic differences in these pictures from the current revision boards.
 
