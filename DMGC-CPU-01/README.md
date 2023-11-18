@@ -3,7 +3,7 @@
 ![DMGC-CPU-01_2-3_scan](https://user-images.githubusercontent.com/97127539/212452961-b9c53a46-5c29-4012-afe8-3af43f842dfc.jpg)
 ![DMGC-CPU-01_2-0_ASSEMBLED](https://user-images.githubusercontent.com/97127539/197366878-ae154a5e-c2df-48f9-88fb-2e1cacaa1770.jpg)
 
-*The image above of the assembled board is of v2.0, not the current revision of v2.3. The differences in appearance are minor, see below.*
+*The image above of the assembled board is of v2.0, not the current revision of v2.4. The differences in appearance are minor, see below.*
 
 The CPU board houses the majority of the electronics in the DMGC. Parts harvested from the original GBC include the CPU, SRAM, and crystal oscillator. EM10 may be transferred as well, but a good enough replacement is included in the BOM if you need a new part. The power supply modifications, the new audio circuit, and a handful of omissions like the IR communication and some of the now-unnecessary LCD pins differentiate this build from the original GBC. But many connections and component values are pulled from the official GBC schematic (linked below).
 
@@ -102,11 +102,11 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
-### v2.4 (PLANNED)
+### v2.4
 - Changed some reference designators for more consistency to source PCBs
 - Expanded slot for FFC to feed through to back of board
 
-### v2.3 (for sale)
+### v2.3
 
 - Nudge volume dial to better center it in the shell
 
