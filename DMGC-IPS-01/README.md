@@ -134,11 +134,11 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
-### v2.4 (PLANNED)
+### v2.4
 
 - Added desensitizing capacitors (C9, C10) to reduce accidental touch inputs on IPS kit
 
-### v2.3 (for sale)
+### v2.3
 
 - Moved R9 to avoid interference with post
 - Moved warning text
