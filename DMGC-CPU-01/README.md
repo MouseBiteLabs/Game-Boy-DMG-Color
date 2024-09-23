@@ -102,6 +102,9 @@ Here, I have provided links to components I used personally (or suitable replace
 
 ## Revision History
 
+### v2.5
+- Added space for adding <a href="https://shop.insidegadgets.com/product/gba-clockxcontrol/">ClockxControl by insideGadgets</a>
+
 ### v2.4
 - Changed some reference designators for more consistency to source PCBs
 - Expanded slot for FFC to feed through to back of board
