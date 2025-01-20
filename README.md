@@ -52,6 +52,10 @@ I also sell them on my Etsy store, so you don't have to buy multiples! (Click th
 
 <a href="https://mousebitelabs.etsy.com"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
 
+And finally, <a href="https://shop.insidegadgets.com/product/game-boy-dmg-color/">insideGadgets sells these boards partially assembled!</a>
+
+<a href="https://shop.insidegadgets.com/product/game-boy-dmg-color/"><img src="https://shop.insidegadgets.com/wp-content/uploads/2022/09/ig_logo_2.png"></a>
+
 ### II. Brand New Electronic Parts
 
 The DMGC uses mostly all-new parts. This isn't a direct-transfer style project! The master BOM with every electronic component required for the four circuit boards are provided in this root folder in Excel format. Furthermore, each folder for each board will contain their section of the BOM near the bottom of each README that contain all of the electronic components needed for that specific circuit board. Note that some parts may be out of stock at the links provided, but many can be found at alternate other retailers online, or have a proper substitute. <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=6600c1bb14">Here is a saved cart from Mouser that contains all the parts in the BOM Excel, including some duplicates.</a> Double check to see if any parts are missing, and consider ordering multiples of some parts. There also may be some parts you want to remove (like the tactile switches).
