@@ -15,7 +15,7 @@ The zipped folder contains all the gerber files for this board.
 -	Layers: 2
 -	Thickness: 1.2 mm
 -	Surface Finish: ENIG or HASL
--   **NOTE: When ordering PCBs, add this note to the order: "The file milling.gbr contains outlines for plated slots. Please add plated slots on the PCB according to this layer."**
+-   **NOTE: For v2.4, when ordering PCBs, add this note to the order: "The file milling.gbr contains outlines for plated slots. Please add plated slots on the PCB according to this layer." V2.5 does not require this note.**
 
 *HASL will work, but will potentially be more difficult for soldering fine-pitch parts like the CPU and FFC connector.*
 
