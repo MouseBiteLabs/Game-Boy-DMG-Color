@@ -48,9 +48,19 @@ I have provided the zipped Gerbers and ordering details in each of the board fol
 
 <a href="https://www.pcbway.com/project/member/?bmbno=BC9D73E0-EF3D-4F"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
-I also sell them on my Etsy store, so you don't have to buy multiples! (Click the banner!)
+### Purchase from My Website
+
+You can purchase this circuit board at my website, [https://mousebitelabs.store](https://mousebitelabs.store). Click the following image to be directed to the specific item listing:
+
+<a href="https://mousebitelabs.store/products/game-boy-dmgc"><img width="1070" height="182" alt="PCB from MouseBiteLabs" src="https://github.com/user-attachments/assets/14072b8c-4d47-434b-9c31-6d4ec74a28bc" /></a>
+
+### Purchase from Etsy
+
+I also offer the board on Etsy, if you would rather purchase through there - click the banner to be redirected.
 
 <a href="https://mousebitelabs.etsy.com"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
+
+### Purchase from insideGadgets
 
 And finally, <a href="https://shop.insidegadgets.com/product/game-boy-dmg-color/">insideGadgets sells these boards partially assembled!</a>
 
